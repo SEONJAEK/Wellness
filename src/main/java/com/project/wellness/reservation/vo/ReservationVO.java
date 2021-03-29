@@ -1,8 +1,8 @@
-package com.project.wellness.search.vo;
+package com.project.wellness.reservation.vo;
 
 import java.sql.Date;
 
-public class SearchVO {
+public class ReservationVO {
 
 	private int num;
 	private Date regDate;
@@ -11,9 +11,9 @@ public class SearchVO {
 	private String userId;
 	private String userName;
 	
-	public SearchVO() {}
+	public ReservationVO() {}
 	
-	public SearchVO(int num, Date regDate, String programName, String programTime, String userId, String userName) {
+	public ReservationVO(int num, Date regDate, String programName, String programTime, String userId, String userName) {
 		this.num = num;
 		this.regDate = regDate;
 		this.programName = programName;

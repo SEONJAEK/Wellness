@@ -7,7 +7,7 @@
    </settings>
 
    <typeAliases> <!-- Class 별칭을 선언하여 모든 경로를 적어주지 않아도 된다. -->
-      <typeAlias type="com.project.wellness.search.vo.SearchVO" alias="Search" />
+      <typeAlias type="com.project.wellness.reservation.vo.ReservationVO" alias="Reservation" />
       <typeAlias type="com.project.wellness.member.vo.MemberVO" alias="Member" />
       <typeAlias type="com.project.wellness.board.vo.BoardVO" alias = "Board" />
      <!-- <typeAlias type="com.project.wellness.member.vo.MemberVO" alias="AdminMember" />
@@ -17,7 +17,7 @@
 
    <!-- 사용하고자 하는 mapper를 등록한다. -->
    <mappers>
-      <mapper resource="mapper/search-mapper.xml" />
+      <mapper resource="mapper/reservation-mapper.xml" />
       <mapper resource="mapper/member-mapper.xml" />   
       <mapper resource="mapper/board-mapper.xml" />
       <!--<mapper resource="mapper/adminMember-mapper.xml"/>

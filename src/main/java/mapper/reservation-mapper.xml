@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
-<mapper namespace="Search">   
+<mapper namespace="Reservation">   
    <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
-	<resultMap id="resultSearch" type="Search"> 
+	<resultMap id="resultReservation" type="Reservation"> 
 		<id property="num" column="R_NUM" />
 		<result property="regDate" column="R_REG_DATE"/>
 		<result property="programName" column="PROGRAM_NAME"/>
@@ -13,7 +13,7 @@
 		<result property="userName" column="USER_NAME"/>
 	</resultMap>
 
-	<select id="selectSearch" resultMap="resultSearch">
+	<select id="selectReservation" resultMap="resultReservation">
 		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m2.user_name from program p 
 	    join reservation r  on p.program_id = r.program_id
 	    join member_info m1 on  m1.user_id = r.user_id
@@ -21,7 +21,7 @@
 	    order by r.r_num
 	</select>
 	
-	<delete id="deleteReservaion" parameterType="int">
+	<delete id="deleteReservation" parameterType="int">
 		delete from reservation where R_NUM = #{num}
 	</delete>
 </mapper>
