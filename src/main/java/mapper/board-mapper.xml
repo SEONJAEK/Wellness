@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+<mapper namespace="Board">   
+   <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
+	<resultMap id="resultBoard" type="Board"> 
+		<id property="num" column="NUM"/>   <!-- 프라이머리키 -->
+		<result property="title" column="TITLE"/>	<!--제목  -->
+		<result property="bDate" column="B_REG_DATE"/> <!--날짜  -->
+		<result property="readCnt" column="READ_CNT"/> <!--조회수  -->
+		<result property="content" column="CONTENT"/> <!--내용  -->
+		<result property="ref" column="REF"/> <!--  -->
+		<result property="reStep" column="RE_STEP"/> <!--  -->
+		<result property="reLevel" column="RE_LEVEL"/> <!--  -->
+		<result property="userId" column="USER_ID"/> <!--아이디  -->
+	</resultMap>
+	
+ 	<!-- 전체 목록 불러오기 -->
+	<select id="selectAllBoard" resultMap="resultBoard">
+		select * from board
+	   <!-- resultType="Program" resultMap에서 type에 적어줬기 때문에 생략가능-->
+	   <!-- id-> 메서드명 resultType = 반환타입 -->
+	</select>
+	   <!-- member 하나만 가져오는 select -->
+    <select id="selectBoard" parameterType="int" resultMap="resultBoard">
+      <!-- paramterType은 userid의 타입을 말함 -->
+     	select * from board where num = #{num}
+    </select>
+
+    <insert id="create"> 
+   		insert into board(NUM, TITLE,B_REG_DATE ,READ_CNT , CONTENT,USER_ID) values(board_seq.nextval, #{title}, sysdate, #{readCnt},#{content},#{userId}) 
+    </insert>
+
+	<delete id="remove">
+		delete from board where bno = #{num}
+	</delete>
+	
+</mapper>
