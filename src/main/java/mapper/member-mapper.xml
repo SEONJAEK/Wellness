@@ -4,48 +4,66 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Member">
-   <resultMap id="resultMember" type="Member">
-      <id property="userId" column="USER_ID" />   <!-- 프라이머리키 -->
-      <result property="userPass" column="USER_PASS" />
-      <result property="userName" column="USER_NAME" />
-      <result property="address" column="ADDRESS" />
-      <result property="gender" column="GENDER" />
-      <result property="phone" column="PHONE" />
-      <result property="email" column="EMAIL" />
-      <result property="userBirth" column="USER_BIRTH" />
-      <result property="isAdmin" column="IS_ADMIN" />
-      <result property="isCoach" column="IS_COACH" />
-      <result property="joinDate" column="JOIN_DATE" />
-      
-      
+	<resultMap id="resultMember" type="Member">
+		<id property="userId" column="USER_ID" />   <!-- 프라이머리키 -->
+		<result property="userPass" column="USER_PASS" />
+		<result property="userName" column="USER_NAME" />
+		<result property="address" column="ADDRESS" />
+		<result property="gender" column="GENDER" />
+		<result property="address2" column="ADDRESS2" />
+		<result property="phone" column="PHONE" />
+		<result property="email" column="EMAIL" />
+		<result property="userBirth1" column="USER_BIRTH1" />
+		<result property="userBirth2" column="USER_BIRTH2" />
+		<result property="userBirth3" column="USER_BIRTH3" />
+		<result property="isAdmin" column="IS_ADMIN" />
+		<result property="isCoach" column="IS_COACH" />
+		<result property="joinDate" column="JOIN_DATE" />
+		<result property="post_num" column="POST_NUM" />
+		
+	</resultMap>
 
-   </resultMap>
+	<!-- 회원가입 -->
+	<insert id="join" parameterType="Member">
+		INSERT INTO member_info( USER_ID
+		, USER_PASS
+		, USER_NAME
+		, POST_NUM
+		, ADDRESS
+		, ADDRESS2
+		, GENDER
+		, PHONE
+		, EMAIL
+		, USER_BIRTH1
+		, USER_BIRTH2
+		, USER_BIRTH3
+		, IS_ADMIN
+		, IS_COACH
+		, JOIN_DATE )
 
-   <insert id="join" parameterType = "Member">
-      INSERT INTO member_info( USER_ID
-      , USER_PASS
-      , USER_NAME
-      , ADDRESS
-      , GENDER
-      , PHONE
-      , EMAIL
-      , USER_BIRTH
-      , IS_ADMIN
-      , IS_COACH
-      , JOIN_DATE )
-
-      VALUES( #{userId}
-      , #{userPass}
-      , #{userName}
-      , #{address}
-      , #{gender}
-      , #{phone}
-      , #{email}
-      , #{userBirth}
-      , 0
-      , 0
-      , SYSDATE )
-   </insert>
-
-
-</mapper>
+		VALUES( #{userId}
+		, #{userPass}
+		, #{userName}
+		, #{post_num}
+		, #{address}
+		, #{address2}
+		, #{gender}
+		, #{phone}
+		, #{email}
+		, #{userBirth1}
+		, #{userBirth2}
+		, #{userBirth3}
+		, 0
+		, 0
+		, SYSDATE )
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType="Member">
+		SELECT USER_ID, USER_PASS 
+		  FROM member_info
+		 WHERE USER_ID = #{userId}
+		   AND USER_PASS = #{userPass}   
+	</select>
+	
+	</mapper>

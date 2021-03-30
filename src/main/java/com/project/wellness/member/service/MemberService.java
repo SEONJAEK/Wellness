@@ -6,4 +6,6 @@ public interface MemberService {
 	
 	public int join(MemberVO vo) throws Exception;
 	
+	public int login(MemberVO vo) throws Exception;
+	
 }
