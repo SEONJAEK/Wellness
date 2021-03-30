@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html lang="ko"> 
 <head>
@@ -21,12 +22,12 @@
     <meta property="og:url" content="http://wfitness.co.kr">
     <meta name="robots" content="ALL"> -->
 
-    <link rel="stylesheet" href="../css/reset.css" type="text/css">
-    <link rel="stylesheet" href="../css/pages.css" type="text/css">
-    <link rel="stylesheet" href="../css/mobile.css" type="text/css">   
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reset.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pages.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/mobile.css" type="text/css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/style.js" type="application/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/style.js" type="application/javascript"></script>
 
 </head>
 
