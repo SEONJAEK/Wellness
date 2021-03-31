@@ -10,8 +10,8 @@
       <typeAlias type="com.project.wellness.reservation.vo.ReservationVO" alias="Reservation" />
       <typeAlias type="com.project.wellness.member.vo.MemberVO" alias="Member" />
       <typeAlias type="com.project.wellness.board.vo.BoardVO" alias = "Board" />
-     <!-- <typeAlias type="com.project.wellness.member.vo.MemberVO" alias="AdminMember" />
-      <typeAlias type="com.project.wellness.program.vo.programVO" alias="Program" /> -->
+      <typeAlias type="com.project.wellness.admin.vo.GraphVO" alias="Graph" />
+      <!--<typeAlias type="com.project.wellness.program.vo.programVO" alias="Program" /> -->
       
    </typeAliases>
 
@@ -20,8 +20,8 @@
       <mapper resource="mapper/reservation-mapper.xml" />
       <mapper resource="mapper/member-mapper.xml" />   
       <mapper resource="mapper/board-mapper.xml" />
-      <!--<mapper resource="mapper/adminMember-mapper.xml"/>
-      <mapper resource="mapper/Program-mapper.xml"/>-->
+      <mapper resource="mapper/adminMember-mapper.xml"/>
+      <!--<mapper resource="mapper/Program-mapper.xml"/>-->
          
    </mappers>
 </configuration>
