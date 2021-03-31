@@ -8,8 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.wellness.member.service.MemberService;
@@ -49,29 +51,32 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
-	public String postLogin(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
-		logger.info("post login");
+	public ModelAndView postLogin(@ModelAttribute MemberVO vo, HttpSession session) throws Exception{
 		
-		HttpSession session = req.getSession();
-		int cnt = service.login(vo);
-		
-		if(vo == null) {
-			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
+		boolean result = service.login(vo, session);
+		ModelAndView mav = new ModelAndView();
+		if(result == true) {
+			mav.setViewName("mypage");
+			mav.addObject("msg","seccess");
 		}else {
-			session.setAttribute("member", vo);
+			mav.setViewName("member/login");
+			mav.addObject("msg","failure");
 		}
 		
-		return "redirect:/";
+		return mav;
 	}
 	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) throws Exception{
-		
-		session.invalidate();
-		
-		return "redirect:/";
-	}
+//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+//	public String logout(HttpSession session) throws Exception{
+//		
+//		session.invalidate();
+//		
+//		return "redirect:/";
+//	}
 
 	
+	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
+	public String postJoinupd() throws Exception {
+		return "member/joinupd";
+	}
 }

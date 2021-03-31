@@ -21,7 +21,7 @@ padding: 30px;
             <div class="container-fluid" style="border: 2px solid; width: 400px; height: 300px; margin: 100px;">
                 <input type="text" name="userId" placeholder="ID" title="아이디입력" style="width: 250px; height: 40px; margin-left: 80px;"><br>
                 <input type="password" name="userPass" placeholder="PASSWORD" title="비밀번호입력" style="width: 250px; height: 40px; margin-left: 80px;"><br>
-                <input type="button" value="LOGIN" style="width: 255px; height: 40px; margin-left: 80px;" onclick="location.href='main.css'">
+                <input type="submit" value="LOGIN" style="width: 255px; height: 40px; margin-left: 80px;">
              
             <div>
             

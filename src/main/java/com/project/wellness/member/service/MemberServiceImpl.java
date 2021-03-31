@@ -1,6 +1,7 @@
 package com.project.wellness.member.service;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -20,10 +21,20 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public int login(MemberVO vo) throws Exception {
-		int cnt = dao.login(vo);
-		return cnt;
+	public boolean login(MemberVO vo, HttpSession session) throws Exception {
+		boolean result = dao.login(vo);
+		if(result) {
+			MemberVO vo2 = viewMember(vo);
+			session.setAttribute("userId", vo2.getUserId());
+			session.setAttribute("userName", vo2.getUserName());
+		}
 		
+		return result;
+	}
+	
+	@Override
+	public MemberVO viewMember(MemberVO vo) {
+		return dao.viewMember(vo);
 	}
 	
 }

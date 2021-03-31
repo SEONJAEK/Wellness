@@ -25,9 +25,9 @@
 		</style>
 </head>
 <body>
-<form action="/views/joinupd" method="post">
+<form action="joinupd.do" method="post">
 	<h3>회원정보 수정</h3>
-		<div class="jumbotron" style="width:500px; margin-top:30px; margin-left: 430px; border-radius: 30px; border: 2.5px dotted;">
+		<div class="jumbotron" style="width:500px; margin-top:30px; margin-left: 370px; border-radius: 30px; border: 2.5px dotted;">
 				<div class="form">
 				<label for="name">이름 <input class="form-control" type="text" id="user_name" placeholder="이름을 입력하세요"/></label><br>
 				<label for="id">아이디 <input class="form-control" type="text" id="user_id" disabled placeholder="nalala" /></label><br>
@@ -80,7 +80,7 @@
 						id="addr3" type="text" />
 				</div>
 
-				<button class="btn">수정하기</button>
+				<input type="submit" class="btn" value="수정하기">
 			</div>
 	
 		</div>

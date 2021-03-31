@@ -59,11 +59,15 @@
 	</insert>
 	
 	<!-- 로그인 -->
-	<select id="login" parameterType="Member">
-		SELECT USER_ID, USER_PASS 
+	<select id="login" resultType="String">
+		SELECT USER_NAME AS userName
 		  FROM member_info
 		 WHERE USER_ID = #{userId}
 		   AND USER_PASS = #{userPass}   
 	</select>
 	
+	<select id="viewMember" resultType="Member">
+	SELECT * FROM member_info  WHERE USER_ID = #{userId}
+		   AND USER_PASS = #{userPass} 
+	</select>
 	</mapper>

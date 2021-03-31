@@ -18,10 +18,16 @@ public class MemberDAO {
 		return cnt;
 		
 	}
-	
-	public int login(MemberVO vo) throws Exception {
-		int cnt = sql.selectOne("Member.login", vo);
-		return cnt;
+	//로그인
+	public boolean login(MemberVO memberVO) throws Exception {
+		String login = sql.selectOne("Member.login", memberVO);
+		return (login == null) ? false: true;
 		
 	}
+	
+	
+	public MemberVO viewMember(MemberVO memberVO) {
+		return sql.selectOne("Member.viewMember", memberVO);
+	}
+	
 }
