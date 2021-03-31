@@ -23,8 +23,6 @@
     <meta property="og:url" content="http://wfitness.co.kr">
     <meta name="robots" content="ALL"> -->
 
-
-
 <link rel="stylesheet" href="<c:url value="/resources/css/reset.css" />"
 	type="text/css">
 <link rel="stylesheet" href="<c:url value="/resources/css/pages.css"/>"
@@ -40,6 +38,7 @@
 <script src="<c:url value="/resources/js/style.js"/>"
 	type="application/javascript"></script>
 
+  
 </head>
 
 <body>
