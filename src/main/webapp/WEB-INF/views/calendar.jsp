@@ -80,8 +80,8 @@
 						 var date = info.date.getDate();
 						 var regDate = year+'-'+month+'-'+date;
 						 alert(regDate);
-						 /*document.getElementById('yogaMorning') = function() {
-							$.ajax({
+						 document.getElementById('yogaMorning') = function() {
+						/*	$.ajax({
 									type: 'POST',
 									url: 'reservation.do',
 									data: {regDate: regDate, programId: document.querySelector("input[name='programId']").value, },

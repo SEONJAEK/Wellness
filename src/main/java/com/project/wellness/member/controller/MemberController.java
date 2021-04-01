@@ -73,14 +73,6 @@ public class MemberController {
 //		
 //		return "redirect:/";
 //	}
-	
-	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
-	public String logout(HttpServletRequest request) throws Exception{
-		HttpSession session = request.getSession();
-		session.invalidate();
-		
-		return "redirect:/";
-	}
 
 	
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)

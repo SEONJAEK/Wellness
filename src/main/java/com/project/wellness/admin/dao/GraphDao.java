@@ -28,17 +28,5 @@ public class GraphDao {
 		return graph1;
 	}
 	
-	public List<GraphVO> graph2f() throws Exception {
-
-		List<GraphVO> graph2 = sqlSession.selectList("Graph.graph2f");
-		return graph2;
-	}
-	
-	public List<GraphVO> graph2m() throws Exception {
-
-		List<GraphVO> graph2 = sqlSession.selectList("Graph.graph2m");
-		return graph2;
-	}
-	
 	
 }

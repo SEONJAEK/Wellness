@@ -38,7 +38,7 @@
 <script src="<c:url value="/resources/js/style.js"/>"
 	type="application/javascript"></script>
 
-
+  
 </head>
 
 <body>
@@ -109,26 +109,17 @@
 					</ul>
 
 					<section class="info_section float--right">
-
-						<c:choose>
-							<c:when test="${not empty sessionScope.userId}">
-								<ul class="info_list">
-									<li><a href="#">${sessionScope.userId }님</a></li>
-									<li><a href="logout.do">로그아웃</a></li>
-
-									<li><a href="#">회원관리 페이지</a></li>
-								</ul>
-							</c:when>
-							<c:otherwise>
-								<ul class="info_list">
-									<li><a href="#">로그인</a></li>
-									<li><a href="#">회원가입</a></li>
-								</ul>
-							</c:otherwise>
-						</c:choose>
+						<ul class="info_list">
+							<li><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+							<!-- <li><a href="#">로그아웃</a></li>
+                                    <li><a href="#">내 정보</a></li>
+                                    <li><a href="#">회원관리 페이지</a></li> -->
+						</ul>
 					</section>
 				</nav>
 			</header>
+
 		</div>
 	</div>
 
