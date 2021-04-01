@@ -76,7 +76,7 @@ ul, li {
 	text-align: center;
 }
 </style>
- <script>
+<script>
 	function btnDelete(num) {
 		if(confirm('취소 하시겠습니까?') == true) {
 			location.href="delete.do?num="+num;
@@ -102,26 +102,33 @@ ul, li {
 					</ul>
 				</li>
 				<li>
-					<c:if test="${empty programList}">등록 된 예약이 없습니다.</c:if>
-					<c:forEach var="list" items="${programList}">
-						<ul>
-							<li>${list.regDate}</li>
-							<li>${list.programName}</li>
-							<li class="left">${list.programTime}</li>
-							<li>${list.userName}</li>
-							
-							<jsp:useBean id="now" class="java.util.Date" />
-							<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today"/>
-							<fmt:parseNumber value="${today}" integerOnly="true" var="today"/>
-
-							<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd" var="reservationDay"/>
-							<fmt:parseNumber value="${reservationDay}" integerOnly="true" var="rDay"/>
-							
-							<c:if test="${today-rDay lt 1 }">
-                          		<li><input type="button" value="예약취소" onclick="btnDelete(${list.num});"></li>
-                        	</c:if>
-						</ul>
-					</c:forEach>
+					<c:choose>
+						<c:when test="${empty programList}">등록된 예약이 없습니다.</c:when>
+						<c:otherwise>
+							<c:forEach var="list" items="${programList}"  begin="0" end="10">
+								<ul>
+									<li>${list.regDate}</li>
+									<li>${list.programName}</li>
+									<li class="left">${list.programTime}</li>
+									<li>${list.userName}</li>
+		
+									<jsp:useBean id="now" class="java.util.Date" />
+									<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
+									<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
+		
+									<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd"
+										var="reservationDay" />
+									<fmt:parseNumber value="${reservationDay}" integerOnly="true"
+										var="rDay" /> 
+		
+									<c:if test="${today-rDay lt 0}">
+										<li><input type="button" value="예약취소"
+											onclick="btnDelete(${list.num});"></li>
+									</c:if>
+								</ul>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 				</li>
 			</ul>
 		</ul>
