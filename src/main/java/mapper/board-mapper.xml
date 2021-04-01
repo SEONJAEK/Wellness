@@ -1,39 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
-<mapper namespace="Board">   
-   <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
-	<resultMap id="resultBoard" type="Board"> 
-		<id property="num" column="NUM"/>   <!-- 프라이머리키 -->
-		<result property="title" column="TITLE"/>	<!--제목  -->
-		<result property="bDate" column="B_REG_DATE"/> <!--날짜  -->
-		<result property="readCnt" column="READ_CNT"/> <!--조회수  -->
-		<result property="content" column="CONTENT"/> <!--내용  -->
-		<result property="ref" column="REF"/> <!--  -->
-		<result property="reStep" column="RE_STEP"/> <!--  -->
-		<result property="reLevel" column="RE_LEVEL"/> <!--  -->
-		<result property="userId" column="USER_ID"/> <!--아이디  -->
-	</resultMap>
-	
- 	<!-- 전체 목록 불러오기 -->
-	<select id="selectAllBoard" resultMap="resultBoard">
-		select * from board
-	   <!-- resultType="Program" resultMap에서 type에 적어줬기 때문에 생략가능-->
-	   <!-- id-> 메서드명 resultType = 반환타입 -->
-	</select>
-	   <!-- member 하나만 가져오는 select -->
-    <select id="selectBoard" parameterType="int" resultMap="resultBoard">
-      <!-- paramterType은 userid의 타입을 말함 -->
-     	select * from board where num = #{num}
-    </select>
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
 
-    <insert id="create"> 
-   		insert into board(NUM, TITLE,B_REG_DATE ,READ_CNT , CONTENT,USER_ID) values(board_seq.nextval, #{title}, sysdate, #{readCnt},#{content},#{userId}) 
+	<resultMap id="resultBoard" type="Board">
+      <id property="bno" column="BNO" />   <!-- 프라이머리키 -->
+      <result property="title" column="TITLE" />
+      <result property="content" column="CONTENT" />
+      <result property="userId" column="USER_ID" />
+      <result property="bRegDate" column="B_REG_DATE" />
+      <result property="hit" column="HIT" />
+   </resultMap>
+   
+	<!-- 게시판 글 작성 -->
+	<insert id="insert" parameterType="Board" useGeneratedKeys="true" keyProperty="bno">
+	    INSERT INTO BOARD(    BNO 
+	   					       , TITLE 
+	   					       , CONTENT 
+	   					       , USER_ID  )
+	                  VALUES(    #{bno}
+	                 		   , #{title}
+	                 		   , #{content}
+	                 		   , #{userId}  )
+   
     </insert>
-
-	<delete id="remove">
-		delete from board where bno = #{num}
-	</delete>
+   
+	<select id="listPage" resultMap="resultBoard" parameterType="com.project.wellness.board.vo.SearchCriteria">
+		SELECT  BNO, 
+		        TITLE, 
+		        CONTENT,
+		        USER_ID, 
+		        B_REG_DATE
+		 FROM ( 
+		        SELECT BNO, 
+		               TITLE, 
+		               CONTENT, 
+		               USER_ID, 
+		               B_REG_DATE, 
+		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
+		         FROM BOARD
+		         WHERE 1=1 
+		         <include refid="search"></include>
+		                       )
+		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY BNO DESC
+	</select>
 	
+	<select id="listCount" parameterType="com.project.wellness.board.vo.SearchCriteria" resultType="int">
+		SELECT COUNT(BNO)
+		   FROM BOARD
+		   WHERE 1=1
+		<include refid="search"></include>	
+		   AND BNO > 0
+	</select>
+	
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">AND TITLE LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'c'.toString()">AND CONTENT LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'w'.toString()">AND USER_ID LIKE '%' || #{keyword} || '%'</if>
+			<if test="searchType == 'tc'.toString()">AND (TITLE LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
+		</if>
+	</sql>
+	
+	<select id="read" parameterType="int" resultMap="resultBoard">
+		SELECT * FROM BOARD
+		 WHERE BNO = #{bno}
+	</select>
+	
+	<update id="update" parameterType="Board">
+		UPDATE BOARD
+		   SET TITLE    =   #{title},
+		   	   CONTENT  =   #{content}
+		 WHERE BNO = #{bno} 
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE 
+		  FROM BOARD
+		 WHERE BNO = #{bno}
+	</delete>
+   
+    <!-- 게시판 조회수 -->
+    <update id="boardHit" parameterType="int">
+    	UPDATE BOARD SET
+    	HIT = HIT+1
+    	WHERE BNO = #{bno}
+    </update>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

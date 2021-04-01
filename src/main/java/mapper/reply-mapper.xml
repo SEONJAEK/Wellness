@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="replyMapper">
+<resultMap id="resultReply" type="Reply">
+      <id property="rno" column="RNO" />   <!-- 프라이머리키 -->
+      <result property="bno" column="BNO" />
+      <result property="rContent" column="RCONTENT" />
+      <result property="userId" column="USER_ID" />
+      <result property="regDate" column="REGDATE" />
+   </resultMap>
+
+<!-- 댓글 조회 -->
+	<select id="readReply" resultType="Reply">
+    	SELECT
+    		  RNO, RCONTENT, USER_ID, REGDATE
+    	 FROM BOARD_REPLY
+    	WHERE BNO = #{bno}
+	</select>
+
+<!-- 댓글 작성 -->
+	<insert id="writeReply">
+	INSERT INTO BOARD_REPLY(
+							  BNO
+							, RNO
+							, RCONTENT
+							, USER_ID
+						  				)
+				  VALUES(	 #{bno}
+				  		   , BOARD_REPLY_SEQ.NEXTVAL
+				  		   , #{rContent}
+				  		   , #{userId}	)
+	</insert>
+	
+<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="Reply">
+		UPDATE BOARD_REPLY SET RCONTENT = #{rContent}
+		WHERE RNO = #{rno}
+	</update>
+
+<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="Reply">
+		DELETE FROM BOARD_REPLY
+		WHERE RNO = #{rno}
+	</delete>
+	
+<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="Reply">
+		SELECT
+				BNO
+			  , RNO
+			  , RCONTENT
+			  , USER_ID
+			  , REGDATE
+		  FROM BOARD_REPLY
+		 WHERE RNO = #{rno}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
