@@ -36,5 +36,8 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO viewMember(MemberVO vo) {
 		return dao.viewMember(vo);
 	}
-	
+	@Override
+	public void joinupd(MemberVO memberVO) {
+		dao.joinupd(memberVO);
+	}
 }

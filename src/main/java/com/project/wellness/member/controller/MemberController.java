@@ -74,9 +74,15 @@ public class MemberController {
 //		return "redirect:/";
 //	}
 
-	
+	//회원정보 수정
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
-	public String postJoinupd() throws Exception {
+	public String getJoinupd() throws Exception {
 		return "member/joinupd";
+	}
+	
+	@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
+	public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
+		service.joinupd(vo);
+		return "member/login";
 	}
 }

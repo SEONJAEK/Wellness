@@ -30,4 +30,8 @@ public class MemberDAO {
 		return sql.selectOne("Member.viewMember", memberVO);
 	}
 	
+	//회원정보 수정
+	public void joinupd(MemberVO memberVO) {
+		sql.update("Member.joinupd", memberVO);
+	}
 }

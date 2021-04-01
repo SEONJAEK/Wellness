@@ -70,4 +70,19 @@
 	SELECT * FROM member_info  WHERE USER_ID = #{userId}
 		   AND USER_PASS = #{userPass} 
 	</select>
+	
+	<update id="joinupd">
+	UPDATE member_info SET
+	USER_PASS = #{userPass},
+	USER_NAME = #{userName},
+	POST_NUM = #{post_num},
+	ADDRESS = #{address},
+	ADDRESS2 = #{address2},
+	GENDER = #{gender},
+	PHONE = #{phone},
+	EMAIL = #{email}
+	WHERE 
+	USER_ID = #{userId}
+	</update>
+	
 	</mapper>

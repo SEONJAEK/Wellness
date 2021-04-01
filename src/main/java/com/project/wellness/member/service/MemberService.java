@@ -11,4 +11,6 @@ public interface MemberService {
 	public boolean login(MemberVO vo, HttpSession session) throws Exception;
 	
 	public MemberVO viewMember(MemberVO vo);
+	
+	public void joinupd(MemberVO memberVO);
 }
