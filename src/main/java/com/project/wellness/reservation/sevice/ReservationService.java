@@ -9,4 +9,6 @@ public interface ReservationService {
 	public List<ReservationVO> selectReservation() throws Exception;
 	
 	public int deleteReservation(int num) throws Exception;
+	
+//	public int insertReservation() throws Exception;
 }

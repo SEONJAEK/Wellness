@@ -11,6 +11,7 @@
 		<result property="programTime" column="PROGRAM_TIME"/>
 		<result property="userId" column="USER_ID"/>
 		<result property="userName" column="USER_NAME"/>
+		<result property="programId" column="PROGRAM_ID"/>
 	</resultMap>
 
 	<select id="selectReservation" resultMap="resultReservation">
@@ -24,4 +25,8 @@
 	<delete id="deleteReservation" parameterType="int">
 		delete from reservation where R_NUM = #{num}
 	</delete>
+	
+	<!--<insert id="insertReservation" resertType="int">
+		INSERT INTO reservation VALUES(R_NUM_SEQ.nextval, #{regDate}, #{programId}, #{userId})
+	</insert>--> 
 </mapper>

@@ -27,5 +27,12 @@ public class ReservationServiceImpl implements ReservationService {
 		int cnt = reservationDao.deleteReservation(num);
 		return cnt;
 	}
+	
+//	@Override
+//	public int insertReservation() throws Exception {
+//		
+//		int cnt = searchDao.insertReservation();
+//		return cnt;
+//	}
 
 }

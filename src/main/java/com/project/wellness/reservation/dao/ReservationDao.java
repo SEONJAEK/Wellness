@@ -27,4 +27,10 @@ public class ReservationDao {
 		int cnt = sqlSession.delete("Reservation.deleteReservation", num);
 		return cnt;
 	}
+	
+//	public int insertReservation() throws Exception {
+//	
+//	int cnt = sqlSession.insert("Search.insertReservation");
+//	return cnt;
+//}
 }

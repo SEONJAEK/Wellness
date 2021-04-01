@@ -34,4 +34,19 @@ public class ReservationController {
 		   
 		   return "redirect: mypage.do";
 	   }
+	
+	@RequestMapping(value="reservation.do", method=RequestMethod.GET)
+	public String selectReservation() {
+		return "calendar";
+	}
+	
+//	@RequestMapping(value="reservation.do", method=RequestMethod.POST)
+//	@ResponseBody
+//	public String insertReservation(String regDate, String programId, HttpServletRequest request) throws Exception {
+//		
+//		regDate = request.getParameter(regDate);
+//		programId = request.getParameter(programId);
+//		
+//		return "redirect:reservation.do";
+//	}
 }
