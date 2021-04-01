@@ -26,6 +26,21 @@ public class GraphServiceImpl implements GraphService {
 			
 			List<GraphVO> graph1 = graphDao.graph1();
 			return graph1;
+	}
+	
+
+	@Override
+	public List<GraphVO> graph2f() throws Exception {
+			
+			List<GraphVO> graph2 = graphDao.graph2f();
+			return graph2;
+		}
+	
+	@Override
+	public List<GraphVO> graph2m() throws Exception {
+			
+			List<GraphVO> graph2 = graphDao.graph2m();
+			return graph2;
 		}
 	}
 
