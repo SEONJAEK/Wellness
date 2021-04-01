@@ -81,7 +81,7 @@
 						 var regDate = year+'-'+month+'-'+date;
 						 alert(regDate);
 						 document.getElementById('yogaMorning') = function() {
-							 $.ajax({
+						/*	$.ajax({
 									type: 'POST',
 									url: 'reservation.do',
 									data: {regDate: regDate, programId: document.querySelector("input[name='programId']").value, },
@@ -95,7 +95,7 @@
 												+ "\n" + "error : " + errorData);
 									}
 							  });
-						 }
+						 }  */
 					}
 				});
 			calendar.render();
