@@ -2,11 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>My예약 확인</title>
+<%@ include file="include/header.jsp" %>
+
 <style type="text/css">
 body {
 	line-height: 2em;
@@ -86,8 +83,8 @@ ul, li {
 		}
 	}
  </script>
-</head>
-<body>
+
+
 	<div id="mainWrapper">
 		<ul>
 			<li>My 예약 현황</li>
@@ -133,5 +130,5 @@ ul, li {
 			</ul>
 		</ul>
 	</div>
-</body>
-</html>
+
+<%@ include file="include/footer.jsp" %>
