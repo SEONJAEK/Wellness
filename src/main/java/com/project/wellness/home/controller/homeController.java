@@ -10,5 +10,6 @@ public class homeController {
 	   public String index() throws Exception {
 	      return "index";
 	   }
+	
 }
 
