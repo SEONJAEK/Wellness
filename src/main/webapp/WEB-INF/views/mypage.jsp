@@ -77,7 +77,7 @@ ul, li {
 	function btnDelete(num) {
 		if(confirm('취소 하시겠습니까?') == true) {
 			location.href="delete.do?num="+num;
-			alert('취소');
+			alert('취소되었습니다.');
 		}else {
 			return false;
 		}
@@ -102,7 +102,7 @@ ul, li {
 					<c:choose>
 						<c:when test="${empty programList}">등록된 예약이 없습니다.</c:when>
 						<c:otherwise>
-							<c:forEach var="list" items="${programList}"  begin="0" end="10">
+							<c:forEach var="list" items="${programList}"  begin="1" end="10">
 								<ul>
 									<li>${list.regDate}</li>
 									<li>${list.programName}</li>
