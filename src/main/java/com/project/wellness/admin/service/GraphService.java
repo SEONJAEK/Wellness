@@ -10,4 +10,5 @@ public List<GraphVO> selectGraph() throws Exception;
 public List<GraphVO> graph1() throws Exception;
 public List<GraphVO> graph2f() throws Exception;
 public List<GraphVO> graph2m() throws Exception;
+public void updateRole(GraphVO graphVO);
 }

@@ -42,5 +42,10 @@ public class GraphServiceImpl implements GraphService {
 			List<GraphVO> graph2 = graphDao.graph2m();
 			return graph2;
 		}
+	@Override
+	public void updateRole(GraphVO graphVO) {
+		graphDao.updateRole(graphVO);
+	}
+	
 	}
 

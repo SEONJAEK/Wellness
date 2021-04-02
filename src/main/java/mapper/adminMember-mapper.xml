@@ -76,5 +76,9 @@
 	  	FROM member_info WHERE GENDER='F' 
 	</select>
 	
-	
+	<update id="updateRole">
+		UPDATE member_info SET
+		IS_ADMIN = #{is_admin} WHERE 
+		USER_ID = #{userId}
+	</update>
 </mapper>

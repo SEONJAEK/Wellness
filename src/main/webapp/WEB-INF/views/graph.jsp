@@ -303,6 +303,29 @@ ul, li {
 		</div>
 	
 
+<script>
+	
+		$('.isAdmin').change(function() {
+			var role =  $(this).find('option:selected').index();
+			var user_id =  $(this).closest("tr").find("td:eq(1)").text();
+			$.ajax({
+				url : "updateRole.do",
+				type: "POST",
+				data : { "userId" : user_id,"is_admin": role},
+				
+				success: function(responseData){
+
+				      if(responseData==='success'){
+				    	  window.alert('success');
+				      }
+				}
+				
+				
+				
+			});
+		});
+		
+	</script>
 	<!-- 선재 삽입2 -->		
 	
 	</div>

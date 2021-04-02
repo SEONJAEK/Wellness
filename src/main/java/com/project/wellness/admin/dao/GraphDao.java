@@ -2,6 +2,9 @@ package com.project.wellness.admin.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,6 +16,9 @@ public class GraphDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	@Inject 
+	SqlSession sql;
 
 	public GraphDao() {}
 
@@ -38,6 +44,10 @@ public class GraphDao {
 
 		List<GraphVO> graph2 = sqlSession.selectList("Graph.graph2m");
 		return graph2;
+	}
+	
+	public void updateRole(GraphVO graphVO) {
+		sql.update("Graph.updateRole", graphVO);
 	}
 	
 	

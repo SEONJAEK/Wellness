@@ -27,6 +27,7 @@ public class MemberServiceImpl implements MemberService {
 			MemberVO vo2 = viewMember(vo);
 			session.setAttribute("userId", vo2.getUserId());
 			session.setAttribute("userName", vo2.getUserName());
+			session.setAttribute("isAdmin", vo2.getIsAdmin());
 		}
 		
 		return result;
