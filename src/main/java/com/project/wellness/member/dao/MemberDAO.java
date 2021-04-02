@@ -18,6 +18,7 @@ public class MemberDAO {
 		return cnt;
 		
 	}
+	
 	//로그인
 	public boolean login(MemberVO memberVO) throws Exception {
 		String login = sql.selectOne("Member.login", memberVO);

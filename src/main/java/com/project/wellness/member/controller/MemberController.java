@@ -66,13 +66,13 @@ public class MemberController {
 		return mav;
 	}
 	
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-//	public String logout(HttpSession session) throws Exception{
-//		
-//		session.invalidate();
-//		
-//		return "redirect:/";
-//	}
+	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
+	public String logout(HttpServletRequest request) throws Exception{
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return "redirect:/";
+	}
 
 	//회원정보 수정
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
