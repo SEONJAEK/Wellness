@@ -140,6 +140,7 @@ ul, li {
 	<!-- 공통 스크립트 주소 -->
 	
 	<script>
+
 	var color = Chart.helpers.color;
 	window.chartColors = {
 			red: 'rgb(255, 99, 132)',
@@ -174,19 +175,19 @@ ul, li {
 				data: {
 			   
 			      
-					labels: ['10대', '20대', '30대', '40대', '50대', '60대', '70대', '80대', '90대'],
+					labels: ['10대','20대', '30대', '40대', '50대', '기타'],
 					datasets: [{
-						label: '남',
+						label: '여',
 						backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.red,
-						data: [10, 30, 39, 20, 25, 34, 0,25, 34, 0],
+						data: [${f_ten}, ${f_twenty}, ${f_thirty}, ${f_fourty}, ${f_fifty}, ${f_other}],
 						fill: false,
 					}, {
-						label: '녀',
+						label: '남',
 						backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.blue,
 						fill: false,
-						data: [18, 33, 22, 19, 11, 39, 30,25, 34, 0],
+						data: [${m_ten}, ${m_twenty}, ${m_thirty}, ${m_fourty}, ${m_fifty}, ${m_other}],
 					}]
 				},
 
@@ -244,7 +245,7 @@ ul, li {
 	
 		<div id="mainWrapper">
 		<!-- index_count 변수 : 1부터 선언-->
-		<c:set var="index_count" value="1" scope="page" />
+		<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
 		<ul>
 			<li>회원 정보 페이지</li>
 			
@@ -305,17 +306,4 @@ ul, li {
 	<!-- 선재 삽입2 -->		
 	
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 <%@ include file="include/footer.jsp" %>
