@@ -14,38 +14,42 @@
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
     }
-  .logo{width: 14%; height: 150px; margin-left: 5%; background-image: url("../image/s_images/logo-white.png"); background-size: 100% 120%; background-repeat: no-repeat; text-indent: -9999px; cursor: pointer;}
+ 
+  .logo{width: 14%; height: 150px; margin-left: 5%; background-image: url("../images/s_images/logo-white.png"); background-size: 100% 120%; background-repeat: no-repeat; text-indent: -9999px; cursor: pointer;}
   .logo a{display: block; width: 100%; height: 150px;}
-  .nav{max-width: 1200px; margin: 0 auto; position: relative;}
+  .nav{max-width: 1440px; margin: 0 auto; position: relative;}
   /* 인포메이션 */
   .info_section{width: 7%; display: flex;}
   .info_list{display: flex; justify-content: space-between;
-    position: absolute; top: -90px;} 
-  .info_list li{width: 100%; flex: none;}
+    position: absolute; top: -121px;} 
+  .info_list li{width: 100%; flex-grow: 0; flex-shrink: 0; flex-basis: auto;}
   .info_list li a{font-size: 1.5rem;}
   /* 내비 */
-  .dropmenu{position: absolute; top: -100px; left: 18%; border: none;
-    border: 0px; margin: 0px; padding: 0px;}
+  .dropmenu{position: absolute; top: -110px; left: 23%; border: none;
+    border: 0px; margin: 0px; padding: 0px; display:flex; justify-content: center;}
   .sub_ul{background: #666; list-style: none; margin: 0; padding: 0;}
-  .dropmenu li{float:left;}
+  .dropmenu li{float:left; flex-grow: 1; flex-shrink: 1; flex-basis: auto;}
   .dropmenu li a{
     color: #fff; display: block; margin: 0px; text-align: center;
     text-decoration: none;}
-  .menu_a{line-height: 100px;}
+  .menu_a{line-height: 100px; position: relative; font-size: 2rem;}
   .sub_a{line-height: 50px;}
-  .menu_li{padding: 0 60px;}
-  .menu_a{position: relative; font-size: 2rem;}
+  .menu_li{padding: 0 2.5rem;}
   .menu_a:after{
     content: ''; position: absolute; width: 0; height: 3px;
     display: block; margin-top: -35px; right: 0; background: #fff; transition: width .3s ease;}
   .menu_a:hover:after{width: 100%; left: 0; background: #fff;}
-  .sub_ul{display: none; height: auto; border: 0px; position: absolute; top: 100%; width: 120px;}
+  .sub_ul{display: none; height: auto; border: 0px; position: absolute; top: 100%; width: 7.5rem;}
   .dropmenu li:hover ul{display: block;}
-  .sub_li {background: #292929; display: block; float: none; margin: 0px; padding: 0px; width: 200px;}
+  .sub_li{background: #292929; display: block; float: none; margin: 0px; padding: 0px; width: 12rem;}
   .dropmenu li li a{color: #747474; font-size: 1.5rem;}
   .dropmenu li:hover li a{background: none;}
   .dropmenu li ul a{display: block; margin: 0px; padding-left: 15%; text-align: left;}
   .dropmenu li ul a:hover, .dropmenu li ul li:hover a{border: 0px; color: #fff; text-decoration: none;}
+  @media screen and (max-width: 1728px){
+    .info_section{min-width: 23%;}
+	}
+
   /* 슬라이더 */
   .display-text{color: #de3726; font-size: 13rem; font-style: italic;
   position: absolute; top: 15rem; left: 8rem; z-index: 1;}
@@ -54,13 +58,13 @@
   .slideshow-container{width: 100%; height: 1000px; position: relative; margin: auto;}
   .dots{position: absolute; bottom: 5rem; left:50%;}
   .dot{height: 15px; width: 15px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
-  .active {background-color: #717171;}
-  .fade {animation-name: fade; animation-duration: 1.5s;}
-   @-webkit-keyframes fade {
+  .active{background-color: #717171;}
+  .fade{animation-name: fade; animation-duration: 1.5s;}
+   @-webkit-keyframes fade{
      from {opacity: .4} 
      to {opacity: 1}
    }
-   @keyframes fade {
+   @keyframes fade{
      from {opacity: .4} 
      to {opacity: 1}
    }
@@ -159,7 +163,6 @@
   .main-nav{width: 100%; display:flex; justify-content: center; align-items: center;}
   .main-nav a{display:inline-block; padding: 1rem; margin: 1rem; border: 1px solid #de3726; text-align:center; font-size: 2rem;}
   .main-title{width: 100%; margin:0 auto; font-size: 5rem; color: #fff; display: flex; justify-content: center; }
-  
 
   /* intro */
   /* 방역 안내 */
