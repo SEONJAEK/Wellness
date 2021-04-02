@@ -28,9 +28,9 @@ public class ReservationDao {
 		return cnt;
 	}
 	
-//	public int insertReservation() throws Exception {
-//	
-//	int cnt = sqlSession.insert("Search.insertReservation");
-//	return cnt;
-//}
+	public int insertReservation(ReservationVO vo) throws Exception {
+		
+		int cnt = sqlSession.insert("Reservation.insertReservation",vo);
+		return cnt;
+	}
 }

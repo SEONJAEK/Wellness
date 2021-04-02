@@ -1,5 +1,6 @@
 package com.project.wellness.reservation.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,13 +47,20 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value="reservation.do", method=RequestMethod.POST)
-	@ResponseBody
-	public String insertReservation(String regDate, String programId, HttpServletResponse response) throws Exception {
+	@ResponseBody	//ajax post 방식 할 때 꼭 써줘야함
+	public int insertReservation(Date regDate, String programId) throws Exception {
 		
 		System.out.println(regDate);
 		System.out.println(programId);
 		
-		JSONObject jsonObject = new JSONObject();
-		return jsonObject.toJSONString();
+		ReservationVO vo = new ReservationVO();
+		vo.setRegDate(regDate);
+		vo.setProgramId(programId);
+		int cnt = reservationService.insertReservation(vo);
+		return cnt;
+		
+//		JSONObject jsonObject = new JSONObject();
+//		jsonObject.put("regDate",vo.getRegDate());
+//		jsonObject.put("programId", vo.getProgramId());
 	}
 }

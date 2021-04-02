@@ -10,5 +10,5 @@ public interface ReservationService {
 	
 	public int deleteReservation(int num) throws Exception;
 	
-//	public int insertReservation() throws Exception;
+	public int insertReservation(ReservationVO vo) throws Exception;
 }

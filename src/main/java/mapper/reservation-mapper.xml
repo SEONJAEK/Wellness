@@ -26,7 +26,7 @@
 		delete from reservation where R_NUM = #{num}
 	</delete>
 	
-	<!--<insert id="insertReservation" resertType="int">
-		INSERT INTO reservation VALUES(R_NUM_SEQ.nextval, #{regDate}, #{programId}, #{userId})
-	</insert>--> 
+	<insert id="insertReservation" parameterType="Reservation">
+		INSERT INTO reservation VALUES(R_NUM_SEQ.nextval, #{regDate}, #{programId}, 'qwer')
+	</insert>
 </mapper>

@@ -28,11 +28,11 @@ public class ReservationServiceImpl implements ReservationService {
 		return cnt;
 	}
 	
-//	@Override
-//	public int insertReservation() throws Exception {
-//		
-//		int cnt = searchDao.insertReservation();
-//		return cnt;
-//	}
+	@Override
+	public int insertReservation(ReservationVO vo) throws Exception {
+		
+		int cnt = reservationDao.insertReservation(vo);
+		return cnt;
+	}
 
 }
