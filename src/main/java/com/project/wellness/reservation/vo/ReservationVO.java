@@ -2,24 +2,29 @@ package com.project.wellness.reservation.vo;
 
 import java.sql.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ReservationVO {
 
 	private int num;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date regDate;
 	private String programName;
 	private String programTime;
 	private String userId;
 	private String userName;
+	private String programId;
 	
 	public ReservationVO() {}
 	
-	public ReservationVO(int num, Date regDate, String programName, String programTime, String userId, String userName) {
+	public ReservationVO(int num, Date regDate, String programName, String programTime, String userId, String userName, String programId) {
 		this.num = num;
 		this.regDate = regDate;
 		this.programName = programName;
 		this.programTime = programTime;
 		this.userId = userId;
 		this.userName = userName;
+		this.programId = programId;
 	}	
 	
 	public int getNum() {
@@ -58,6 +63,12 @@ public class ReservationVO {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public String getProgramId() {
+		return programId;
+	}
+	public void setProgramId(String programId) {
+		this.programId = programId;
 	}
 	
 	

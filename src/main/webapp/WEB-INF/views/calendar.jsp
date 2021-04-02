@@ -79,15 +79,16 @@
 						 var month = info.date.getMonth()+1;
 						 var date = info.date.getDate();
 						 var regDate = year+'-'+month+'-'+date;
-						 alert(regDate);
-						 document.getElementById('yogaMorning') = function() {
-						/*	$.ajax({
+						 //alert(document.querySelector("input[name='programId']").value);
+						 //alert(regDate);
+						 document.getElementById('yogaMorning').onclick=function(){
+							 $.ajax({
 									type: 'POST',
 									url: 'reservation.do',
-									data: {regDate: regDate, programId: document.querySelector("input[name='programId']").value, },
+									data: {regDate: regDate, programId: document.querySelector("input[name='programId']").id },
 									dataType: 'json',
-									success: function() {
-										alert('예약 되었습니다.');
+									success: function(data) {
+										alert("예약되었습니다.");
 									},
 									error:function(request, status, errorData) {
 										alert("error code : " + request.status + "\n"
@@ -95,7 +96,7 @@
 												+ "\n" + "error : " + errorData);
 									}
 							  });
-						 }  */
+						 }
 					}
 				});
 			calendar.render();

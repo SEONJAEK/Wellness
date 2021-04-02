@@ -2,12 +2,17 @@ package com.project.wellness.reservation.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.wellness.reservation.sevice.ReservationService;
 import com.project.wellness.reservation.vo.ReservationVO;
@@ -40,13 +45,14 @@ public class ReservationController {
 		return "calendar";
 	}
 	
-//	@RequestMapping(value="reservation.do", method=RequestMethod.POST)
-//	@ResponseBody
-//	public String insertReservation(String regDate, String programId, HttpServletRequest request) throws Exception {
-//		
-//		regDate = request.getParameter(regDate);
-//		programId = request.getParameter(programId);
-//		
-//		return "redirect:reservation.do";
-//	}
+	@RequestMapping(value="reservation.do", method=RequestMethod.POST)
+	@ResponseBody
+	public String insertReservation(String regDate, String programId, HttpServletResponse response) throws Exception {
+		
+		System.out.println(regDate);
+		System.out.println(programId);
+		
+		JSONObject jsonObject = new JSONObject();
+		return jsonObject.toJSONString();
+	}
 }
