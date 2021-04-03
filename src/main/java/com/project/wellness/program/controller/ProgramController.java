@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ProgramController {
-	@RequestMapping(value="schedule.do",method=RequestMethod.GET)
+	@RequestMapping(value="program.do",method=RequestMethod.GET)
 	   public String graph() {
-	      return "schedule";
+	      return "program";
 	   }
 }
