@@ -33,119 +33,157 @@
 	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
 	integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
 	crossorigin="anonymous">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="<c:url value="/resources/js/style.js"/>"
-	type="application/javascript"></script>
+ 
 
   
 </head>
 
 <body>
 	<div id="wrapper">
-		<!-- 헤더 로고 -->
-		<div class="header-wrapper">
-			<header class="nav-down">
-				<h1 class="logo" title="메인으로 돌아가기">
-					<a href="index.html">웰니스 피트니스</a>
-				</h1>
-				<!-- 토글 메뉴  -->
-				<div class="btn-burger open-nav-main">
-					<span class="b1"></span> <span class="b2"></span> <span class="b3"></span>
-				</div>
+ 		<!-- 헤더 -->
+        <div class="header-wrapper">
+            <header class="nav-down">
+                    <!-- 모바일 메뉴 버튼   -->
+                    <h1 class="logo" title="메인으로 돌아가기"><a href="${pageContext.request.contextPath}/index.do">웰니스 피트니스</a></h1>
+                     <div class="btn-burger">
+                        <span class="b1"></span>
+                        <span class="b2"></span>
+                        <span class="b3"></span>
+                    </div>
 
+                    <!-- 모바일 내비 -->
+                    <div class="mobile-nav nav-down">
+                        <div class="menu-icon">
+                            <div class="top">               
+                                <a href="#"><i class="fas fa-dumbbell"></i>
+                                <p>지점 소개</p></a>
+                                <a href="#"><i class="fas fa-running"></i>
+                                <p>프로그램</p></a>     
+                            </div>
+                            <div class="bottom">
+                                <a href="#"><i class="far fa-calendar-check"></i>
+                                <p>GX 예약</p></a>
+                                <a href="#"><i class="far fa-comments"></i>
+                                <p>Q &amp; A</p></a>
+                            </div>    
+                        </div>
+                        <div class="mobile-info">
+                             <a href="#"><p>로그인</p></a>
+                             <a href="#"><p>회원가입</p></a>
+                        </div>
+                    </div>
 
-				<div class="mobile-nav nav-down">
-					<div class="menu-icon">
-						<div class="top">
-							<!-- <div class="tp"> -->
-							<a href="#"><i class="fas fa-dumbbell"></i>
-								<p>지점 소개</p></a>
-							<!-- </div> -->
-							<!-- <div class="tp"> -->
-							<a href="#"><i class="fas fa-running"></i>
-								<p>프로그램</p></a>
-							<!-- </div> -->
-						</div>
-						<div class="bottom">
-							<!-- <div class="bt">     -->
-							<a href="#"><i class="far fa-calendar-check"></i>
-								<p>GX 예약</p></a>
-							<!-- </div> -->
-							<!-- <div class="bt"> -->
-							<a href="#"><i class="far fa-comments"></i>
-								<p>Q &amp; A</p></a>
-							<!-- </div> -->
-						</div>
-					</div>
-					<div class="mobile-info">
-						<a href="#"><p>로그인</p></a> <a href="#"><p>회원가입</p></a>
-					</div>
-				</div>
+                     <!-- PC 내비 -->
+                    <nav class="nav nav-down clearfix">     
+                            <ul class="dropmenu float--left">
+                                <li class="menu_li"><a class="menu_a" href="${pageContext.request.contextPath}/intro.do">지점소개</a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_li"><a class="sub_a" href="#">시설소개</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">시설방역</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">코치소개</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">위치안내</a></li>
+                                    </ul> 
+                                </li>
+                                <li class="menu_li"><a class="menu_a" href="${pageContext.request.contextPath}/program.do">프로그램</a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_li"><a class="sub_a" href="#">PT</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">GX 프로그램</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu_li"><a class="menu_a" href="#">GX 예약</a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_li"><a class="sub_a" href="#">요가</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">필라테스</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">에어로빅</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">PT</a></li>
+                                    </ul>    
+                                </li>
+                                <li class="menu_li"><a class="menu_a" href="#">Q & A</a></li>
+                                <li class="menu_li"><a class="menu_a" href="#" style="display: none;">회원 관리 페이지</a>
+                                    <ul class="sub_ul">
+                                        <li class="sub_li"><a class="sub_a" href="#">회원 분석</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">회원 목록</a></li>
+                                        <li class="sub_li"><a class="sub_a" href="#">예약 현황</a></li>
+                                    </ul>    
+                                </li>
+                                <li class="menu_li"><a class="menu_a" href="#" style="display: none;">내 예약</a>
+                                </li>
+                            </ul>
+                        
+                            <!-- 인포 영역 -->
+                            <section class="info_section float--right">
+                                <ul class="info_list">
+                                    <c:choose>
+					            	<c:when test="${id eq null}">
+					            		<li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
+					            	</c:when>
+					            	<c:otherwise>
+					            		<li><a href="${pageContext.request.contextPath}/index.do">로그아웃</a></li>
+					            	</c:otherwise>
+					               </c:choose>
+					               
+					               <c:choose>
+					            	<c:when test="${id eq null}">
+					            		<li><a href="${pageContext.request.contextPath}/join.do">회원가입</a></li>
+					            	</c:when>
+					            	<c:otherwise>
+					            		<li><a href="${pageContext.request.contextPath}/joinupd.do">내 정보</a></li>
+					            	</c:otherwise>
+					               </c:choose>
+                                    <!--<li><a href="#">로그인</a></li>
+                                    <li><a href="#">회원가입</a></li>
+                                    <li><a href="#">로그아웃</a></li>
+                                    <li><a href="#">내 정보</a></li>
+                                    <li><a href="#">회원 관리 페이지</a></li> -->
+                                </ul>
+                            </section>
+                    </nav>  
+            </header>
+			<h2 class="display-text">FIND<br>YOUR<br>ENERGY</h2>
+            
+            <!-- 슬라이더  -->
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                <img src="../images/p_images/mainweight.jpg" alt="슬라이드사진1">
+                </div>
+                <div class="mySlides fade">
+                <img src="../images/p_images/mainyoga.jpg" alt="슬라이드사진2">
+                </div>
+                <div class="mySlides fade">
+                <img src="../images/p_images/dumbell.png" alt="슬라이드사진3">
+                </div>
+                <div class="mySlides fade">
+                <img src="../images/p_images/cycles.jpg" alt="슬라이드사진4">
+                </div>
+                <div class="mySlides fade">
+                <img src="../images/p_images/weights.jpg" alt="슬라이드사진5">
+                </div>
+            	<div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div> 
 
-				<!-- PC 버전 메뉴 -->
-				<nav class="nav nav-down clearfix">
-					<ul class="dropmenu float--left">
-						<li class="menu_li"><a class="menu_a" href="#">지점소개</a>
-							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="#">시설소개</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">시설방역</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">코치소개</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">위치안내</a></li>
-							</ul></li>
-						<li class="menu_li"><a class="menu_a" href="#">프로그램</a>
-							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="#">PT</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">GX 프로그램</a></li>
-							</ul></li>
-						<li class="menu_li"><a class="menu_a" href="#">GX 예약</a>
-							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="#">YOGA</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">Pilates</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">Aerobic</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">PT</a></li>
-							</ul></li>
-						<li class="menu_li"><a class="menu_a" href="#">Q & A</a></li>
-					</ul>
-
-					<section class="info_section float--right">
-						<c:choose>
-							<c:when test="${not empty sessionScope.userId}">
-								<ul class="info_list">
-									<li><a href="#">${sessionScope.userId }님</a></li>
-									<li><a href="logout.do">로그아웃</a></li>
-                                    
-                                    <li><a href="#">회원관리 페이지</a></li>
-								</ul>
-							</c:when>
-							<c:otherwise>
-								<ul class="info_list">
-									<li><a href="#">로그인</a></li>
-									<li><a href="#">회원가입</a></li>
-								</ul>
-							</c:otherwise>
-						</c:choose>
-					</section>
-				</nav>
-			</header>
-
-		</div>
-	</div>
+        </div> <!--// 헤더 -->
+	
 
 
 	<!-- 각 페이지 내비 -->
-	<main class="main">
+	<!--  <main class="main">
 		<section class="main-top">
 			<div class="main-nav">
 				<a href="">PT</a> <a href="">GX 프로그램</a>
-			</div>
+			</div> -->
 			<!-- 각 페이지 제목 -->
-			<h2 class="main-title">PROGRAM</h2>
-		</section>
+		<!--	<h2 class="main-title">PROGRAM</h2>
+		</section> -->
 
 		<!-- 각 페이지 본문 -->
-		<section class="main-bottom">
+		<!--<section class="main-bottom">
 			<div class=""></div>
 			<div class=""></div>
 		</section>
-	</main>
+	</main> -->

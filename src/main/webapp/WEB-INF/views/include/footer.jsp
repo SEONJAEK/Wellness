@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     	
     		<!-- 푸터  -->
+    	</div><!--wrapper 끝-->	
       		<footer class="footer">
             <div class="logo"><a href="index.html">웰니스 피트니스</a></div>
 			<div class="office-info-wrapper">
@@ -33,5 +34,10 @@
                 <p>copyright&copy; 2021. all rights reserved.</p>
             </div>    
 	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="<c:url value="/resources/js/style.js"/>"
+	type="application/javascript"></script>
+
+	
 </body>
 </html>
