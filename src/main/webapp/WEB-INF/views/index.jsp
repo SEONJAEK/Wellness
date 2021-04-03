@@ -39,7 +39,7 @@
                                 <br>2주, 4주 일요일 휴무</p>   
                             </div>
                                 <!-- 웰니스 건물 -->
-                                <img class="sec1pic" src="../images/p_images/building.jpg" alt="">        
+                                <img class="sec1pic" src="resources/images/p_images/building.jpg" alt="">        
                         </div>
                     </div>
                 </section>
@@ -69,25 +69,25 @@
                     <div class="main-contents-wrapper">
                         <div class="main-pic-wrapper" style="overflow: hidden;">  
                             <div class="container">
-                                <img class="mp" src="../images/p_images/freeweight.jpg" alt="프리 웨이트 룸">
+                                <img class="mp" src="resources/images/p_images/freeweight.jpg" alt="프리 웨이트 룸">
                                 <div class="overlay overlayRight">
                                         <div class="category">프리 웨이트 룸<i class="fas fa-angle-double-right"></i></div>         
                                 </div>
                             </div>
                             <div class="container">
-                                <img class="mp" src="../images/p_images/flyingyoga.jpg" alt="요가 룸">
+                                <img class="mp" src="resources/images/p_images/flyingyoga.jpg" alt="요가 룸">
                                 <div class="overlay overlayRight">
                                         <div class="category">요가 룸<i class="fas fa-angle-double-right"></i></div>         
                                 </div>
                             </div>
                             <div class="container">
-                                <img class="mp" src="../images/p_images/pilates.jpg" alt="필라테스 룸">
+                                <img class="mp" src="resources/images/p_images/pilates.jpg" alt="필라테스 룸">
                                 <div class="overlay overlayRight">
                                         <div class="category">필라테스 룸<i class="fas fa-angle-double-right"></i></div>         
                                 </div>
                             </div>
                             <div class="container">
-                                <img class="mp" src="../images/p_images/machineweight.jpg" alt="머신 웨이트 룸">
+                                <img class="mp" src="resources/images/p_images/machineweight.jpg" alt="머신 웨이트 룸">
                                 <div class="overlay overlayRight">
                                         <div class="category">머신 웨이트 룸<i class="fas fa-angle-double-right"></i></div>         
                                 </div>
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                             <div class="pro">
-                                <img class="" src="../images/p_images/group.jpg" style="min-height:260px;" alt="">
+                                <img class="" src="resources/images/p_images/group.jpg" style="min-height:260px;" alt="">
                             </div>
                             <div class="pro text">
                                 <div class="ptext-box">
@@ -169,9 +169,9 @@
                     <!-- 3GX 시스템 사진 -->
                     <div class="main-pic-wrapper" style="margin-bottom: 10%;">
                             <div class="sec4wrapper">
-                                <img class="sec4pic" src="../images/p_images/gxyoga.jpg" alt="그룹 요가 수업 모습">
-                                <img class="sec4pic" src="../images/p_images/gxps.jpg" alt="그룹 필라테스 수업 모습">
-                                <img class="sec4pic" src="../images/p_images/gxar.jpg" alt="그룹 에어로빅 수업 모습">       
+                                <img class="sec4pic" src="resources/images/p_images/gxyoga.jpg" alt="그룹 요가 수업 모습">
+                                <img class="sec4pic" src="resources/images/p_images/gxps.jpg" alt="그룹 필라테스 수업 모습">
+                                <img class="sec4pic" src="resources/images/p_images/gxar.jpg" alt="그룹 에어로빅 수업 모습">       
                             </div>
                         </div>
                 </section>
