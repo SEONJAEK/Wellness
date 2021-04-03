@@ -17,7 +17,7 @@
 			var formObj = $("form[name='updateForm']");
 			
 			$(".cancel_btn").on("click", function(){
-				location.href = "/board/readView?bno=${replyDelete.bno}"
+				location.href = "readView.do?bno=${replyDelete.bno}"
 					   + "&page=${scri.page}"
 					   + "&perPageNum=${scri.perPageNum}"
 					   + "&searchType=${scri.searchType}"

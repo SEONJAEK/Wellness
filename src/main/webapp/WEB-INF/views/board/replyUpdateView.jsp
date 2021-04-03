@@ -17,7 +17,7 @@
 			var formObj = $("form[name='updateForm']");
 			
 			$(".cancel_btn").on("click", function(){
-				location.href = "/board/readView?bno=${replyUpdate.bno}"
+				location.href = "readView.do?bno=${replyUpdate.bno}"
 					   + "&page=${scri.page}"
 					   + "&perPageNum=${scri.perPageNum}"
 					   + "&searchType=${scri.searchType}"
@@ -34,10 +34,6 @@
 				<h1> 게시판</h1>
 			</header>
 			<hr />
-			 
-			<div>
-				<%@include file="nav.jsp" %>
-			</div>
 			<hr />
 			
 			<section id="container">
@@ -52,7 +48,7 @@
 						<tbody>
 							<tr>
 								<td>
-									<label for="content">댓글 내용</label><input type="text" id="content" name="content" value="${replyUpdate.content}"/>
+									<label for="rContent">댓글 내용</label><input type="text" id="rContent" name="rContent" value="${replyUpdate.rContent}"/>
 								</td>
 							</tr>	
 							

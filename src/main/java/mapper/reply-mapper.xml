@@ -12,7 +12,7 @@
    </resultMap>
 
 <!-- 댓글 조회 -->
-	<select id="readReply" resultType="Reply">
+	<select id="readReply" resultMap="resultReply">
     	SELECT
     		  RNO, RCONTENT, USER_ID, REGDATE
     	 FROM BOARD_REPLY
@@ -26,11 +26,12 @@
 							, RNO
 							, RCONTENT
 							, USER_ID
-						  				)
+							, REGDATE )
 				  VALUES(	 #{bno}
 				  		   , BOARD_REPLY_SEQ.NEXTVAL
 				  		   , #{rContent}
-				  		   , #{userId}	)
+				  		   , #{userId}	
+				  		   , SYSDATE )
 	</insert>
 	
 <!-- 댓글 수정 -->

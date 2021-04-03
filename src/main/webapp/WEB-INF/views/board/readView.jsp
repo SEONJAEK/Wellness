@@ -20,7 +20,7 @@
 			
 			// 수정 
 			$(".update_btn").on("click", function(){
-				formObj.attr("action", "/board/updateView");
+				formObj.attr("action", "updateView.do");
 				formObj.attr("method", "get");
 				formObj.submit();				
 			})
@@ -31,7 +31,7 @@
 				var deleteYN = confirm("삭제하시겠습니까?");
 				if(deleteYN == true){
 					
-				formObj.attr("action", "/board/delete");
+				formObj.attr("action", "delete.do");
 				formObj.attr("method", "post");
 				formObj.submit();
 					
@@ -41,7 +41,7 @@
 			// 목록
 			$(".list_btn").on("click", function(){
 				
-				location.href = "/board/list?page=${scri.page}"
+				location.href = "list.do?page=${scri.page}"
 						      +"&perPageNum=${scri.perPageNum}"
 						      +"&searchType=${scri.searchType}&keyword=${scri.keyword}";
 			})
@@ -54,7 +54,7 @@
 			
 			//댓글 수정 View
 			$(".replyUpdateBtn").on("click", function(){
-				location.href = "/board/replyUpdateView?bno=${read.bno}"
+				location.href = "replyUpdateView.do?bno=${read.bno}"
 								+ "&page=${scri.page}"
 								+ "&perPageNum=${scri.perPageNum}"
 								+ "&searchType=${scri.searchType}"
@@ -64,7 +64,7 @@
 			
 			//댓글 삭제 View
 			$(".replyDeleteBtn").on("click", function(){
-				location.href = "/board/replyDeleteView?bno=${read.bno}"
+				location.href = "replyDeleteView.do?bno=${read.bno}"
 					+ "&page=${scri.page}"
 					+ "&perPageNum=${scri.perPageNum}"
 					+ "&searchType=${scri.searchType}"
@@ -99,11 +99,11 @@
 					<textarea id="content" name="content" class="form-control" readonly="readonly"><c:out value="${read.content}" /></textarea>
 				</div>
 				<div class="form-group">
-					<label for="writer" class="col-sm-2 control-label">작성자</label>
-					<input type="text" id="userid" name="userId" class="form-control" value="${read.userId}"  readonly="readonly"/>
+					<label for="userId" class="col-sm-2 control-label">작성자</label>
+					<input type="text" id="userId" name="userId" class="form-control" value="${read.userId}"  readonly="readonly"/>
 				</div>
 				<div class="form-group">
-					<label for="regdate" class="col-sm-2 control-label">작성날짜</label>
+					<label for="bRegDate" class="col-sm-2 control-label">작성날짜</label>
 					<fmt:formatDate value="${read.bRegDate}" pattern="yyyy-MM-dd" />	
 				</div>
 								
@@ -119,11 +119,11 @@
 						<c:forEach items="${replyList}" var="replyList">
 							<li>
 								<p>
-								작성자 : ${replyList.writer}<br />
-								작성 날짜 :  <fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd" />
+								작성자 : ${replyList.userId}<br />
+								작성 날짜 :  <fmt:formatDate value="${replyList.regDate}" pattern="yyyy-MM-dd" />
 								</p>
 								  
-								<p>${replyList.content}</p>
+								<p>${replyList.rContent}</p>
 								<div>
 									<button type="button" class="replyUpdateBtn btn btn-warning" data-rno="${replyList.rno}">수정</button>
 									<button type="button" class="replyDeleteBtn btn btn-danger" data-rno="${replyList.rno}">삭제</button>
@@ -141,16 +141,16 @@
 					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
 				
 					<div class="form-group">
-						<label for="userid" class="col-sm-2 control-label">댓글 작성자</label>
+						<label for="userId" class="col-sm-2 control-label">댓글 작성자</label>
 						<div class="col-sm-10">
-							<input type="text" id="userid" name="userid" class="form-control" />
+							<input type="text" id="userId" name="userId" class="form-control" />
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label for="content" class="col-sm-2 control-label">댓글 내용</label>
+						<label for="rContent" class="col-sm-2 control-label">댓글 내용</label>
 						<div class="col-sm-10">
-							<input type="text" id="content" name="content" class="form-control"/>
+							<input type="text" id="rContent" name="rContent" class="form-control"/>
 						</div>
 					</div>
 					

@@ -80,13 +80,13 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="userid">작성자</label><input type="text" id="userid" name="userid" value="${update.userid}" readonly="readonly"/>
+									<label for="userid">작성자</label><input type="text" id="userid" name="userid" value="${update.userId}" readonly="readonly"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="regdate">작성날짜</label>
-									<fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd"/>					
+									<label for="bRegDate">작성날짜</label>
+									<fmt:formatDate value="${update.bRegDate}" pattern="yyyy-MM-dd"/>					
 								</td>
 							</tr>		
 						</tbody>			

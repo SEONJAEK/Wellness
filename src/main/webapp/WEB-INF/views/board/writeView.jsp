@@ -18,7 +18,7 @@
 				if(fn_valiChk()){
 					return false;
 				}
-				formObj.attr("action", "/board/write");
+				formObj.attr("action", "write.do");
 				formObj.attr("method", "post");
 				formObj.submit();
 			});
@@ -40,10 +40,6 @@
 				<h1> 게시판</h1>
 			</header>
 			<hr />
-			 
-			<div>
-				<%@include file="nav.jsp" %>
-			</div>
 			<hr />
 			
 			<section id="container">
@@ -62,7 +58,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="userid">작성자</label><input type="text" id="userid" name="userid" class="chk" title="작성자를 입력하세요."/>
+									<label for="userId">작성자</label><input type="text" id="userId" name="userId" class="chk" title="작성자를 입력하세요."/>
 								</td>
 							<tr>
 								<td>						

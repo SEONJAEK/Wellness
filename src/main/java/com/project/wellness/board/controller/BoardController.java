@@ -77,6 +77,7 @@ public class BoardController {
 		model.addAttribute("scri", scri);
 		
 		List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		System.out.println(replyList);
 		model.addAttribute("replyList", replyList);
 		
 		return "board/readView";
@@ -120,7 +121,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/board/list";
+		return "redirect:list.do";
 	}
 	
 	
@@ -137,7 +138,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/board/readView";
+		return "redirect:/readView.do";
 	}
 	
 	//댓글 수정 GET
@@ -167,7 +168,7 @@ public class BoardController {
 		return "redirect:/board/readView";
 	}
 	
-	//댓글 삭제 GET
+//	//댓글 삭제 GET
 	@RequestMapping(value="replyDeleteView.do", method = RequestMethod.GET)
 	public String replyDeleteView(ReplyVO vo, SearchCriteria scri, Model model) throws Exception {
 		logger.info("reply Write");
