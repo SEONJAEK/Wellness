@@ -31,12 +31,9 @@ function hasScrolled() {
  }
  lastScrollTop = st;
 }
-
 $(document).ready(function() {
   $(window).scroll(function() {
-    $(window).resize(function(){
-      var width_size = window.outerWidth;
-    if (width_size >= 769 && $(this).scrollTop() <= 500)  {
+    if ($(this).scrollTop() <= 500)  {
         $('header').css("background-color", "rgba(45, 80, 148, 0)");
          } 
         else {
@@ -44,7 +41,7 @@ $(document).ready(function() {
     }
   });
 });
-});
+
 // 슬라이드
 var slideIndex = 0;
 showSlides();
@@ -73,3 +70,31 @@ $(document).ready(function(){
     $(".mobile-nav").slideToggle("fast");
   });
 });
+
+//시설 소개 애니메이션
+$(".mp").hover(function(){
+  $(".mpt.tran").css("display", "block");
+}, function(){
+  $(".mpt.tran").css("display", "none");
+});
+
+//위치 안내 지도
+function initMap() {
+  const myLatLng = {
+    lat: 37.52600709694355,
+    lng: 127.04577275675955
+  }
+  const map = new google.maps.Map(
+    document.getElementById('map'),
+      {
+        center: myLatLng,
+        scrollwheel: false,
+        zoom: 18
+      }
+  );
+  const marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Wellness'
+  });
+}
