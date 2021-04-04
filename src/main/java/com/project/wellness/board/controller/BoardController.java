@@ -165,7 +165,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/board/readView";
+		return "redirect:/readView.do";
 	}
 	
 //	//댓글 삭제 GET
@@ -193,7 +193,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/board/readView";
+		return "redirect:/readView.do";
 	}
 	
 

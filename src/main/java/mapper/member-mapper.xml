@@ -66,9 +66,9 @@
 		   AND USER_PASS = #{userPass}   
 	</select>
 	
-	<select id="viewMember" resultMap="resultMember">
+	<select id="viewMember" parameterType="Member" resultMap="resultMember">
 	SELECT * FROM member_info  WHERE USER_ID = #{userId}
-		   AND USER_PASS = #{userPass} 
+<!-- 		   AND USER_PASS = #{userPass}  -->
 	</select>
 	
 	<update id="joinupd">

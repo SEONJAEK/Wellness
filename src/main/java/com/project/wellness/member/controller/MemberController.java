@@ -76,13 +76,16 @@ public class MemberController {
 
 	//회원정보 수정
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
-	public String getJoinupd() throws Exception {
+	public String getJoinupd(@ModelAttribute MemberVO memberVO, Model model) throws Exception {
+		
+		model.addAttribute("update", service.viewMember(memberVO)) ;
+		System.out.println("memberREsult : " + service.viewMember(memberVO));
 		return "member/joinupd";
 	}
 	
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
 	public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
 		service.joinupd(vo);
-		return "member/login";
+		return "index";
 	}
 }

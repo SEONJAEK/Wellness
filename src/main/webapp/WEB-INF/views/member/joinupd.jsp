@@ -192,26 +192,26 @@ background-color: black;
 	
    		
    		<h6><label>아이디<span id="red"></span><br>
-      		<input type="text" placeholder="qwer1"  name="userId" id="userid" class="form-control" readonly="readonly" required style="display:inline-block; width: 250px"/>
+      		<input type="text" value="${update.userId}"   name="userId" id="userid" class="form-control" readonly="readonly" required style="display:inline-block; width: 250px"/>
       	</h6>
  
    		<h6><label>비밀번호<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호" name="userPass" id="userpw" class="form-control" required style="width: 400px"/></label>
+      		<input type="password" value="${update.userPass}" placeholder="비밀번호" name="userPass" id="userpw" class="form-control" required style="width: 400px"/></label>
   			<div id="pw_check"></div>
   		</h6>
   
    		<h6><label>비밀번호확인<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 400px"/></label>
+      		<input type="password" value="${update.userPass}" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 400px"/></label>
    			<div id="pw_check2"></div>
    		</h6>
    
    		<h6><label>이름<span id="red"></span><br>
-      		<input type="text" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 400px"/></label>
+      		<input type="text" value="${update.userName}" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 400px"/></label>
       		<div id="name_check"></div>
       	</h6>
       
   		<h6><label>핸드폰<span id="red"></span><br>
-      		<input type="tel" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 400px;height: 25px;"/></label>
+      		<input type="tel" value="${update.phone}" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 400px;height: 25px;"/></label>
       	</h6>
   
  		<h6><label>성별<span id="red"></span><br>
