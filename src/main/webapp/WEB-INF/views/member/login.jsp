@@ -12,6 +12,16 @@ padding: 30px;
 }
 </style>
 
+<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">MY 예약</h2>
+	<!--  <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	</section>
+	</main>
 
 <form action ="login.do" method="post">
             <h2> Member Login</h2>
@@ -35,4 +45,4 @@ padding: 30px;
      
        </form>
       
-        <%@ include file="../include/footer.jsp" %>
+<%@ include file="../include/footer.jsp" %>

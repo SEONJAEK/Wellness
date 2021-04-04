@@ -1,6 +1,8 @@
 package com.project.wellness.admin.controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -125,23 +127,48 @@ public class GraphController {
 					
 		}
 	
+	
+	
 	@RequestMapping(value="reservation_admin.do", method=RequestMethod.GET)
-	public String extractReservation(HttpServletRequest request, @ModelAttribute ReservationVO vo, Model model) throws Exception {
+	public String extractReservation1(HttpServletRequest request, Model model) throws Exception {
 		if(request.getSession() != null ){
 			if(request.getSession().getAttribute("isAdmin") != null ) {
 				if((Integer)request.getSession().getAttribute("isAdmin") == 1 ){
-		
-					List<ReservationVO> list = reservationService.selectReservation(vo);
-					PagedListHolder pagedListHolder = new PagedListHolder(list);
-					int page = ServletRequestUtils.getIntParameter(request, "p", 0);
-					pagedListHolder.setPage(page);
-					pagedListHolder.setPageSize(10);
-					model.addAttribute("pagedListHolder",pagedListHolder);
-					
-					
-					
-					
-					return "admin/reservation";
+					String date = (String)request.getParameter("date");
+					if(date!=null){
+						
+						List<ReservationVO> list = reservationService.selectReservationByDate(date);
+						PagedListHolder pagedListHolder = new PagedListHolder(list);
+						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+						pagedListHolder.setPage(page);
+						pagedListHolder.setPageSize(10);
+						model.addAttribute("pagedListHolder",pagedListHolder);
+						model.addAttribute("select_date",date);
+						
+						
+						
+						return "admin/reservation";
+					}else {
+						java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
+						String date_current = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+						
+						
+						
+						List<ReservationVO> list = reservationService.selectReservationByDate(date_current);
+						PagedListHolder pagedListHolder = new PagedListHolder(list);
+						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+						pagedListHolder.setPage(page);
+						pagedListHolder.setPageSize(10);
+						model.addAttribute("pagedListHolder",pagedListHolder);
+						
+						model.addAttribute("select_date",date_current);
+						
+						return "admin/reservation";
+					}
+						
+				
+						
+//					
 				}
 				else {
 					return "redirect:/";

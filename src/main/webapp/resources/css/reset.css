@@ -13,7 +13,7 @@ button, a{cursor:pointer;}
 .float--right {float: right;}
 .clearfix::after {content: "";clear: both;display: block;}
 /* body - 배경, 폰트, 글자 행간 */
-body{font-family:'Do Hyeon', NanumGothic,나눔고딕,'Nanum Gothic','맑은 고딕',HelveticaNeue,DroidSans,Sans-serif,Helvetica; line-height:1;}
+body{font-family:'Do Hyeon', NanumGothic,나눔고딕,'Nanum Gothic','맑은 고딕',HelveticaNeue,DroidSans,Sans-serif,Helvetica!important; line-height:1;}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 
 nav ul, li{list-style:none;}
