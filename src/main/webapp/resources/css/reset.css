@@ -6,6 +6,7 @@ footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{
 margin: 0; padding: 0; border: 0; vertical-align: baseline; background: transparent;
 font-weight: 400;
 }
+h4{font-size: 4rem;}
 button, a{cursor:pointer;}
 /* INNER LEFT / RIGHT */
 .float--left {float: left;}

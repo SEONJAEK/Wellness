@@ -1,10 +1,10 @@
 /* 모바일용 CSS */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     #wrapper{display: flex; flex-flow: column nowrap;}
     /* #mobile-header{}     */
     header{width: 100%; height: 100px;}    
-    header .logo{width: 27%; height: 100px; margin:0 auto;}
-    header .logo a{height: 100px;}    
+    header .logo{min-width: 200px; height: 140px; margin:0 auto; margin-top: -45px;}
+    header .logo a{height: 140px; margin-top: 15px;}    
     nav{display: none;}
     .slideshow-container{height: 640px;}
     .dots{position: absolute; bottom: 3rem; left: 40%;}  
@@ -23,7 +23,7 @@
     }
     .mobile-nav p{font-size: 2rem;}
     .mobile-info{width: 100%; display: flex; position: absolute;
-     bottom:18%; justify-content: center;}
+        bottom:18%; justify-content: center;}
     .mobile-info a{color: #5c5857;}
     .mobile-info p:nth-child(1){margin-right: 50px;}
     .menu-icon{width: 100%; display: flex; flex-direction: column wrap; padding-top: 40px;}
@@ -31,33 +31,39 @@
     /* .menu-icon .top a, .bottom a{padding-bottom: 20%;} */
     .top, .bottom{width: 100%; height: 50%;}
     /* .tp, .bt{padding: 10%;} */
-    .menu-icon p{padding: 10%;}
+    .menu-icon p{padding-top: 10%;}
     .menu-icon .fas, .menu-icon .far{color: #5c5857; font-size: 6rem;}
     
     .display-text{font-size: 5rem; top:18rem; left:1.5rem;}
     /* 도입부 */
     /* .sec1wrapper{height: 600px;} */
-    .sec1text{width: 40%; height: 30%;}
-    .sec1text p{font-size: 1rem; line-height:1.1rem;}   
+    .intro-text{width: 40%; height: 30%;}
+    .intro-text p{font-size: 1.3rem; line-height:2rem;}   
     .main-wrapper.sec1{height: 1050px;}
     .main-contents-wrapper{width: 100%; height: 100%;}
     .main-contents-wrapper img{width: 100%; height: 100%;} 
     .main-pic-wrapper{flex-flow: column wrap; height: auto;}
     
+    
     /* 프로그램 소개 */
+    .right-text{flex-flow:column wrap; height: 100%;}
+    .left-text{flex-flow:column wrap; height: 100%;}
+    .left-text .pro:nth-of-type(1){order: 2;}
+    .left-text .pro:nth-of-type(2){order: 1;}
     .pro{width: 100%;}
-    .pro:nth-child(2n){min-height: 400px; padding: 10px 0 0 10px;}
+    .pro.text{min-height: 400px; padding: 10px 0 0 10px;}
     /* 시설 소개 */
-    .container{width: 100%; height: 100%;}
-    .category{font-size: 2rem;}
+    .fac-container{width: 100%; height: 100%;}
+    p.category{font-size: 3rem;}
     .ptext-box{padding: 0;}
     /* 3GX 시스템 */
-    .sec4wrapper .sec4pic {width: 100%; height: 100%;}
-    .sec1pic{height: 600px;}
-    .sec4wrapper{width: 100%; height: 100%; display: flex; flex-flow: column wrap;}
+    .gx3-wrapper .gx3-pic{width: 100%; height: 100%;}
+    .gx3-wrapper .gx3-container{width: 100%; height: 600px;}
+    .gx3-wrapper{width: 100%; height: 100%; display: flex; flex-flow: column wrap;}
     
     /* 각 페이지 상단 */
     .main-nav a{padding: .5rem; margin: .5rem; font-size: 1.5rem;}
+
 
     /* intro.css*/
     /* 시설 안내 */
@@ -70,6 +76,8 @@
     /* 위치 안내 */
     .l-wrapper{flex-flow: column wrap;}
     #map, .ltext{width: 100%;}
+
+
 
     /* footer */
     footer .logo, footer .logo a{width: 50%; height: 100px;}
