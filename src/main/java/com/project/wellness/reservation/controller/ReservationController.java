@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,10 +27,15 @@ public class ReservationController {
 	ReservationService reservationService;
 	
 	@RequestMapping(value="mypage.do", method=RequestMethod.GET)
-	public String selectReservation(Model model) throws Exception {
+	public String selectReservation(HttpServletRequest request, Model model) throws Exception {
 		
-		List<ReservationVO> list = reservationService.selectReservation();
-		model.addAttribute("programList",list);
+List<ReservationVO> list = reservationService.selectReservation();
+		
+		PagedListHolder pagedListHolder = new PagedListHolder(list);
+		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+		pagedListHolder.setPage(page);
+		pagedListHolder.setPageSize(10);
+		model.addAttribute("pagedListHolder",pagedListHolder);
 		
 		return "mypage";
 	}

@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ include file="include/header.jsp" %>
 
 <style type="text/css">
@@ -18,7 +20,7 @@ ul, li {
 }
 
 #mainWrapper {
-	width: 800px;
+	width: 80%;
 	margin: 0 auto; /*가운데 정렬*/
 }
 
@@ -85,50 +87,57 @@ ul, li {
  </script>
 
 
-	<div id="mainWrapper">
-		<ul>
-			<li>My 예약 현황</li>
-			<ul id="ulTable">
-				<li>
-					<ul>
-						<li>날짜</li>
-						<li>프로그램</li>
-						<li>시간</li>
-						<li>강사</li>
-						<li>취소</li>
-					</ul>
-				</li>
-				<li>
-					<c:choose>
-						<c:when test="${empty programList}">등록된 예약이 없습니다.</c:when>
+<div id="mainWrapper">
+
+	<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
+	<ul>
+		<li>My 예약 현황</li>
+					
+		<div class="container" style="margin-top: 20px;">
+			<jsp:useBean id="pagedListHolder" scope="request" type="org.springframework.beans.support.PagedListHolder" />
+			<c:url value="/mypage.do" var="pagedLink">
+				<c:param name="p" value="~" />
+			</c:url>
+					
+			<table class="table table-bordered">
+
+				<tr>
+					<th>날짜</th>
+					<th>프로그램</th>
+					<th>시간</th>
+					<th>강사</th>
+					<th>예약취소</th>
+				</tr>
+				<c:choose>
+						<c:when test="${empty pagedListHolder.pageList}">등록된 예약이 없습니다.</c:when>
 						<c:otherwise>
-							<c:forEach var="list" items="${programList}"  begin="1" end="10">
-								<ul>
-									<li>${list.regDate}</li>
-									<li>${list.programName}</li>
-									<li class="left">${list.programTime}</li>
-									<li>${list.userName}</li>
-		
-									<jsp:useBean id="now" class="java.util.Date" />
-									<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
-									<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
-		
-									<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd"
-										var="reservationDay" />
-									<fmt:parseNumber value="${reservationDay}" integerOnly="true"
-										var="rDay" /> 
-		
-									<c:if test="${today-rDay lt 0}">
-										<li><input type="button" value="예약취소"
-											onclick="btnDelete(${list.num});"></li>
-									</c:if>
-								</ul>
-							</c:forEach>
-						</c:otherwise>
-					</c:choose>
-				</li>
-			</ul>
-		</ul>
-	</div>
+							<c:forEach items="${pagedListHolder.pageList}" var="list">
+								<tr>
+									<td>${list.regDate}</td> 
+									<td>${list.programName}</td>
+									<td>${list.programTime}</td>
+									<td>${list.userName}</td>
+									<td>
+										<jsp:useBean id="now" class="java.util.Date" />
+											<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
+											<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
+					
+											<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd" var="reservationDay" />
+											<fmt:parseNumber value="${reservationDay}" integerOnly="true" var="rDay" /> 
+											
+											<c:if test="${today-rDay lt 0}">
+												<li><input type="button" value="예약취소" onclick="btnDelete(${list.num});"></li>
+											</c:if>
+									</td>
+								</tr>
+								<c:set var="index_count" value="${index_count+1}" scope="page" />		
+							</c:forEach>				
+					</c:otherwise>
+				</c:choose>
+			</table>
+			<tg:paging pagedListHolder="${pagedListHolder}" pagedLink="${pagedLink}" />
+		</div>
+	</ul>
+</div>
 
 <%@ include file="include/footer.jsp" %>
