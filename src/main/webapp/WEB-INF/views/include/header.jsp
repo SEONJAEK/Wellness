@@ -68,8 +68,29 @@
                             </div>    
                         </div>
                         <div class="mobile-info">
-                             <a href="#"><p>로그인</p></a>
-                             <a href="#"><p>회원가입</p></a>
+                        			<c:choose>
+					            	<c:when test="${id eq null}">
+					            		<a href="${pageContext.request.contextPath}/login.do"><p>로그인</p></a>
+					            	</c:when>
+					            	<c:otherwise>
+					            		<a href="${pageContext.request.contextPath}/index.do"><p>로그아웃</p></a>
+					            	</c:otherwise>
+					               </c:choose>
+					               
+					               <c:choose>
+					            	<c:when test="${id eq null}">
+					            		<a href="${pageContext.request.contextPath}/join.do"><p>회원가입</p></a>
+					            	</c:when>
+					            	<c:otherwise>
+					            		<a href="${pageContext.request.contextPath}/joinupd.do"><p>내 정보</p></a>
+					            	</c:otherwise>
+					               </c:choose>
+					               <c:if test="${id != null && (isAdmin==1 || isCoach==1)}">
+	                                <a href=""><p>회원 관리 페이지</p></a>
+	                                </c:if>
+	                                <c:if test="${id != null && isAdmin==0 && isCoach==0}">
+						             <a href=""><p>내 정보</p></a>
+	                                </c:if>
                         </div>
                     </div>
 
@@ -99,15 +120,19 @@
                                     </ul>    
                                 </li>
                                 <li class="menu_li"><a class="menu_a" href="#">Q & A</a></li>
-                                <li class="menu_li"><a class="menu_a" href="#" style="display: none;">회원 관리 페이지</a>
+                                <c:if test="${id != null && (isAdmin==1 || isCoach==1)}">
+                                <li class="menu_li"><a class="menu_a" href="#">회원 관리 페이지</a>
                                     <ul class="sub_ul">
                                         <li class="sub_li"><a class="sub_a" href="#">회원 분석</a></li>
                                         <li class="sub_li"><a class="sub_a" href="#">회원 목록</a></li>
                                         <li class="sub_li"><a class="sub_a" href="#">예약 현황</a></li>
                                     </ul>    
                                 </li>
-                                <li class="menu_li"><a class="menu_a" href="#" style="display: none;">내 예약</a>
+                                </c:if>
+                                <c:if test="${id != null && isAdmin==0 && isCoach==0}">
+					            <li class="menu_li"><a class="menu_a" href="#">내 예약</a>
                                 </li>
+                                </c:if>
                             </ul>
                         
                             <!-- 인포 영역 -->
@@ -130,42 +155,11 @@
 					            		<li><a href="${pageContext.request.contextPath}/joinupd.do">내 정보</a></li>
 					            	</c:otherwise>
 					               </c:choose>
-                                    <!--<li><a href="#">로그인</a></li>
-                                    <li><a href="#">회원가입</a></li>
-                                    <li><a href="#">로그아웃</a></li>
-                                    <li><a href="#">내 정보</a></li>
-                                    <li><a href="#">회원 관리 페이지</a></li> -->
                                 </ul>
                             </section>
                     </nav>  
             </header>
-			<h2 class="display-text">FIND<br>YOUR<br>ENERGY</h2>
-            
-            <!-- 슬라이더  -->
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                <img src="../images/p_images/mainweight.jpg" alt="슬라이드사진1">
-                </div>
-                <div class="mySlides fade">
-                <img src="../images/p_images/mainyoga.jpg" alt="슬라이드사진2">
-                </div>
-                <div class="mySlides fade">
-                <img src="../images/p_images/dumbell.png" alt="슬라이드사진3">
-                </div>
-                <div class="mySlides fade">
-                <img src="../images/p_images/cycles.jpg" alt="슬라이드사진4">
-                </div>
-                <div class="mySlides fade">
-                <img src="../images/p_images/weights.jpg" alt="슬라이드사진5">
-                </div>
-            	<div class="dots">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-            </div> 
+			
 
         </div> <!--// 헤더 -->
 	
