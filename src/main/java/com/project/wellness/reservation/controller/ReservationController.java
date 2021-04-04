@@ -38,7 +38,7 @@ public class ReservationController {
     		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
     		pagedListHolder.setPage(page);
     		pagedListHolder.setPageSize(10);
-    		model.addAttribute("programList",pagedListHolder);
+    		model.addAttribute("pagedListHolder",pagedListHolder);
             
             return "mypage";
          }

@@ -34,5 +34,13 @@ public class ReservationServiceImpl implements ReservationService {
 		int cnt = reservationDao.insertReservation(vo);
 		return cnt;
 	}
+	
+	//선재 회원 예약 코드 날짜 
+		@Override
+		public List<ReservationVO> selectReservationByDate(String date) throws Exception {
+			
+			List<ReservationVO> list = reservationDao.selectReservationByDate(date);
+			return list;
+		}
 
 }

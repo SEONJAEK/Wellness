@@ -7,6 +7,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="../include/header.jsp" %>
 
+<link href="<c:url value="resources/fullcalendar/packages/core/main.css"/>" rel='stylesheet' />
+<link href="<c:url value="resources/fullcalendar/packages/daygrid/main.css" />" rel='stylesheet' />
+<script src="<c:url value="resources/fullcalendar/packages/core/main.js"/>"></script>
+<script src="<c:url value="/resources/fullcalendar/packages/interaction/main.js"/>"></script>
+<script src="<c:url value="/resources/fullcalendar/packages/daygrid/main.js" />"></script>
+	
 
 
 <style>
@@ -137,16 +143,47 @@ a.menubox:hover{
 }
 </style>
   
+<style>
+		#title {
+			
+			text-align: center;
+		}
+		
+		#container {
+			display: flex;
+			justify-content: space-between;
+		
+			 margin: auto;
+  			
+		}
+		
+		#calendarYoga {
+			padding: 0px;
+			margin: 5px;
+			width:500px;
+		
+		}
+		
+
+		
+		#reservation-img {
+			position: relative;
+		}
+		
+		#imgtext {
+			position: absolute;;
+			font-size: 48px;
+			top: 250px;
+			right: 80px;
+		}
+	</style>
+	
 	
 	<!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
 	<h2 class="main-title">관리자메뉴</h2>
-	<!--  <div class="main-nav">
-		<a href="graph.do">Graph</a> 
-		<a href="member_admin.do">회원관리</a>
-		<a href="reservation_admin.do">예약관리</a>
-	</div>  -->
+
 	</section>
 	</main>
 	
@@ -163,9 +200,14 @@ a.menubox:hover{
 	
 	
 	<!-- 선재 삽입2 -->	
-
+	<h4 id="title">Please select the date you want to check</h4>
+	<div id='container'>
+		<div id='calendarYoga'></div>
+		
+	</div>
+	
 		<div id="mainWrapper">
-		<h1 style="text-align: center; padding-top: 50px;">예약 정보 페이지</h1>
+		<h1 style="text-align: center; padding-top: 50px;">예약 정보 (${select_date})</h1>
 		<!-- index_count 변수 : 1부터 선언-->
 		<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
 		<ul>
@@ -224,31 +266,59 @@ a.menubox:hover{
 		</div>
 	
 	
-
 	
-	
-	<script>
-	
-		$('.isAdmin').change(function() {
-			var role =  $(this).find('option:selected').index();
-			var user_id =  $(this).closest("tr").find("td:eq(1)").text();
-			$.ajax({
-				url : "updateRole.do",
-				type: "POST",
-				data : { "userId" : user_id,"is_admin": role},
+	<script>	
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendarYoga');
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+					timezone: 'local',
 				
-				success: function(responseData){
-
-				      if(responseData==='success'){
-				    	  window.alert('success');
-				      }
-				}
-				
-				
-				
-			});
-		});
+					plugins: ['interaction','dayGrid'],
+					fixedWeekCount: false,
+					
+					header: {        	  
+						 left: '',
+				            center: 'title',
+				            right: 'prev,next'
+					},	
+					
+					selectable: true,
+					
+					select: function(){
+						document.querySelector(".fc-highlight").style.background = '#5a5a5a';
+					},
+					
+					dateClick: function(info) {
+						 var year = info.date.getYear()+1900;
+						 var month = info.date.getMonth()+1;
+						 var date = info.date.getDate();
+						 var regDate = year +'-'+month +'-'+ date;
+					
+							$.ajax({
+								url : "reservation_admin.do",
+								type: "GET",
+								data : { "date" : regDate},
+							
+							
+								
+								success: function(responseData){
+							
+									window.location.href = "reservation_admin.do?date=" + regDate;
+								}
+								
+								
+								
+							});
+						 
+					}
+				});
+			calendar.render();
 		
-	</script>
-	<!-- 선재 삽입2 -->		
+			
+		
+		});
+
+		
+	
+		</script>
 <%@ include file="../include/footer.jsp" %>

@@ -33,4 +33,11 @@ public class ReservationDao {
 		int cnt = sqlSession.insert("Reservation.insertReservation",vo);
 		return cnt;
 	}
+	
+	//선재 회원 예약 코드 날짜 
+		public List<ReservationVO> selectReservationByDate(String date) throws Exception {
+
+			List<ReservationVO> list = sqlSession.selectList("Reservation.selectReservationByDate",date);
+			return list;
+		}
 }

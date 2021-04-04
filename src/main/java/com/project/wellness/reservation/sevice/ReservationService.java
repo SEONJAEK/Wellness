@@ -11,4 +11,7 @@ public interface ReservationService {
 	public int deleteReservation(int num) throws Exception;
 	
 	public int insertReservation(ReservationVO vo) throws Exception;
+	
+	//선재 회원 예약 코드 날짜 
+		public List<ReservationVO> selectReservationByDate(String date) throws Exception;
 }

@@ -32,13 +32,13 @@
    
    
    
-   <!-- 선재 회원 예약 코드 날짜 -->
-   <select id="selectReservationByDate" resultMap="resultReservation" parameterType="Reservation">
-      select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_name from program p 
-       join reservation r  on p.program_id = r.program_id
-       join member_info m on  m.user_id = r.user_id and  m.user_id = r.user_id 
-        where r_reg_date = TO_DATE( #{regDate}, 'YYYY-MM-DD') 
-       order by r.r_num
-   </select>
+  <!-- 선재 회원 예약 코드 날짜 -->
+	<select id="selectReservationByDate" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_name from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id and  m.user_id = r.user_id 
+        where r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  
+	    order by r.r_num
+	</select>
    
 </mapper>
