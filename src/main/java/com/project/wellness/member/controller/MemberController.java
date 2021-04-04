@@ -76,7 +76,11 @@ public class MemberController {
 
 	//회원정보 수정
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
-	public String getJoinupd(@ModelAttribute MemberVO memberVO, Model model) throws Exception {
+	public String getJoinupd(HttpServletRequest request, Model model) throws Exception {
+		String userId = (String)request.getSession().getAttribute("userId");
+		MemberVO memberVO = new MemberVO();
+		memberVO.setUserId(userId);
+		
 		
 		model.addAttribute("update", service.viewMember(memberVO)) ;
 		System.out.println("memberREsult : " + service.viewMember(memberVO));
