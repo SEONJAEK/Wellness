@@ -56,7 +56,7 @@ public class MemberController {
 		boolean result = service.login(vo, session);
 		ModelAndView mav = new ModelAndView();
 		if(result == true) {
-			mav.setViewName("mypage");
+			mav.setViewName("index");
 			mav.addObject("msg","seccess");
 		}else {
 			mav.setViewName("member/login");

@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>로그인 페이지</title>
+<%@ include file="../include/header.jsp" %>
+    
+
 <style>
 h2{
 text-align: center;
@@ -12,8 +11,8 @@ text-align: center;
 padding: 30px;
 }
 </style>
-</head>
-<body>
+
+
 <form action ="login.do" method="post">
             <h2> Member Login</h2>
            
@@ -35,5 +34,5 @@ padding: 30px;
        </div>
      
        </form>
-        </body>
-</html>
+      
+        <%@ include file="../include/footer.jsp" %>
