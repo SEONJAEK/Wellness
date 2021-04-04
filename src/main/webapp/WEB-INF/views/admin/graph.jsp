@@ -5,7 +5,7 @@
 <%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ include file="include/header.jsp" %>
+<%@ include file="../include/header.jsp" %>
 
 <script src="<c:url value="/resources/js/Chart.min.js" />"></script>
 
@@ -108,13 +108,64 @@ ul, li {
 	text-align: center;
 }
  <!--선재 추가1-->
+ 
+.list-group {
+text-align: center;
+padding-left: 0;
+    margin-bottom: 20px;
+}
+.list-group a.menubox {
+    display: inline-block;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #ebebeb;
+    border: 1px solid #ebebeb;
+    font-weight: 400;
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+    margin: 0 2px;
+    }
+    .list-group a.active {
+    background: #0e0e0e;
+    color: #c59d55;
+}
+
+a.menubox:hover{
+    background: #0e0e0e;
+    color: #c59d55;
+}
 </style>
   
 
+	<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">관리자메뉴</h2>
+	<!-- <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	
+	</section>
+	</main>
 	
 	
-	
-	<h1 style="text-align: center; padding-top: 50px;">관리자페이지</h1>
+	<div class="sub_menu">
+		<nav id="sub_menu">
+			<div class="list-group" style="text-align:center!important;">
+					<a href="graph.do" target="_self" class="menubox active">Graph</a>
+					<a href="member_admin.do" target="_self" class="menubox ">회원관리</a>
+					<a href="reservation_admin.do" target="_self" class="menubox ">예약관리</a>
+			</div>
+		</nav>
+	</div>
+
+
+	<h1 style="text-align: center; padding-top: 50px;">GRAPH 페이지</h1>
 	<div class="three-column" style="padding-top: 100px;">
 		<!-- 원형그래프 -->
 		<div class="column" id="canvas-holder">
@@ -241,92 +292,6 @@ ul, li {
 		
 		</script>
 
-	<!-- 선재 삽입2 -->	
-	
-		<div id="mainWrapper">
-		<!-- index_count 변수 : 1부터 선언-->
-		<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
-		<ul>
-			<li>회원 정보 페이지</li>
-			
-			<div class="container" style="margin-top: 20px;">
-				<jsp:useBean id="pagedListHolder" scope="request"
-					type="org.springframework.beans.support.PagedListHolder" />
-				<c:url value="/graph.do" var="pagedLink">
-					<c:param name="p" value="~" />
-				</c:url>
-		
 
-				<table class="table table-bordered">
-					<tr>
-						<th>번호</th>
-						<th>아이디</th>
-						<th>이름</th>
-						<th>성별</th>
-						<th>나이</th>
-						<th>전화번호</th>
-						<th>이메일</th>
-						<th>주소</th>
-						<th>관리자여부</th>
-	
-					</tr>
-					<!-- 반복문 써서 모든 회원정보 출력 -->
-					<c:forEach items="${pagedListHolder.pageList}" var="item">
-						<tr>
-							<td>${index_count}</td> 
-							<td>${item.userId}</td>
-							<td>${item.userName}</td>
-							<td>${item.gender}</td>
-							<td>${item.age}</td>
-							<td>${item.phone}</td>
-							<td>${item.email}</td>
-							<td>${item.address}</td>
-							<td>
-							<select class="isAdmin" id="isAdmin" name="isAdmin">
-									<option value="0" ${item.is_admin == '0' ? 'selected="selected"' : ''} >회원</option>
-									<option value="1" ${item.is_admin == '1' ? 'selected="selected"' : ''}>관리자</option>
-							</select>
-							</td>
-							
-					
-						</tr>
-						<!-- index_count 1씩 증가 -->
-						<c:set var="index_count" value="${index_count+1}" scope="page" />
-					</c:forEach>
-				</table>
-				<tg:paging pagedListHolder="${pagedListHolder}"
-					pagedLink="${pagedLink}" />
-			</div>
-			
-			
-		</ul>
-		</div>
-	
-
-<script>
-	
-		$('.isAdmin').change(function() {
-			var role =  $(this).find('option:selected').index();
-			var user_id =  $(this).closest("tr").find("td:eq(1)").text();
-			$.ajax({
-				url : "updateRole.do",
-				type: "POST",
-				data : { "userId" : user_id,"is_admin": role},
-				
-				success: function(responseData){
-
-				      if(responseData==='success'){
-				    	  window.alert('success');
-				      }
-				}
-				
-				
-				
-			});
-		});
-		
-	</script>
 	<!-- 선재 삽입2 -->		
-	
-	</div>
-<%@ include file="include/footer.jsp" %>
+<%@ include file="../include/footer.jsp" %>

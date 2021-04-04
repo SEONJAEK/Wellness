@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.project.wellness.admin.vo.GraphVO;
+import com.project.wellness.reservation.vo.ReservationVO;
 
 @Repository
 public class GraphDao {
@@ -49,6 +50,7 @@ public class GraphDao {
 	public void updateRole(GraphVO graphVO) {
 		sql.update("Graph.updateRole", graphVO);
 	}
+	
 	
 	
 }
