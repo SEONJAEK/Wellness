@@ -6,6 +6,33 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="include/header.jsp" %>
+            <h2 class="display-text">FIND<br>YOUR<br>ENERGY</h2>
+            
+            <!-- 슬라이더  -->
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                <img src="resources/images/p_images/mainweight.jpg" alt="슬라이드사진1">
+                </div>
+                <div class="mySlides fade">
+                <img src="resources/images/p_images/mainyoga.jpg" alt="슬라이드사진2">
+                </div>
+                <div class="mySlides fade">
+                <img src="resources/images/p_images/dumbell.png" alt="슬라이드사진3">
+                </div>
+                <div class="mySlides fade">
+                <img src="resources/images/p_images/cycles.jpg" alt="슬라이드사진4">
+                </div>
+                <div class="mySlides fade">
+                <img src="resources/images/p_images/weights.jpg" alt="슬라이드사진5">
+                </div>
+            	<div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div> 
             <!-- 도입부 -->
                 <section class="main-wrapper">
                     <!-- 도입부 텍스트 -->
@@ -29,8 +56,8 @@
 
                     <!-- 도입부 텍스트+사진 -->
                     <div class="main-pic-wrapper">
-                        <div class="sec1wrapper">
-                            <div class="sec1text">          
+                        <div class="intro-wrapper">
+                            <div class="intro-text">          
                                 <p style="color: #de3726">웰니스 피트니스</p>
                                 <p>서울 강남구 압구정로 99길 웰니스빌딩 3층</p>    
                                 <p style="color: #de3726">영업 시간</p>
@@ -39,7 +66,7 @@
                                 <br>2주, 4주 일요일 휴무</p>   
                             </div>
                                 <!-- 웰니스 건물 -->
-                                <img class="sec1pic" src="resources/images/p_images/building.jpg" alt="">        
+                                <img class="intro-pic" src="resources/images/p_images/redbuilding.jpg" alt="웰니스 건물">        
                         </div>
                     </div>
                 </section>
@@ -65,31 +92,31 @@
                         </div>
                     </div>
 
-                    <!-- 시설 소개 사진 -->
+					<!-- 시설 소개 사진 -->
                     <div class="main-contents-wrapper">
                         <div class="main-pic-wrapper" style="overflow: hidden;">  
-                            <div class="container">
+                            <div class="fac-container">
                                 <img class="mp" src="resources/images/p_images/freeweight.jpg" alt="프리 웨이트 룸">
                                 <div class="overlay overlayRight">
-                                        <div class="category">프리 웨이트 룸<i class="fas fa-angle-double-right"></i></div>         
+                                        <p class="category">프리 웨이트 룸<i class="fas fa-angle-double-right"></i></p>			
                                 </div>
                             </div>
-                            <div class="container">
-                                <img class="mp" src="resources/images/p_images/flyingyoga.jpg" alt="요가 룸">
+                            <div class="fac-container">
+                                <img class="mp" src="resources/images/p_images/yogaroom.jpg" alt="요가 룸">
                                 <div class="overlay overlayRight">
-                                        <div class="category">요가 룸<i class="fas fa-angle-double-right"></i></div>         
+                                        <p class="category">요가 룸<i class="fas fa-angle-double-right"></i></p>			
                                 </div>
                             </div>
-                            <div class="container">
+                            <div class="fac-container">
                                 <img class="mp" src="resources/images/p_images/pilates.jpg" alt="필라테스 룸">
                                 <div class="overlay overlayRight">
-                                        <div class="category">필라테스 룸<i class="fas fa-angle-double-right"></i></div>         
+                                        <p class="category">필라테스 룸<i class="fas fa-angle-double-right"></i></p>			
                                 </div>
                             </div>
-                            <div class="container">
+                            <div class="fac-container">
                                 <img class="mp" src="resources/images/p_images/machineweight.jpg" alt="머신 웨이트 룸">
                                 <div class="overlay overlayRight">
-                                        <div class="category">머신 웨이트 룸<i class="fas fa-angle-double-right"></i></div>         
+                                        <p class="category">머신 웨이트 룸<i class="fas fa-angle-double-right"></i></p>			
                                 </div>
                             </div>
                         </div>
@@ -121,27 +148,31 @@
 
                     <!-- 프로그램 소개 사진 -->
                     <div class="main-contents-wrapper">
-                        <div class="main-pic-wrapper" style="overflow: hidden;">
-                            <div class="pro">
-                                <img class="" style="" src="https://kinective.com/wp-content/uploads/2019/11/home-personal-training@2x.jpg" alt="PT 하는 모습">
-                            </div>        
-                            <div class="pro text">
-                                <div class="ptext-box">
-                                    <h4>Personal Training</h4>
-                                    <span class="pro-line"></span>
-                                    <p>운동 강습이 절실하게 필요한 회원님께 50분 동안 제공해드리는 개인 지도입니다.</p>
-                                    <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                        <div class="main-pic-wrapper">
+                            <div class="right-text">
+                                <div class="pro">
+                                    <img class="" style="" src="https://kinective.com/wp-content/uploads/2019/11/home-personal-training@2x.jpg" alt="PT 하는 모습">
+                                </div>        
+                                <div class="pro text">
+                                    <div class="ptext-box">
+                                        <h4 style="font-size: 4rem;">Personal Training</h4>
+                                        <span class="pro-line"></span>
+                                        <p>운동 강습이 절실하게 필요한 회원님께 50분 동안 제공해드리는 개인 지도입니다.</p>
+                                        <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pro">
-                                <img class="" src="resources/images/p_images/group.jpg" style="min-height:260px;" alt="">
-                            </div>
-                            <div class="pro text">
-                                <div class="ptext-box">
-                                    <h4>Group Exercise</h4>
-                                    <span class="pro-line"></span>
-                                    <p>요가, 필라테스, 에어로빅 그룹 운동을 통해 개인별 운동 목표를 달성합니다.</p>
-                                    <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                            <div class="left-text">                 
+                                <div class="pro text">
+                                    <div class="ptext-box">
+                                        <h4 style="font-size: 4rem;">Group Exercise</h4>
+                                        <span class="pro-line"></span>
+                                        <p>요가, 필라테스, 에어로빅 그룹 운동을 통해 개인별 운동 목표를 달성합니다.</p>
+                                        <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                                    </div>
+                                </div>
+                                <div class="pro">
+                                    <img class="" src="resources/images/p_images/group.jpg" style="min-height:260px;" alt="">
                                 </div>
                             </div>
                         </div>
@@ -166,14 +197,32 @@
                         </div>
                     </div>
 
-                    <!-- 3GX 시스템 사진 -->
+                   <!-- 3GX 시스템 사진 -->
                     <div class="main-pic-wrapper" style="margin-bottom: 10%;">
-                            <div class="sec4wrapper">
-                                <img class="sec4pic" src="resources/images/p_images/gxyoga.jpg" alt="그룹 요가 수업 모습">
-                                <img class="sec4pic" src="resources/images/p_images/gxps.jpg" alt="그룹 필라테스 수업 모습">
-                                <img class="sec4pic" src="resources/images/p_images/gxar.jpg" alt="그룹 에어로빅 수업 모습">       
+                            <div class="gx3-wrapper">
+                                <div class="gx3-container">
+                                    <img class="gx3-pic" src="resources/images/p_images/gxyoga.jpg" alt="그룹 요가 수업 모습">
+                                    <div class="gx3-text">
+                                        <h2 class="gx3-title">요가</h2>
+                                        <a href="gx3-rsv">예약하기</a>			
+                                    </div>
+                                </div>
+                                <div class="gx3-container">
+                                    <img class="gx3-pic" src="resources/images/p_images/gxps.jpg" alt="그룹 필라테스 수업 모습">
+                                    <div class="gx3-text">
+                                        <h2 class="gx3-title">필라테스</h2>
+                                        <a href="gx3-rsv">예약하기</a>
+                                    </div>
+                                </div>
+                                <div class="gx3-container">
+                                    <img class="gx3-pic" src="resources/images/p_images/gxar.jpg" alt="그룹 에어로빅 수업 모습">       
+                                    <div class="gx3-text">
+                                        <h2 class="gx3-title">에어로빅</h2>
+                                        <a href="gx3-rsv">예약하기</a>		
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                    </div>
                 </section>
     </div><!--wrapper 끝-->
     
