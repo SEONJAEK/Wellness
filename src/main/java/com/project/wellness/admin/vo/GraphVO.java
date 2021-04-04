@@ -32,6 +32,8 @@ public class GraphVO {
 	
 	
 	
+	
+	
 
 	public int getM_ten() {
 		return m_ten;

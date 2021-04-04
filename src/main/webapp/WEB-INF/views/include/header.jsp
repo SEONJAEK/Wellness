@@ -73,7 +73,7 @@
 					            		<a href="${pageContext.request.contextPath}/login.do"><p>로그인</p></a>
 					            	</c:when>
 					            	<c:otherwise>
-					            		<a href="${pageContext.request.contextPath}/index.do"><p>로그아웃</p></a>
+					            		<a href="${pageContext.request.contextPath}/logout.do"><p>로그아웃</p></a>
 					            	</c:otherwise>
 					               </c:choose>
 					               
