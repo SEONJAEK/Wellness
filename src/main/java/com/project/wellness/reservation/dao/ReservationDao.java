@@ -16,9 +16,9 @@ public class ReservationDao {
 
 	public ReservationDao() {}
 
-	public List<ReservationVO> selectReservation() throws Exception {
+	public List<ReservationVO> selectReservation(ReservationVO vo) throws Exception {
 
-		List<ReservationVO> list = sqlSession.selectList("Reservation.selectReservation");
+		List<ReservationVO> list = sqlSession.selectList("Reservation.selectReservation",vo);
 		return list;
 	}
 	

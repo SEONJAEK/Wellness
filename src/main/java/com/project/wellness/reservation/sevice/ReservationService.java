@@ -6,7 +6,7 @@ import com.project.wellness.reservation.vo.ReservationVO;
 
 public interface ReservationService {
 
-	public List<ReservationVO> selectReservation() throws Exception;
+	public List<ReservationVO> selectReservation(ReservationVO vo) throws Exception;
 	
 	public int deleteReservation(int num) throws Exception;
 	

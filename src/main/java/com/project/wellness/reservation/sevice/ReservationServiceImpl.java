@@ -15,9 +15,9 @@ public class ReservationServiceImpl implements ReservationService {
 	ReservationDao reservationDao;
 	
 	@Override
-	public List<ReservationVO> selectReservation() throws Exception {
+	public List<ReservationVO> selectReservation(ReservationVO vo) throws Exception {
 		
-		List<ReservationVO> list = reservationDao.selectReservation();
+		List<ReservationVO> list = reservationDao.selectReservation(vo);
 		return list;
 	}
 	

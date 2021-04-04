@@ -126,12 +126,12 @@ public class GraphController {
 		}
 	
 	@RequestMapping(value="reservation_admin.do", method=RequestMethod.GET)
-	public String extractReservation(HttpServletRequest request,Model model) throws Exception {
+	public String extractReservation(HttpServletRequest request, @ModelAttribute ReservationVO vo, Model model) throws Exception {
 		if(request.getSession() != null ){
 			if(request.getSession().getAttribute("isAdmin") != null ) {
 				if((Integer)request.getSession().getAttribute("isAdmin") == 1 ){
 		
-					List<ReservationVO> list = reservationService.selectReservation();
+					List<ReservationVO> list = reservationService.selectReservation(vo);
 					PagedListHolder pagedListHolder = new PagedListHolder(list);
 					int page = ServletRequestUtils.getIntParameter(request, "p", 0);
 					pagedListHolder.setPage(page);
