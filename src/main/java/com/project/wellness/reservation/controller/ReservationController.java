@@ -28,19 +28,25 @@ public class ReservationController {
    @Autowired
    ReservationService reservationService;
    
+   //예약 조회
    @RequestMapping(value="mypage.do", method=RequestMethod.GET)
    public String selectReservation(HttpServletRequest request, @ModelAttribute ReservationVO vo, Model model) throws Exception {
-      if(request.getSession() != null ){
+      
+	   if(request.getSession() != null ){
          if(request.getSession().getAttribute("userId") != null ) {
-            vo.setUserId((String) request.getSession().getAttribute("userId"));
-            List<ReservationVO> list = reservationService.selectReservation(vo);
-            PagedListHolder pagedListHolder = new PagedListHolder(list);
+            
+        	 vo.setUserId((String) request.getSession().getAttribute("userId"));
+            
+        	 List<ReservationVO> list = reservationService.selectReservation(vo);
+           
+        	 PagedListHolder pagedListHolder = new PagedListHolder(list);
     		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
     		pagedListHolder.setPage(page);
     		pagedListHolder.setPageSize(10);
+    		
     		model.addAttribute("pagedListHolder",pagedListHolder);
             
-            return "mypage";
+            return "reservation/mypage";
          }
          else {
             return "member/login";
@@ -52,34 +58,49 @@ public class ReservationController {
    
    }
    
+   //예약 취소
    @RequestMapping(value="delete.do", method=RequestMethod.GET)
       public String deleteReservation(@RequestParam("num") int num) throws Exception {
          
-      reservationService.deleteReservation(num);
+	   	 reservationService.deleteReservation(num);
          
          return "redirect: mypage.do";
       }
    
-   @RequestMapping(value="reservation.do", method=RequestMethod.GET)
-   public String selectReservation() {
-      return "calendar";
+   //요가 예약페이지
+   @RequestMapping(value="reservationYoga.do", method=RequestMethod.GET)
+   public String selectReservationYoga() {
+      return "reservation/calendarYoga";
    }
    
+   //필라테스 예약페이지
+   @RequestMapping(value="reservationPilates.do", method=RequestMethod.GET)
+   public String selectReservationPilates() {
+      return "reservation/calendarPilates";
+   }
+   
+   //에어로빅 예약페이지
+   @RequestMapping(value="reservationAerobic.do", method=RequestMethod.GET)
+   public String selectReservationAerobic() {
+      return "reservation/calendarAerobic";
+   }
+   
+   //예약 insert
    @RequestMapping(value="reservation.do", method=RequestMethod.POST)
    @ResponseBody   //ajax post 방식 할 때 꼭 써줘야함
-   public int insertReservation(Date regDate, String programId) throws Exception {
+   public int insertReservation(HttpServletRequest request, Date regDate, String programId) throws Exception {
       
-      System.out.println(regDate);
-      System.out.println(programId);
-      
-      ReservationVO vo = new ReservationVO();
-      vo.setRegDate(regDate);
-      vo.setProgramId(programId);
-      int cnt = reservationService.insertReservation(vo);
-      return cnt;
-      
-//      JSONObject jsonObject = new JSONObject();
-//      jsonObject.put("regDate",vo.getRegDate());
-//      jsonObject.put("programId", vo.getProgramId());
+	   if(request.getSession() != null ){
+	         if(request.getSession().getAttribute("userId") != null ) {
+			     ReservationVO vo = new ReservationVO();
+	        	 vo.setUserId((String) request.getSession().getAttribute("userId"));
+				   
+			      vo.setRegDate(regDate);
+			      vo.setProgramId(programId);
+			      int cnt = reservationService.insertReservation(vo);
+			      
+			      return cnt;
+	         }
+	   } return 1;
    }
 }
