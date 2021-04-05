@@ -27,7 +27,7 @@
    </delete>
    
    <insert id="insertReservation" parameterType="Reservation">
-      INSERT INTO reservation VALUES(R_NUM_SEQ.nextval, #{regDate}, #{programId}, 'qwer')
+      INSERT INTO reservation VALUES(R_NUM_SEQ.nextval, #{regDate}, #{programId}, #{userId})
    </insert>
    
    

@@ -86,6 +86,7 @@
 	</style>
 	
 	<script>	
+		
 		document.addEventListener('DOMContentLoaded', function() {
 			var calendarEl = document.getElementById('calendarYoga');
 			var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -111,7 +112,8 @@
 							 $.ajax({
 									type: 'POST',
 									url: 'reservation.do',
-									data: {regDate: regDate, programId: document.querySelector("input[name='programId1']").id },
+									data: {regDate: regDate, 
+											programId: document.querySelector("input[name='programId1']").id},
 									dataType: 'json',
 									success: function(data) {
 										alert("예약되었습니다.");
@@ -166,14 +168,14 @@
 				<div id='reservation-img'>
 					<img src='resources/images/r_images/yoga1.jpg' />
 					<span id='imgtext'>10:00-11:00</span>
-					<input type="button" id="yogaMorning" name="programId1" value="오전예약"/>
+					<input type="button" id="yogaMorning" name="programId1" onclick="btn_reservation();" value="오전예약"/>
 				</div>
 			</div>
 			<div id='reservation-evening'>
 				<div id='reservation-img'>
 					<img src='resources/images/r_images/yoga2.jpg' />
 					<span id='imgtext'>19:00-20:00</span>
-					<input type="button" id="yogaEvening" name="programId2" value="오후예약"/>
+					<input type="button" id="yogaEvening" name="programId2" onclick="btn_reservation();" value="오후예약"/>
 				</div>
 			</div>
 		</div>

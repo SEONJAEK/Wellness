@@ -39,7 +39,7 @@ public class ReservationController {
             
         	 List<ReservationVO> list = reservationService.selectReservation(vo);
            
-        	 PagedListHolder pagedListHolder = new PagedListHolder(list);
+        	PagedListHolder pagedListHolder = new PagedListHolder(list);
     		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
     		pagedListHolder.setPage(page);
     		pagedListHolder.setPageSize(10);
@@ -55,7 +55,6 @@ public class ReservationController {
       }else {
          return "member/login";
       }
-   
    }
    
    //예약 취소
@@ -89,18 +88,17 @@ public class ReservationController {
    @RequestMapping(value="reservation.do", method=RequestMethod.POST)
    @ResponseBody   //ajax post 방식 할 때 꼭 써줘야함
    public int insertReservation(HttpServletRequest request, Date regDate, String programId) throws Exception {
-      
+      int cnt = 0;
 	   if(request.getSession() != null ){
-	         if(request.getSession().getAttribute("userId") != null ) {
-			     ReservationVO vo = new ReservationVO();
-	        	 vo.setUserId((String) request.getSession().getAttribute("userId"));
-				   
-			      vo.setRegDate(regDate);
-			      vo.setProgramId(programId);
-			      int cnt = reservationService.insertReservation(vo);
-			      
-			      return cnt;
-	         }
-	   } return 1;
-   }
+		   if(request.getSession().getAttribute("userId") != null ) {
+			    ReservationVO vo = new ReservationVO();        
+			    vo.setUserId((String) request.getSession().getAttribute("userId"));
+				vo.setRegDate(regDate);
+				vo.setProgramId(programId);
+				System.out.println(vo);
+				cnt = reservationService.insertReservation(vo);
+				return cnt;
+		   }
+	   } return cnt;
+	}
 }
