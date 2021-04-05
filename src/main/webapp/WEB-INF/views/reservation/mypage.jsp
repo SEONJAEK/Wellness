@@ -110,38 +110,38 @@ ul, li {
 			</c:url>
 					
 			<table class="table table-bordered">
-			<c:choose>
-				<c:when test="${empty pagedListHolder.pageList}">등록된 예약이 없습니다.</c:when>
 					<tr>
 						<th>날짜</th>
 						<th>프로그램</th>
 						<th>시간</th>
 						<th>강사</th>
 						<th>예약취소</th>
-					</tr>
-					<c:otherwise>
-						<c:forEach items="${pagedListHolder.pageList}" var="list">
-								<tr>
-									<td>${list.regDate}</td> 
-									<td>${list.programName}</td>
-									<td>${list.programTime}</td>
-									<td>${list.userName}</td>
-									<td>
-										<jsp:useBean id="now" class="java.util.Date" />
-											<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
-											<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
-					
-											<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd" var="reservationDay" />
-											<fmt:parseNumber value="${reservationDay}" integerOnly="true" var="rDay" /> 
-											
-											<c:if test="${today-rDay lt 0}">
-												<li><input type="button" value="예약취소" onclick="btnDelete(${list.num});"></li>
-											</c:if>
-									</td>
-								</tr>
-								<c:set var="index_count" value="${index_count+1}" scope="page" />		
-							</c:forEach>				
-					</c:otherwise>
+					</tr>			
+					<c:choose>
+						<c:when test="${empty pagedListHolder.pageList}">등록된 예약이 없습니다.</c:when>
+						<c:otherwise>
+							<c:forEach items="${pagedListHolder.pageList}" var="list">
+									<tr>
+										<td>${list.regDate}</td> 
+										<td>${list.programName}</td>
+										<td>${list.programTime}</td>
+										<td>${list.userName}</td>
+										<td>
+											<jsp:useBean id="now" class="java.util.Date" />
+												<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
+												<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
+						
+												<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd" var="reservationDay" />
+												<fmt:parseNumber value="${reservationDay}" integerOnly="true" var="rDay" /> 
+												
+												<c:if test="${today-rDay lt 0}">
+													<li><input type="button" value="예약취소" onclick="btnDelete(${list.num});"></li>
+												</c:if>
+										</td>
+									</tr>
+									<c:set var="index_count" value="${index_count+1}" scope="page" />		
+								</c:forEach>				
+						</c:otherwise>
 				</c:choose>
 			</table>
 			<tg:paging pagedListHolder="${pagedListHolder}" pagedLink="${pagedLink}" />
