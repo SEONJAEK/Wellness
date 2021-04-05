@@ -1,18 +1,26 @@
 package com.project.wellness.member.controller;
 
+import java.lang.reflect.Member;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 import com.project.wellness.member.service.MemberService;
 import com.project.wellness.member.vo.MemberVO;
@@ -76,11 +84,7 @@ public class MemberController {
 
 	//회원정보 수정
 	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
-	public String getJoinupd(HttpServletRequest request, Model model) throws Exception {
-		String userId = (String)request.getSession().getAttribute("userId");
-		MemberVO memberVO = new MemberVO();
-		memberVO.setUserId(userId);
-		
+	public String getJoinupd(@ModelAttribute MemberVO memberVO, Model model) throws Exception {
 		
 		model.addAttribute("update", service.viewMember(memberVO)) ;
 		System.out.println("memberREsult : " + service.viewMember(memberVO));
@@ -92,4 +96,29 @@ public class MemberController {
 		service.joinupd(vo);
 		return "index";
 	}
+	
+	// ID 찾기 화면
+		@RequestMapping(value = "idfind.do", method = RequestMethod.GET)
+		public String idfind() {
+			return "member/idfind";
+		}
+
+		// ID 찾기
+		@RequestMapping(value = "idfind.do", method = RequestMethod.POST)
+		public String idfind(@RequestParam("userName")String userName, @RequestParam("email") String email, Model model) {
+			MemberVO memberVO = new MemberVO();
+			memberVO.setUserName(userName);
+			memberVO.setEmail(email);
+			
+			memberVO = service.idfind(memberVO);
+			model.addAttribute("memberVO",memberVO);
+			return "member/resultId";
+			
+		}
+		@RequestMapping(value = "resultId.do", method = RequestMethod.POST)
+		public String resultId() {
+			return "index";
+	}
+		
+
 }

@@ -1,5 +1,7 @@
 package com.project.wellness.member.dao;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -35,4 +37,12 @@ public class MemberDAO {
 	public void joinupd(MemberVO memberVO) {
 		sql.update("Member.joinupd", memberVO);
 	}
+	
+	//아이디찾기
+	public MemberVO idfind(MemberVO memberVO) {
+		return sql.selectOne("Member.idfind", memberVO);
+	}
+
+	
+
 }

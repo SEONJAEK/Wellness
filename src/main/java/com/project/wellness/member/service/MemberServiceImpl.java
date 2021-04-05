@@ -1,5 +1,7 @@
 package com.project.wellness.member.service;
 
+import java.lang.reflect.Member;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -40,5 +42,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void joinupd(MemberVO memberVO) {
 		dao.joinupd(memberVO);
+	}
+	
+	@Override
+	public MemberVO idfind(MemberVO memberVO) {
+		return dao.idfind(memberVO);
 	}
 }

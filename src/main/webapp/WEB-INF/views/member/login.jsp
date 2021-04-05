@@ -11,18 +11,18 @@ text-align: center;
 padding: 30px;
 }
 </style>
-
-<main class="main">
+<!-- 각 페이지 내비 -->
+	<main class="main">
 		<section class="main-top">
-	<h2 class="main-title">MY 예약</h2>
-	<!--  <div class="main-nav">
+	<h2 class="main-title">로그인</h2>
+	<!-- <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
 		<a href="reservation_admin.do">예약관리</a>
 	</div> -->
+	
 	</section>
 	</main>
-
 <form action ="login.do" method="post">
             <h2> Member Login</h2>
            
@@ -35,7 +35,7 @@ padding: 30px;
             <div>
             
             <ul> <br>
-                <a href="" style="margin-left: 30px;" >아이디 찾기</a> &nbsp;
+                <a href="idfind.do" style="margin-left: 30px;" >아이디 찾기</a> &nbsp;
                 <a href="">비밀번호 찾기</a> &nbsp;
                 <a href="">회원가입</a>
             </ul>
@@ -45,4 +45,4 @@ padding: 30px;
      
        </form>
       
-<%@ include file="../include/footer.jsp" %>
+        <%@ include file="../include/footer.jsp" %>

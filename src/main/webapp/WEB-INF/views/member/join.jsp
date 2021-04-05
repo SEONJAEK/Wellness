@@ -212,7 +212,22 @@ background-color: black;
 		width: 400px;
 }
 </style>
-</head>
+
+<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">회원가입</h2>
+	<!-- <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	
+	</section>
+	</main>
+
+
+
 <body>
 
 
