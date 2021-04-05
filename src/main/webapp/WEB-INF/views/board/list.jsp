@@ -12,9 +12,13 @@
 	 
 	 	<title>게시판 페이지</title>
 	<style>
+		.table {
+			font-size : 20px;
+		}
 	 	#keywordInput{
 	 		width : 93%;
 	 	}
+
 	</style>
 	</head>
 	<!-- 각 페이지 내비 -->
@@ -35,7 +39,10 @@
 			<h1>게시판 목록 페이지</h1>
 			<hr />
 			 
-			
+			<div>
+				<%@include file="nav.jsp" %>
+			</div>
+			<hr />
 			
 			<section id="container">
 				<form role="form" method="get">

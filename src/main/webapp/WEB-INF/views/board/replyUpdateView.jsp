@@ -11,7 +11,13 @@
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
 	 	<title>댓글 수정 페이지</title>
+	 	<style>
+		table {
+			font-size : 20px;
+			}
+		</style>
 	</head>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='updateForm']");

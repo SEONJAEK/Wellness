@@ -11,6 +11,11 @@
 		 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 
 	 	<title>게시판</title>
+	<style>
+		p {
+			font-size: 30px;
+		}
+	</style>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -46,6 +51,11 @@
 			
 			 
 			<h1>댓글 삭제  페이지</h1>
+			<hr />
+			 
+			<div>
+				<%@include file="nav.jsp" %>
+			</div>
 			<hr />
 			
 			<section id="container">

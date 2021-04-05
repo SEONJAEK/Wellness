@@ -11,14 +11,20 @@
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
 	 	<title>게시판 수정 페이지</title>
+	 	<style>
+			table {
+				font-size : 20px;
+				}
+		</style>
 	</head>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='updateForm']");
 			
 			$(".cancel_btn").on("click", function(){
 				event.preventDefault();
-				location.href = "/board/readView?bno=${update.bno}"
+				location.href = "list.do?bno=${update.bno}"
 					   + "&page=${scri.page}"
 					   + "&perPageNum=${scri.perPageNum}"
 					   + "&searchType=${scri.searchType}"
@@ -29,7 +35,7 @@
 				if(fn_valiChk()){
 					return false;
 				}
-				formObj.attr("action", "/board/update");
+				formObj.attr("action", "update.do");
 				formObj.attr("method", "post");
 				formObj.submit();
 			})
@@ -71,7 +77,7 @@
 			<hr />
 			
 			<section id="container">
-				<form name="updateForm" role="form" method="post" action="/board/update">
+				<form name="updateForm" role="form" method="post" action="update.do">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
 					<input type="hidden" id="page" name="page" value="${scri.page}"> 
 					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
@@ -81,22 +87,22 @@
 						<tbody>
 							<tr>
 								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
+									<label for="title">제목 : </label><input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
+									<label for="content">내용 : </label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="userid">작성자</label><input type="text" id="userid" name="userid" value="${update.userId}" readonly="readonly"/>
+									<label for="userId">작성자 : </label><input type="text" id="userId" name="userId" value="${update.userId}" readonly="readonly"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="bRegDate">작성날짜</label>
+									<label for="bRegDate">작성날짜 : </label>
 									<fmt:formatDate value="${update.bRegDate}" pattern="yyyy-MM-dd"/>					
 								</td>
 							</tr>		

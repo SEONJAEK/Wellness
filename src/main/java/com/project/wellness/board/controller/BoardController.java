@@ -47,7 +47,7 @@ public class BoardController {
 		
 		service.write(boardVO);
 		
-		return "redirect:/board/list";
+		return "redirect:list.do";
 	}
 	
 	// 게시판 목록 조회
@@ -106,7 +106,7 @@ public class BoardController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/board/list";
+		return "redirect:list.do";
 	}
 
 	// 게시판 삭제
