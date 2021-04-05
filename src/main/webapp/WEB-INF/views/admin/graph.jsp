@@ -162,29 +162,31 @@ a.menubox:hover{
 					<a href="reservation_admin.do" target="_self" class="menubox ">예약관리</a>
 			</div>
 		</nav>
-	</div>
+	</div><br><br><br>
 
 
 	<h1 style="text-align: center; padding-top: 50px;">GRAPH 페이지</h1>
 	<div class="three-column" style="padding-top: 100px;">
 		<!-- 원형그래프 -->
+		
 		<div class="column" id="canvas-holder">
-			<canvas id="chart-area"
-				 ></canvas>
+			<h1 style="text-align: center">남여 회원 성비 </h1><br><br>
+			<canvas id="chart-area"></canvas>
 		</div>
 
 		<!-- 남녀 연령별 막대그래프 -->
 		<div class="column" id="canvas-holder">
-		<canvas id="chart-area1"
-			></canvas>
+		<h1 style="text-align: center">나이대 별 회원 분포도</h1><br><br>
+		<canvas id="chart-area1"></canvas>
 		</div>
 		<!-- 회원 증가추이 꺾은선 그래프 -->
 		<div class="column" id="canvas-holder">
-		<canvas id="chart-area2"
-			></canvas>
+		<h1 style="text-align: center">월별 회원 증가 추이</h1><br><br>
+		<canvas id="chart-area2"></canvas>
 		 </div>
 	</div>
 
+<br><br><br><br><br><br>
 
 	
 	

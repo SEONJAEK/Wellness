@@ -6,6 +6,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="../include/header.jsp" %>
+<link rel="stylesheet"
+	href="<c:url value="resources/css/bootstrap.css"/>">
+
 
 
 
@@ -259,5 +262,6 @@ a.menubox:hover{
 		});
 		
 	</script>
+	<br><br><br><br>
 	<!-- 선재 삽입2 -->		
 <%@ include file="../include/footer.jsp" %>
