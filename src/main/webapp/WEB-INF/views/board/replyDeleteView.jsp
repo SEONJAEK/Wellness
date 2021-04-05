@@ -13,7 +13,7 @@
 	 	<title>게시판</title>
 	<style>
 		p {
-			font-size: 30px;
+			font-size: 20px;
 		}
 	</style>
 	</head>

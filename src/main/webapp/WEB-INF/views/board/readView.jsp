@@ -16,8 +16,9 @@
 
 <title>게시판 상세보기</title>
 <style>
-	div {
-		font-size : 20px;
+
+	.replyContent {
+		font-size : 20px;	
 	}
 	.replyList li {
 		list-style: none;
@@ -162,7 +163,7 @@
 				<ol class="replyList">
 					<c:forEach items="${replyList}" var="replyList">
 						<li>
-							<p>
+							<p class="replyContent">
 								작성자 : ${replyList.userId}<br /> 작성 날짜 :
 								<fmt:formatDate value="${replyList.regDate}"
 									pattern="yyyy-MM-dd" />

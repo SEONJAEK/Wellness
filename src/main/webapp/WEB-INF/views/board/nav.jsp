@@ -6,4 +6,5 @@
 <ul>
 	<li><a href="list.do">목록</a></li>
 	<li><a href="writeView.do">글 작성</a></li>
+	
 </ul>

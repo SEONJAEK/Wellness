@@ -12,8 +12,11 @@
 	 
 	 	<title>게시판 페이지</title>
 	<style>
-		.table {
-			font-size : 20px;
+		tbody {
+			font-size: 20px;
+		}
+		.thead1 {
+			font-size: 25px;
 		}
 	 	#keywordInput{
 	 		width : 93%;
@@ -47,7 +50,7 @@
 			<section id="container">
 				<form role="form" method="get">
 					<table class="table table-hover">
-						<thead>
+						<thead class="thead1">
 							<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>
 						</thead>
 						

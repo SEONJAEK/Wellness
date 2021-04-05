@@ -12,9 +12,7 @@
 	 	
 	 	<title>댓글 수정 페이지</title>
 	 	<style>
-		table {
-			font-size : 20px;
-			}
+		
 		</style>
 	</head>
 	
