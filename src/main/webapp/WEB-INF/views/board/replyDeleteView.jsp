@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html>
+<%@ include file="../include/header.jsp" %>
 	<head>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -27,15 +27,25 @@
 		})
 		
 	</script>
+	<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">관리자메뉴</h2>
+	<!-- <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	
+	</section>
+	</main>
 	<body>
 	
 		<div id="root">
-			<header>
-				<h1> 게시판</h1>
-			</header>
-			<hr />
-			 
+		
 			
+			 
+			<h1>댓글 삭제  페이지</h1>
 			<hr />
 			
 			<section id="container">
@@ -57,4 +67,4 @@
 			<hr />
 		</div>
 	</body>
-</html>
+<%@ include file="../include/footer.jsp" %>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<html>
+<%@ include file="../include/header.jsp" %>
 	<head>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -9,7 +9,7 @@
 	 	
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
-	 	<title>게시판</title>
+	 	<title>게시판 글 쓰기</title>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -33,6 +33,18 @@
 			}
 		}
 	</script>
+	<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">관리자메뉴</h2>
+	<!-- <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	
+	</section>
+	</main>
 	<body>
 	
 		<div id="root">
@@ -43,7 +55,7 @@
 			<hr />
 			
 			<section id="container">
-				<form name="writeForm" method="post" action="/board/write">
+				<form name="writeForm" method="post" action="/board/write.do">
 					<table>
 						<tbody>
 							<tr>
@@ -73,4 +85,4 @@
 			<hr />
 		</div>
 	</body>
-</html>
+<%@ include file="../include/footer.jsp" %>
