@@ -33,7 +33,7 @@ public class GraphController {
 
 	
 	@RequestMapping(value="graph.do",method=RequestMethod.GET)
-		public String selectGraph(HttpServletRequest request,Model model) throws Exception {
+	public String selectGraph(HttpServletRequest request,Model model) throws Exception {
 
 				if(request.getSession() != null ){
 					if(request.getSession().getAttribute("isAdmin") != null ) {
@@ -129,6 +129,66 @@ public class GraphController {
 	
 	
 	
+//	@RequestMapping(value="reservation_admin.do", method=RequestMethod.GET)
+//	public String extractReservation1(HttpServletRequest request, Model model) throws Exception {
+//		if(request.getSession() != null ){
+//			if(request.getSession().getAttribute("isAdmin") != null ) {
+//				if((Integer)request.getSession().getAttribute("isAdmin") == 1 ){
+//					String date = (String)request.getParameter("date");
+//					if(date!=null){
+//						
+//						List<ReservationVO> list = reservationService.selectReservationByDate(date);
+//						PagedListHolder pagedListHolder = new PagedListHolder(list);
+//						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+//						pagedListHolder.setPage(page);
+//						pagedListHolder.setPageSize(10);
+//						model.addAttribute("pagedListHolder",pagedListHolder);
+//						model.addAttribute("select_date",date);
+//						
+//						
+//						
+//						return "admin/reservation";
+//					}else {
+//						java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
+//						String date_current = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+//						
+//						
+//						
+//						List<ReservationVO> list = reservationService.selectReservationByDate(date_current);
+//						PagedListHolder pagedListHolder = new PagedListHolder(list);
+//						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+//						pagedListHolder.setPage(page);
+//						pagedListHolder.setPageSize(10);
+//						model.addAttribute("pagedListHolder",pagedListHolder);
+//						
+//						model.addAttribute("select_date",date_current);
+//						
+//						return "admin/reservation";
+//					}
+//						
+//				
+//						
+////					
+//				}
+//				else {
+//					return "redirect:/";
+//				}
+//				
+//			}
+//			else {
+//				return "member/login";
+//			}
+//			
+//				
+//		}
+//		
+//			
+//		else {
+//			return "member/login";
+//		}
+//				
+//	}
+//	
 	@RequestMapping(value="reservation_admin.do", method=RequestMethod.GET)
 	public String extractReservation1(HttpServletRequest request, Model model) throws Exception {
 		if(request.getSession() != null ){
@@ -137,12 +197,28 @@ public class GraphController {
 					String date = (String)request.getParameter("date");
 					if(date!=null){
 						
-						List<ReservationVO> list = reservationService.selectReservationByDate(date);
-						PagedListHolder pagedListHolder = new PagedListHolder(list);
-						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
-						pagedListHolder.setPage(page);
-						pagedListHolder.setPageSize(10);
-						model.addAttribute("pagedListHolder",pagedListHolder);
+						List<ReservationVO> listAerobic1 = reservationService.selectReservationAerobic1(date);
+						List<ReservationVO> listAerobic2 = reservationService.selectReservationAerobic2(date);
+						List<ReservationVO> listPilates1 = reservationService.selectReservationPilates1(date);
+						List<ReservationVO> listPilates2 = reservationService.selectReservationPilates2(date);
+						List<ReservationVO> listYoga1 = reservationService.selectReservationYoga1(date);
+						List<ReservationVO> listYoga2 = reservationService.selectReservationYoga2(date);
+						
+						
+						
+						
+//						List<ReservationVO> list = reservationService.selectReservationByDate(date);
+//						PagedListHolder pagedListHolder = new PagedListHolder(list);
+//						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+//						pagedListHolder.setPage(page);
+//						pagedListHolder.setPageSize(10);
+						model.addAttribute("listAerobic1",listAerobic1);
+						model.addAttribute("listAerobic2",listAerobic2);
+						model.addAttribute("listPilates1",listPilates1);
+						model.addAttribute("listPilates2",listPilates2);
+						model.addAttribute("listYoga1",listYoga1);
+						model.addAttribute("listYoga2",listYoga2);
+						
 						model.addAttribute("select_date",date);
 						
 						
@@ -154,13 +230,26 @@ public class GraphController {
 						
 						
 						
-						List<ReservationVO> list = reservationService.selectReservationByDate(date_current);
-						PagedListHolder pagedListHolder = new PagedListHolder(list);
-						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
-						pagedListHolder.setPage(page);
-						pagedListHolder.setPageSize(10);
-						model.addAttribute("pagedListHolder",pagedListHolder);
+						List<ReservationVO> listAerobic1 = reservationService.selectReservationAerobic1(date_current);
+						List<ReservationVO> listAerobic2 = reservationService.selectReservationAerobic2(date_current);
+						List<ReservationVO> listPilates1 = reservationService.selectReservationPilates1(date_current);
+						List<ReservationVO> listPilates2 = reservationService.selectReservationPilates2(date_current);
+						List<ReservationVO> listYoga1 = reservationService.selectReservationYoga1(date_current);
+						List<ReservationVO> listYoga2 = reservationService.selectReservationYoga2(date_current);
 						
+						model.addAttribute("listAerobic1",listAerobic1);
+						model.addAttribute("listAerobic2",listAerobic2);
+						model.addAttribute("listPilates1",listPilates1);
+						model.addAttribute("listPilates2",listPilates2);
+						model.addAttribute("listYoga1",listYoga1);
+						model.addAttribute("listYoga2",listYoga2);
+						
+//						PagedListHolder pagedListHolder = new PagedListHolder(list);
+//						int page = ServletRequestUtils.getIntParameter(request, "p", 0);
+//						pagedListHolder.setPage(page);
+//						pagedListHolder.setPageSize(10);
+//						model.addAttribute("pagedListHolder",pagedListHolder);
+//						
 						model.addAttribute("select_date",date_current);
 						
 						return "admin/reservation";

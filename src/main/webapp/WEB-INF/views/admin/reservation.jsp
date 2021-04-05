@@ -5,34 +5,39 @@
 <%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ include file="../include/header.jsp" %>
+<%@ include file="../include/header.jsp"%>
+<link rel="stylesheet"
+	href="<c:url value="resources/css/bootstrap.css"/>">
+<link
+	href="<c:url value="resources/fullcalendar/packages/core/main.css"/>"
+	rel='stylesheet' />
+<link
+	href="<c:url value="resources/fullcalendar/packages/daygrid/main.css" />"
+	rel='stylesheet' />
+<script
+	src="<c:url value="resources/fullcalendar/packages/core/main.js"/>"></script>
+<script
+	src="<c:url value="/resources/fullcalendar/packages/interaction/main.js"/>"></script>
+<script
+	src="<c:url value="/resources/fullcalendar/packages/daygrid/main.js" />"></script>
 
-<link href="<c:url value="resources/fullcalendar/packages/core/main.css"/>" rel='stylesheet' />
-<link href="<c:url value="resources/fullcalendar/packages/daygrid/main.css" />" rel='stylesheet' />
-<script src="<c:url value="resources/fullcalendar/packages/core/main.js"/>"></script>
-<script src="<c:url value="/resources/fullcalendar/packages/interaction/main.js"/>"></script>
-<script src="<c:url value="/resources/fullcalendar/packages/daygrid/main.js" />"></script>
-	
 
 
 <style>
-
-  .column {
-  float: left!important;
-  width: 30%!important;
-  padding: 10px!important;
-  
+.column {
+	float: left !important;
+	width: 30% !important;
+	padding: 10px !important;
 }
 
-  .three-column:after{
-	  content: "";
-	  display: table;
-	  clear: both;
-  }
-  
- <!--선재 추가1-->
- 
-body {
+.three-column:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+<!--
+선재 추가1-->body {
 	line-height: 2em;
 	font-family: "맑은 고딕";
 }
@@ -111,163 +116,267 @@ ul, li {
 .left {
 	text-align: center;
 }
- <!--선재 추가1-->
- 
- .list-group {
-text-align: center;
-padding-left: 0;
-    margin-bottom: 20px;
-}
-.list-group a.menubox {
-    display: inline-block;
-    width: 250px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background: #ebebeb;
-    border: 1px solid #ebebeb;
-    font-weight: 400;
-    font-size: 15px;
-    color: #666;
-    text-decoration: none;
-    margin: 0 2px;
-    }
-    .list-group a.active {
-    background: #0e0e0e;
-    color: #c59d55;
+
+<!--
+선재 추가1-->.list-group {
+	text-align: center;
+	padding-left: 0;
+	margin-bottom: 20px;
 }
 
-a.menubox:hover{
-    background: #0e0e0e;
-    color: #c59d55;
+.list-group a.menubox {
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background: #ebebeb;
+	border: 1px solid #ebebeb;
+	font-weight: 400;
+	font-size: 15px;
+	color: #666;
+	text-decoration: none;
+	margin: 0 2px;
+}
+
+.list-group a.active {
+	background: #0e0e0e;
+	color: #c59d55;
+}
+
+a.menubox:hover {
+	background: #0e0e0e;
+	color: #c59d55;
 }
 </style>
-  
-<style>
-		#title {
-			
-			text-align: center;
-		}
-		
-		#container {
-			display: flex;
-			justify-content: space-between;
-		
-			 margin: auto;
-  			
-		}
-		
-		#calendarYoga {
-			padding: 0px;
-			margin: 5px;
-			width:500px;
-		
-		}
-		
 
-		
-		#reservation-img {
-			position: relative;
-		}
-		
-		#imgtext {
-			position: absolute;;
-			font-size: 48px;
-			top: 250px;
-			right: 80px;
-		}
-	</style>
-	
-	
-	<!-- 각 페이지 내비 -->
-	<main class="main">
-		<section class="main-top">
-	<h2 class="main-title">관리자메뉴</h2>
+<style>
+#title {
+	text-align: center;
+}
+
+#container {
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+}
+
+#calendarYoga {
+	padding: 0px;
+	margin: 5px;
+	width: 500px;
+}
+
+#reservation-img {
+	position: relative;
+}
+
+#imgtext {
+	position: absolute;;
+	font-size: 48px;
+	top: 250px;
+	right: 80px;
+}
+</style>
+
+
+<!-- 각 페이지 내비 -->
+<main class="main">
+	<section class="main-top">
+		<h2 class="main-title">관리자메뉴</h2>
 
 	</section>
-	</main>
-	
-	<div class="sub_menu">
-		<nav id="sub_menu">
-			<div class="list-group" style="text-align:center!important;">
-					<a href="graph.do" target="_self" class="menubox ">Graph</a>
-					<a href="member_admin.do" target="_self" class="menubox ">회원관리</a>
-					<a href="reservation_admin.do" target="_self" class="menubox active">예약관리</a>
-			</div>
-		</nav>
-	</div>
-	
-	
-	
-	<!-- 선재 삽입2 -->	
-	<h4 id="title">Please select the date you want to check</h4>
-	<div id='container'>
-		<div id='calendarYoga'></div>
-		
-	</div>
-	
-		<div id="mainWrapper">
-		<h1 style="text-align: center; padding-top: 50px;">예약 정보 (${select_date})</h1>
-		<!-- index_count 변수 : 1부터 선언-->
-		<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
-		<ul>
-	
-			
-			<div class="container" style="margin-top: 20px;">
-				<jsp:useBean id="pagedListHolder" scope="request"
-					type="org.springframework.beans.support.PagedListHolder" />
-				<c:url value="/reservation_admin.do" var="pagedLink">
-					<c:param name="p" value="~" />
-				</c:url>
-		
+</main>
 
-				<table class="table table-bordered">
-					<tr>
-						<th>날짜</th>
-						<th>프로그램</th>
-						<th>시간</th>
-						<th>회원</th>
-			
-	
-					</tr>
-					<!-- 반복문 써서 모든 회원정보 출력 -->
-					<c:forEach items="${pagedListHolder.pageList}" var="item">
-						<tr>
-							<td>${item.regDate}</td>
-							<td>${item.programName}</td>
-							<td>${item.programTime}</td>
-							<td>${item.userName}</td>
-							
-							<jsp:useBean id="now" class="java.util.Date" />
-								<fmt:formatDate value="${now}" pattern="yyyyMMdd" var="today" />
-								<fmt:parseNumber value="${today}" integerOnly="true" var="today" />
-	
-								<fmt:formatDate value="${list.regDate}" pattern="yyyyMMdd"
-									var="reservationDay" />
-								<fmt:parseNumber value="${reservationDay}" integerOnly="true"
-									var="rDay" /> 
-	
-
-
-				
-							
-					
-						</tr>
-						<!-- index_count 1씩 증가 -->
-						<c:set var="index_count" value="${index_count+1}" scope="page" />
-					</c:forEach>
-				</table>
-				<tg:paging pagedListHolder="${pagedListHolder}"
-					pagedLink="${pagedLink}" />
-			</div>
-			
-			
-		</ul>
+<div class="sub_menu">
+	<nav id="sub_menu">
+		<div class="list-group" style="text-align: center !important;">
+			<a href="graph.do" target="_self" class="menubox ">Graph</a> <a
+				href="member_admin.do" target="_self" class="menubox ">회원관리</a> <a
+				href="reservation_admin.do" target="_self" class="menubox active">예약관리</a>
 		</div>
+	</nav>
+</div>
+
+
+<br>
+<br>
+<br>
+<!-- 선재 삽입2 -->
+<h1 id="title">GX 예약 현황</h1>
+<br>
+<br>
+<div id='container'>
+	<div id='calendarYoga'></div>
+
+</div>
+<!-- 요가 -->
+<div id="mainWrapper">
+	<h1 style="text-align: center; padding-top: 50px;">예약 정보
+		(${select_date})</h1>
+		
+	<!-- 요가1: index_count 변수 : 1부터 선언-->
+	<c:set var="yoga1_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>YOGA [오전]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listYoga1}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${yoga1_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
 	
-	
-	
-	<script>	
+	<!--요가2: index_count 변수 : 1부터 선언-->
+	<c:set var="yoga2_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>YOGA [오후]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listYoga2}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${yoga2_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
+	<!--필라테스1: index_count 변수 : 1부터 선언-->
+	<c:set var="pilates1_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>PILATES [오전]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listPilates1}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${pilates1_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
+	<!--필라테스2: index_count 변수 : 1부터 선언-->
+	<c:set var="pilates2_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>PILATES [오후]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listPilates2}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${pilates2_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
+
+	<!-- 에어로빅1: index_count 변수 : 1부터 선언-->
+	<c:set var="aerobic1_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>AEROBIC [오전]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listAerobic1}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${aerobic1_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
+
+	<!-- 에어로빅2: index_count 변수 : 1부터 선언-->
+	<c:set var="aerobic2_count" value="1" scope="page" />
+	<div class="col-xs-6">
+		<table class="table table-bordered">
+			<h1>AEROBIC [오후]</h1>
+			<tr>
+				<th>ID</th>
+				<th>회원 이름</th>
+				<th>회원 아이디</th>
+				<th>전화번호</th>
+			</tr>
+			<!-- 반복문 써서 모든 회원정보 출력 -->
+			<c:forEach items="${listAerobic2}" var="item">
+				<tr>
+					<td>${index_count}</td>
+					<td>${item.userName}</td>
+					<td>${item.userId}</td>
+					<td>${item.phone}</td>
+				</tr>
+				<!-- index_count 1씩 증가 -->
+				<c:set var="index_count" value="${aerobic2_count+1}" scope="page" />
+			</c:forEach>
+		</table>
+	</div>
+
+
+
+</div>
+
+
+
+
+<!-- 에어로빅 -->
+
+
+
+
+
+<script>	
 		document.addEventListener('DOMContentLoaded', function() {
 			var calendarEl = document.getElementById('calendarYoga');
 			var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -321,4 +430,4 @@ a.menubox:hover{
 		
 	
 		</script>
-<%@ include file="../include/footer.jsp" %>
+<%@ include file="../include/footer.jsp"%>

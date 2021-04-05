@@ -32,13 +32,52 @@
    
    
    
-  <!-- 선재 회원 예약 코드 날짜 -->
-	<select id="selectReservationByDate" resultMap="resultReservation" parameterType="String">
-		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_name from program p 
+  <!-- 선재 회원 요가 1-->
+   <select id="selectReservationYoga1" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
 	    join reservation r  on p.program_id = r.program_id
-	    join member_info m on  m.user_id = r.user_id and  m.user_id = r.user_id 
-        where r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD') and r.program_id = 'yogaMorning'
 	    order by r.r_num
 	</select>
-   
+	 <!-- 선재 회원 요가 2-->
+   <select id="selectReservationYoga2" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  and r.program_id = 'yogaEvening'
+	    order by r.r_num
+	</select>
+	 <!-- 선재 회원 필라테스 1 -->
+   <select id="selectReservationPilates1" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  and r.program_id = 'pilatesMorning'
+	    order by r.r_num
+	</select>
+	 <!-- 선재 회원 필라테스2 -->
+   <select id="selectReservationPilates2" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  and r.program_id = 'pilatesEvening'
+	    order by r.r_num
+	</select>
+	 <!-- 선재 회원 에어로빅1 -->
+   <select id="selectReservationAerobic1" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  and r.program_id = 'aerobicMorning'
+	    order by r.r_num
+	</select>
+	 <!-- 선재 회원 에어로빅2-->
+   <select id="selectReservationAerobic2" resultMap="resultReservation" parameterType="String">
+		select r.r_num, p.program_name, r.r_reg_date, p.program_time, m.user_id ,m.user_name, m.phone from program p 
+	    join reservation r  on p.program_id = r.program_id
+	    join member_info m on  m.user_id = r.user_id
+        where r.r_reg_date =  TO_DATE(#{date}, 'YYYY-MM-DD')  and r.program_id = 'aerobicEvening'
+	    order by r.r_num
+	</select>
 </mapper>
