@@ -133,9 +133,8 @@
 						<li class="menu_li"><a class="menu_a" href="reservationYoga.do">GX 예약</a>
 							<ul class="sub_ul">
 								<li class="sub_li"><a class="sub_a" href="reservationYoga.do">요가</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">필라테스</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">에어로빅</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">PT</a></li>
+								<li class="sub_li"><a class="sub_a" href="#reservationPilates.do">필라테스</a></li>
+								<li class="sub_li"><a class="sub_a" href="reservationAerobic.do">에어로빅</a></li>
 							</ul></li>
 						<li class="menu_li"><a class="menu_a" href="list.do">Q & A</a></li>
 						<!-- 초롱언니 코드 
