@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>  
+<%@ include file="../include/header.jsp" %>
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -171,7 +172,7 @@ h5{
 .id_Button{
 background-color: black;
 		color: white;
-		width: 120px;
+		width: 130px;
 		height: 30px;
 }
 .form-control{
@@ -179,14 +180,27 @@ background-color: black;
 		width: 400px;
 }
 </style>
-</head>
+
+<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+	<h2 class="main-title">회원정보 수정</h2>
+	<!-- <div class="main-nav">
+		<a href="graph.do">Graph</a> 
+		<a href="member_admin.do">회원관리</a>
+		<a href="reservation_admin.do">예약관리</a>
+	</div> -->
+	
+	</section>
+	</main>
+
 <body>
 
 
 <!-- 입력  -->
-<h1 style="text-align:center;">회원정보 수정</h1>
+<h1 style="text-align:center; margin-top: 40px;">회원정보 수정</h1>
 
-<div class="jumbotron" style="width:500px; margin-top:30px; margin-left: 360px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
+<div class="jumbotron" style="width:500px; height: 400px; margin: 0 auto; margin-top: 40px; margin-bottom: 40px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 30px;">
   
 	<form action="joinupd.do" method="post" id="myForm">
 	
@@ -295,10 +309,11 @@ background-color: black;
    	 		<input type="text" class="form-control" placeholder="상세주소" name="address2" id="mem_detailaddress" required style="display:inline-block; width: 200px"/>
 		</div>
 	</h6>
-	<div style="margin:0 auto;text-align:center;">
+	<div style="margin-top: 30px; text-align:center;">
 		<input type="submit" value="수정하기" class="singup"/><br>
 		</div>
    </form>
 </div>
+<%@ include file="../include/footer.jsp" %>
 		
 		
