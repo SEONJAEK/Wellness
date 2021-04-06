@@ -7,10 +7,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="../include/header.jsp" %>
 <link rel="stylesheet"
-	href="<c:url value="resources/css/bootstrap.css"/>">
-
-
-
+	href="<c:url value="resources/css/bootstrap.css?ver=1"/>">
 
 <style>
 
@@ -31,7 +28,7 @@
  
 body {
 	line-height: 2em;
-	font-family: "맑은 고딕";
+	/*font-family: "맑은 고딕";*/
 }
 
 ul, li {
@@ -42,13 +39,13 @@ ul, li {
 }
 
 #mainWrapper {
-	width: 70%;
+	width: 100%;
 	margin: 0 auto; /*가운데 정렬*/
 }
 
 #mainWrapper>ul>li:first-child {
 	text-align: center;
-	font-size: 14pt;
+	font-size: 1rem;
 	height: 40px;
 	vertical-align: middle;
 	line-height: 30px;
@@ -73,7 +70,7 @@ ul, li {
 
 #ulTable>li>ul>li {
 	float: left;
-	font-size: 10pt;
+	font-size: 1rem;
 	border-bottom: 1px solid silver;
 	vertical-align: baseline;
 }
@@ -116,19 +113,19 @@ padding-left: 0;
     margin-bottom: 20px;
 }
 .list-group a.menubox {
-    display: inline-block;
-    width: 250px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    background: #ebebeb;
-    border: 1px solid #ebebeb;
-    font-weight: 400;
-    font-size: 15px;
-    color: #666;
-    text-decoration: none;
-    margin: 0 2px;
-    }
+	display: inline-block;
+	width: 250px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background: #ebebeb;
+	border: 1px solid #ebebeb;
+	font-weight: 400;
+	font-size: 2rem;
+	color: #666;
+	text-decoration: none;
+	margin: 0 2px;
+}
     .list-group a.active {
     background: #0e0e0e;
     color: #c59d55;
@@ -139,14 +136,23 @@ a.menubox:hover{
     color: #c59d55;
 }
 
+h1{font-size: 4rem;}
+h2{font-size: 2rem;}
 
+#membertable{font-size: 1rem;}
+#membertable th{text-align: center;}
+
+@media screen and (max-width: 768px) {
+#membertable .memail .maddre, .mmanag{
+display: none;} 
+}
 </style>
   
 	
 	<!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
-	<h2 class="main-title">MY 예약</h2>
+	<h2 class="main-title">회원 관리 페이지</h2>
 	<!--  <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
@@ -155,22 +161,24 @@ a.menubox:hover{
 	</section>
 	</main>
 	
+	<h1 style="text-align: center; margin-top: 100px;">회원 목록</h1>
+	
+	
 	<div class="sub_menu">
 		<nav id="sub_menu">
-			<div class="list-group" style="text-align:center!important;">
-					<a href="graph.do" target="_self" class="menubox ">Graph</a>
-					<a href="member_admin.do" target="_self" class="menubox active">회원관리</a>
-					<a href="reservation_admin.do" target="_self" class="menubox ">예약관리</a>
+			<div class="list-group" style="text-align:center; margin-top: 100px;">
+					<a href="graph.do" target="_self" class="menubox">회원 분석</a>
+					<a href="member_admin.do" target="_self" class="menubox active">회원 목록</a>
+					<a href="reservation_admin.do" target="_self" class="menubox ">예약 현황</a>
 			</div>
 		</nav>
-	</div>
+	</div><br><br><br>
 	
 	
 	
 	<!-- 선재 삽입2 -->	
 
 		<div id="mainWrapper">
-		<h1 style="text-align: center; padding-top: 50px;">회원 정보 페이지</h1>
 		<!-- index_count 변수 : 1부터 선언-->
 		<c:set var="index_count" value="${pagedListHolder.getPage()*10+1}" scope="page" />
 		<ul>
@@ -184,7 +192,7 @@ a.menubox:hover{
 				</c:url>
 		
 
-				<table class="table table-bordered">
+				<table id="membertable" class="table table-bordered">
 					<tr>
 						<th>번호</th>
 						<th>아이디</th>
@@ -192,10 +200,10 @@ a.menubox:hover{
 						<th>성별</th>
 						<th>나이</th>
 						<th>전화번호</th>
-						<th>이메일</th>
-						<th>주소</th>
+						<th class="memail">이메일</th>
+						<th class="maddre">주소</th>
 						<c:if test="${sessionScope.isAdmin=='1'}">
-							<th>관리자여부</th>
+							<th class="mmanag">관리자여부</th>
 						</c:if>
 	
 					</tr>
@@ -234,9 +242,6 @@ a.menubox:hover{
 			
 		</ul>
 		</div>
-	
-	
-
 	
 	
 	<script>

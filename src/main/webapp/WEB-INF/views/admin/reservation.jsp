@@ -7,7 +7,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ include file="../include/header.jsp"%>
 <link rel="stylesheet"
-	href="<c:url value="resources/css/bootstrap.css"/>">
+	href="<c:url value="resources/css/bootstrap.css?ver=1"/>">
 <link
 	href="<c:url value="resources/fullcalendar/packages/core/main.css"/>"
 	rel='stylesheet' />
@@ -56,7 +56,7 @@ ul, li {
 
 #mainWrapper>ul>li:first-child {
 	text-align: center;
-	font-size: 14pt;
+	font-size: 1rem;
 	height: 40px;
 	vertical-align: middle;
 	line-height: 30px;
@@ -81,7 +81,7 @@ ul, li {
 
 #ulTable>li>ul>li {
 	float: left;
-	font-size: 10pt;
+	font-size: 1rem;
 	border-bottom: 1px solid silver;
 	vertical-align: baseline;
 }
@@ -133,7 +133,7 @@ ul, li {
 	background: #ebebeb;
 	border: 1px solid #ebebeb;
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 2rem;
 	color: #666;
 	text-decoration: none;
 	margin: 0 2px;
@@ -173,37 +173,39 @@ a.menubox:hover {
 
 #imgtext {
 	position: absolute;;
-	font-size: 48px;
+	font-size: 3rem;
 	top: 250px;
 	right: 80px;
 }
+
+h1{font-size: 4rem;}
+h2{font-size: 2rem;}
 </style>
 
 
-<!-- 각 페이지 내비 -->
-<main class="main">
-	<section class="main-top">
-		<h2 class="main-title">관리자메뉴</h2>
+	<!-- 각 페이지 내비 -->
+	<main class="main">
+		<section class="main-top">
+			<h2 class="main-title">회원 관리 페이지</h2>
+		</section>
+	</main>
 
-	</section>
-</main>
+	<h1 style="text-align: center; margin-top: 100px;">GX 예약 현황</h1>
+	
+	
+	<div class="sub_menu">
+		<nav id="sub_menu">
+			<div class="list-group" style="text-align:center; margin-top: 100px;">
+					<a href="graph.do" target="_self" class="menubox">회원 분석</a>
+					<a href="member_admin.do" target="_self" class="menubox">회원 목록</a>
+					<a href="reservation_admin.do" target="_self" class="menubox active">예약 현황</a>
+			</div>
+		</nav>
+	</div><br><br><br>
 
-<div class="sub_menu">
-	<nav id="sub_menu">
-		<div class="list-group" style="text-align: center !important;">
-			<a href="graph.do" target="_self" class="menubox ">Graph</a> <a
-				href="member_admin.do" target="_self" class="menubox ">회원관리</a> <a
-				href="reservation_admin.do" target="_self" class="menubox active">예약관리</a>
-		</div>
-	</nav>
-</div>
 
-
-<br>
-<br>
-<br>
 <!-- 선재 삽입2 -->
-<h1 id="title">GX 예약 현황</h1>
+
 <br>
 <br>
 <div id='container'>
@@ -211,14 +213,14 @@ a.menubox:hover {
 </div>
 <!-- 요가 -->
 <div id="mainWrapper">
-	<h1 style="text-align: center; padding-top: 50px;">예약 정보
-		(${select_date})</h1>
+	<h1 style="text-align: center; padding:0; margin: 100px 0;">
+		${select_date}</h1>
 		
 	<!-- 요가1: index_count 변수 : 1부터 선언-->
 	<c:set var="yoga1_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>YOGA [오전]</h1>
+			<h2>YOGA [오전]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -243,7 +245,7 @@ a.menubox:hover {
 	<c:set var="yoga2_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>YOGA [오후]</h1>
+			<h2>YOGA [오후]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -267,7 +269,7 @@ a.menubox:hover {
 	<c:set var="pilates1_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>PILATES [오전]</h1>
+			<h2>PILATES [오전]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -291,7 +293,7 @@ a.menubox:hover {
 	<c:set var="pilates2_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>PILATES [오후]</h1>
+			<h2>PILATES [오후]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -316,7 +318,7 @@ a.menubox:hover {
 	<c:set var="aerobic1_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>AEROBIC [오전]</h1>
+			<h2>AEROBIC [오전]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -341,7 +343,7 @@ a.menubox:hover {
 	<c:set var="aerobic2_count" value="1" scope="page" />
 	<div class="col-xs-6">
 		<table class="table table-bordered">
-			<h1>AEROBIC [오후]</h1>
+			<h2>AEROBIC [오후]</h2>
 			<tr>
 				<th>ID</th>
 				<th>회원 이름</th>
@@ -365,16 +367,7 @@ a.menubox:hover {
 
 
 </div>
-
-
-
-
 <!-- 에어로빅 -->
-
-
-
-
-
 <script>	
 		document.addEventListener('DOMContentLoaded', function() {
 			var calendarEl = document.getElementById('calendarYoga');
@@ -413,20 +406,13 @@ a.menubox:hover {
 							
 									window.location.href = "reservation_admin.do?date=" + regDate;
 								}
-								
-								
-								
-							});
-						 
+							
+							});			 
 					}
 				});
 			calendar.render();
-		
-			
-		
+	
 		});
 
-		
-	
 		</script>
 <%@ include file="../include/footer.jsp"%>

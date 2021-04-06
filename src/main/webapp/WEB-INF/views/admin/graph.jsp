@@ -110,9 +110,9 @@ ul, li {
  <!--선재 추가1-->
  
 .list-group {
-text-align: center;
-padding-left: 0;
-    margin-bottom: 20px;
+	text-align: center;
+	padding-left: 0;
+
 }
 .list-group a.menubox {
     display: inline-block;
@@ -123,7 +123,7 @@ padding-left: 0;
     background: #ebebeb;
     border: 1px solid #ebebeb;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 2rem;
     color: #666;
     text-decoration: none;
     margin: 0 2px;
@@ -137,13 +137,16 @@ a.menubox:hover{
     background: #0e0e0e;
     color: #c59d55;
 }
+h1{font-size: 4rem;}
+h2{font-size: 2rem;}
+
 </style>
   
 
 	<!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
-	<h2 class="main-title">관리자메뉴</h2>
+	<h2 class="main-title">회원 관리 페이지</h2>
 	<!-- <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
@@ -153,35 +156,37 @@ a.menubox:hover{
 	</section>
 	</main>
 	
+	<h1 style="text-align: center; margin-top: 100px;">회원 분석</h1>
+	
 	
 	<div class="sub_menu">
 		<nav id="sub_menu">
-			<div class="list-group" style="text-align:center!important;">
-					<a href="graph.do" target="_self" class="menubox active">Graph</a>
-					<a href="member_admin.do" target="_self" class="menubox ">회원관리</a>
-					<a href="reservation_admin.do" target="_self" class="menubox ">예약관리</a>
+			<div class="list-group" style="text-align:center; margin-top: 100px;">
+					<a href="graph.do" target="_self" class="menubox active">회원 분석</a>
+					<a href="member_admin.do" target="_self" class="menubox ">회원 목록</a>
+					<a href="reservation_admin.do" target="_self" class="menubox ">예약 현황</a>
 			</div>
 		</nav>
 	</div><br><br><br>
 
 
-	<h1 style="text-align: center; padding-top: 50px;">GRAPH 페이지</h1>
-	<div class="three-column" style="padding-top: 100px;">
+	
+	<div class="three-column" style="padding-top: 100px; margin: 0 auto; min-width: 100%;">
 		<!-- 원형그래프 -->
 		
 		<div class="column" id="canvas-holder">
-			<h1 style="text-align: center">남여 회원 성비 </h1><br><br>
+			<h2 style="text-align: center">남여 회원 성비 </h2><br><br>
 			<canvas id="chart-area"></canvas>
 		</div>
 
 		<!-- 남녀 연령별 막대그래프 -->
 		<div class="column" id="canvas-holder">
-		<h1 style="text-align: center">나이대 별 회원 분포도</h1><br><br>
+		<h2 style="text-align: center">나이대 별 회원 분포도</h2><br><br>
 		<canvas id="chart-area1"></canvas>
 		</div>
 		<!-- 회원 증가추이 꺾은선 그래프 -->
 		<div class="column" id="canvas-holder">
-		<h1 style="text-align: center">월별 회원 증가 추이</h1><br><br>
+		<h2 style="text-align: center">월별 회원 증가 추이</h2><br><br>
 		<canvas id="chart-area2"></canvas>
 		 </div>
 	</div>
