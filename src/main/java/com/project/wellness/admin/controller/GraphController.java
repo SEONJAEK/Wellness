@@ -2,7 +2,9 @@ package com.project.wellness.admin.controller;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -188,6 +190,15 @@ public class GraphController {
 //		}
 //				
 //	}
+	
+	public List<ReservationVO>  fillTenItem(List<ReservationVO> list) {
+		ReservationVO temp = new ReservationVO(-1,new java.sql.Date(new Date().getTime()) , "","","", "", "", "");
+		int list_size = list.size();
+		for (int i = list_size; i < 10; i++) {
+			list.add(i, temp);
+		}
+		return list;
+	}
 //	
 	@RequestMapping(value="reservation_admin.do", method=RequestMethod.GET)
 	public String extractReservation1(HttpServletRequest request, Model model) throws Exception {
@@ -197,12 +208,12 @@ public class GraphController {
 					String date = (String)request.getParameter("date");
 					if(date!=null){
 						
-						List<ReservationVO> listAerobic1 = reservationService.selectReservationAerobic1(date);
-						List<ReservationVO> listAerobic2 = reservationService.selectReservationAerobic2(date);
-						List<ReservationVO> listPilates1 = reservationService.selectReservationPilates1(date);
-						List<ReservationVO> listPilates2 = reservationService.selectReservationPilates2(date);
-						List<ReservationVO> listYoga1 = reservationService.selectReservationYoga1(date);
-						List<ReservationVO> listYoga2 = reservationService.selectReservationYoga2(date);
+						List<ReservationVO> listAerobic1 = fillTenItem(reservationService.selectReservationAerobic1(date));
+						List<ReservationVO> listAerobic2 = fillTenItem(reservationService.selectReservationAerobic2(date));
+						List<ReservationVO> listPilates1 = fillTenItem(reservationService.selectReservationPilates1(date));
+						List<ReservationVO> listPilates2 = fillTenItem(reservationService.selectReservationPilates2(date));
+						List<ReservationVO> listYoga1 = fillTenItem(reservationService.selectReservationYoga1(date));
+						List<ReservationVO> listYoga2 = fillTenItem(reservationService.selectReservationYoga2(date));
 						
 						
 						
@@ -228,14 +239,14 @@ public class GraphController {
 						java.sql.Date sqlDate = new java.sql.Date(new Date().getTime());
 						String date_current = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 						
+						List<ReservationVO> try_ten = fillTenItem(reservationService.selectReservationYoga1("2021-04-17"));
 						
-						
-						List<ReservationVO> listAerobic1 = reservationService.selectReservationAerobic1(date_current);
-						List<ReservationVO> listAerobic2 = reservationService.selectReservationAerobic2(date_current);
-						List<ReservationVO> listPilates1 = reservationService.selectReservationPilates1(date_current);
-						List<ReservationVO> listPilates2 = reservationService.selectReservationPilates2(date_current);
-						List<ReservationVO> listYoga1 = reservationService.selectReservationYoga1(date_current);
-						List<ReservationVO> listYoga2 = reservationService.selectReservationYoga2(date_current);
+						List<ReservationVO> listAerobic1 = fillTenItem(reservationService.selectReservationAerobic1(date_current));
+						List<ReservationVO> listAerobic2 = fillTenItem(reservationService.selectReservationAerobic2(date_current));
+						List<ReservationVO> listPilates1 = fillTenItem(reservationService.selectReservationPilates1(date_current));
+						List<ReservationVO> listPilates2 = fillTenItem(reservationService.selectReservationPilates2(date_current));
+						List<ReservationVO> listYoga1 = fillTenItem(reservationService.selectReservationYoga1(date_current));
+						List<ReservationVO> listYoga2 = fillTenItem(reservationService.selectReservationYoga2(date_current));
 						
 						model.addAttribute("listAerobic1",listAerobic1);
 						model.addAttribute("listAerobic2",listAerobic2);
