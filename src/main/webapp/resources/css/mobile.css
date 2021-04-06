@@ -1,5 +1,5 @@
 /* 모바일용 CSS */
-@media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
     #wrapper{display: flex; flex-flow: column nowrap;}
     /* #mobile-header{}     */
     header{width: 100%; height: 100px;}    
@@ -23,9 +23,9 @@
     }
     .mobile-nav p{font-size: 2rem;}
     .mobile-info{width: 100%; display: flex; position: absolute;
-        bottom:18%; justify-content: center;}
+        bottom:18%; justify-content: space-around;}
     .mobile-info a{color: #5c5857;}
-    .mobile-info p:nth-child(1){margin-right: 50px;}
+    
     .menu-icon{width: 100%; display: flex; flex-direction: column wrap; padding-top: 40px;}
     .menu-icon a{display: inline-block; width: 50%; height: 50%; color:#5c5857; padding-bottom: 50px;}
     /* .menu-icon .top a, .bottom a{padding-bottom: 20%;} */
@@ -33,7 +33,6 @@
     /* .tp, .bt{padding: 10%;} */
     .menu-icon p{padding-top: 10%;}
     .menu-icon .fas, .menu-icon .far{color: #5c5857; font-size: 6rem;}
-    
     .display-text{font-size: 5rem; top:18rem; left:1.5rem;}
     /* 도입부 */
     /* .sec1wrapper{height: 600px;} */
@@ -43,7 +42,6 @@
     .main-contents-wrapper{width: 100%; height: 100%;}
     .main-contents-wrapper img{width: 100%; height: 100%;} 
     .main-pic-wrapper{flex-flow: column wrap; height: auto;}
-    
     
     /* 프로그램 소개 */
     .right-text{flex-flow:column wrap; height: 100%;}
@@ -64,7 +62,6 @@
     /* 각 페이지 상단 */
     .main-nav a{padding: .5rem; margin: .5rem; font-size: 1.5rem;}
 
-
     /* intro.css*/
     /* 시설 안내 */
     .main-contents-wrapper img {width: 100%; height: 100%;}
@@ -73,20 +70,29 @@
     /* 시설 방역 */
     .c-wrapper{flex-flow: column wrap;}
 
+    /* 코치 소개 */
+
     /* 위치 안내 */
     .l-wrapper{flex-flow: column wrap;}
     #map, .ltext{width: 100%;}
-
-
+    .ltext{min-height: 300px;}
 
     /* footer */
     footer .logo, footer .logo a{width: 50%; height: 100px;}
     footer .office-info-wrapper{width:100%; flex-direction: column wrap;}
     footer .office-info{width:100%;}
-    footer p{font-size: 1rem;}
+    footer p{font-size: 1.3rem;}
     .office-info:nth-child(1){margin-right: 5%;}
     .office-info:nth-child(3){display:none;}
-    /* footer .sns-wrapper{display: inline-block; margin-top: 1rem;} */
-    /* footer .fab:first-child{margin-right: 30px;} */
-}
 
+    /* 프로그램 - gx 프로그램 */
+    .gx-wrapper{flex-flow: column wrap; width: 100%; height: auto;}
+    .gxbox{width: 100%; margin-bottom: 161px;}
+    
+    /* 회원 관리 페이지 */
+   
+    
+    
+    }
+
+	
