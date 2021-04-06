@@ -24,13 +24,31 @@
 		.thead1 {
 			font-size:25px;
 		}
-		
+		a{color:#333333;}
+		a.write {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 34px;
+	    width: 125px;
+	    padding: 0 12px;
+	    border-radius: 4px;
+	    font-size: 1rem;
+	    font-weight: 500;
+	    line-height: 1.5;
+	    text-align: center;
+	    border: 1px solid #65b836;
+	    color: #fff;
+	    background: #55a532 linear-gradient(#91dd70, #55ae2e);    
+	    cursor: pointer;
+	    box-sizing: border-box;
+	    position: relative;}
 	</style>
 	</head>
 	<!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
-	<h2 class="main-title">관리자메뉴</h2>
+	<h2 class="main-title">Q &amp; A</h2>
 	<!-- <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
@@ -42,17 +60,12 @@
 	</main>
 	<body class="boardmain">
 		<div class="container">
-			<h1>게시판 목록 페이지</h1>
-			<hr />
-			 
-			<div>
-				<%@include file="nav.jsp" %>
-			</div>
-			<hr />
-			
+			<h1 class="text-left">전체 글</h1>
+			<hr style="border-top: 1px solid #818181;"/>
+
 			<section id="container">
 				<form role="form" method="get">
-					<table class="table table-hover">
+					<table class="table table-hover text-center">
 						<thead class="thead1">
 							<tr><th>번호</th><th>제목</th><th>작성자</th><th>등록일</th><th>조회수</th></tr>
 						</thead>
@@ -89,7 +102,7 @@
 								</span>
 							</div>
 						</div>
-						 
+						<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" href="writeView.do">글 작성</a></li>
 						<script>
 							 $(function(){
 								 $('#searchBtn').click(function() {
@@ -98,7 +111,7 @@
 							 });   
 						</script>
 					</div>
-					<div class="col-md-offset-3">
+					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev}">
 								<li><a href="list.do${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
