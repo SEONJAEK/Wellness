@@ -101,9 +101,9 @@
 								<li class="menu_li"><a class="menu_a"
 									href="member_admin.do">회원 관리 페이지</a>
 									<ul class="sub_ul">
-										<li class="sub_li"><a class="sub_a" href="#">회원 분석</a></li>
-										<li class="sub_li"><a class="sub_a" href="#">회원 목록</a></li>
-										<li class="sub_li"><a class="sub_a" href="#">예약 현황</a></li>
+										<li class="sub_li"><a class="sub_a" href="graph.do">회원 분석</a></li>
+										<li class="sub_li"><a class="sub_a" href="member_admin.do">회원 목록</a></li>
+										<li class="sub_li"><a class="sub_a" href="reservation_admin.do">예약 현황</a></li>
 									</ul></li>
 							</c:when>
 							<c:otherwise>
