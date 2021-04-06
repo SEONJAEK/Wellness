@@ -19,7 +19,7 @@ h3{margin-bottom:2%;}
 
 <main class="main">
 		<section class="main-top">
-	<h2 class="main-title">MY 예약</h2>
+	<h2 class="main-title">아이디 찾기 결과</h2>
 	<!--  <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
@@ -38,8 +38,8 @@ h3{margin-bottom:2%;}
 	   				<h5 id="idfind">아이디: ${memberVO.userId}  </h5>
 					
 					<span>
-						<input type="submit" value="로그인" class="signup" onclick="location.href='${path}/login.do'">
-						<input type="submit" value="패스워드찾기" class="signup" onclick="location.href='${path}/member/pwfind.do'">
+						<input type="submit" style="margin-top: 30px;" value="로그인" class="signup" onclick="location.href='login.do'">
+						<input type="submit" style="margin-top: 30px;" value="비밀번호 찾기" class="signup" onclick="location.href='${path}/member/pwfind.do'">
 					</span>
 				</div> 
 			</div>

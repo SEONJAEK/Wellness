@@ -117,7 +117,7 @@ public class MemberController {
 		}
 		@RequestMapping(value = "resultId.do", method = RequestMethod.POST)
 		public String resultId() {
-			return "index";
+			return "login";
 	}
 		
 

@@ -24,20 +24,20 @@ padding: 30px;
 	</section>
 	</main>
 <form action ="login.do" method="post">
-            <h2> Member Login</h2>
+            <h2  style="margin-top: 40px;"> Member Login</h2>
            
-             <div class="login" style="margin-left: 265px;">
-            <div class="container-fluid" style="border: 2px solid; width: 400px; height: 300px; margin: 100px;">
-                <input type="text" name="userId" placeholder="ID" title="아이디입력" style="width: 250px; height: 40px; margin-left: 80px;"><br>
-                <input type="password" name="userPass" placeholder="PASSWORD" title="비밀번호입력" style="width: 250px; height: 40px; margin-left: 80px;"><br>
-                <input type="submit" value="LOGIN" style="width: 255px; height: 40px; margin-left: 80px;">
+             <div class="login" style="margin-top: 30px; margin-bottom: 40px;">
+<div class="jumbotron" style="width:500px; height: 350px; margin: 0 auto; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
+                <input type="text" name="userId" placeholder="ID" title="아이디입력" style="width: 250px; height: 40px; margin-left: 120px; margin-top: 50px; "><br>
+                <input type="password" name="userPass" placeholder="PASSWORD" title="비밀번호입력" style="width: 250px; height: 40px;  margin-left: 120px;"><br>
+                <input type="submit" value="LOGIN" style="width: 250px; height: 40px;  margin-left: 120px;">
              
             <div>
             
             <ul> <br>
-                <a href="idfind.do" style="margin-left: 30px;" >아이디 찾기</a> &nbsp;
-                <a href="">비밀번호 찾기</a> &nbsp;
-                <a href="">회원가입</a>
+                <a href="idfind.do" style="margin-left: 110px; font-size: 20px;" >아이디 찾기</a> &nbsp;
+                <a href="pwfind.do" style="font-size: 20px;">비밀번호 찾기</a> &nbsp;
+                <a href="join.do"  style="font-size: 20px;">회원가입</a>
             </ul>
             </div>
             </div>

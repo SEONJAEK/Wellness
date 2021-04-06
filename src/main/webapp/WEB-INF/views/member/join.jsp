@@ -204,7 +204,7 @@ h5{
 .id_Button{
 background-color: black;
 		color: white;
-		width: 120px;
+		width: 130px;
 		height: 30px;
 }
 .form-control{
@@ -232,10 +232,10 @@ background-color: black;
 
 
 <!-- 입력  -->
-<h1 style="text-align:center;">회원가입</h1>
+<h1 style="text-align:center; margin-top: 40px;">회원가입</h1>
 
-<div class="jumbotron" style="width:500px; margin-top:30px; margin-left: 360px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
-   <h4>이용약관</h4>
+<div class="jumbotron" style="width:500px; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
+   <h2>이용약관</h2>
         <textarea name="area" style="font-size: 10px; width: 350px; height: 90px;" readonly>
     	웰니스 개인정보 처리 방침
     	웰니스는 정보통신망 이용촉진 및 정보보호 등에
@@ -361,7 +361,7 @@ background-color: black;
 		</div>
 	</h6>
 	<div style="margin:0 auto;text-align:center;">
-		<input type="submit" value="가입하기" class="singup"/><br>
+		<input type="submit" style="margin-top: 30px;" value="가입하기" class="singup"/><br>
 		</div>
    </form>
 </div>
