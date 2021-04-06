@@ -12,6 +12,9 @@
 	 
 	 	<title>게시판 페이지</title>
 	<style>
+		h1 {
+		text-align:center;
+		}
 		.input-group .form-control {
 			width:94%;
 		}

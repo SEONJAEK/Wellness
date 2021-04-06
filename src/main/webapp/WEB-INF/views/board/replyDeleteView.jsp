@@ -12,7 +12,10 @@
 	 
 	 	<title>게시판</title>
 	<style>
-		
+		body {
+			font-size: 25px;
+			text-align: center;
+		}
 	</style>
 	</head>
 	<script type="text/javascript">

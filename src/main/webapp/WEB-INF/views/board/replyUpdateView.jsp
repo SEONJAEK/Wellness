@@ -12,7 +12,14 @@
 	 	
 	 	<title>댓글 수정 페이지</title>
 	 	<style>
-		
+			body {
+			font-size: 25px;
+			text-align: center;
+		}
+			#container {
+			display: inline-block;
+			text-align: center;
+		}
 		</style>
 	</head>
 	

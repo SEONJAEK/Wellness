@@ -9,7 +9,15 @@
 	 	
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
+	 	<title>게시판 글 작성 페이지</title>
 	<style>
+		.chk {
+			background-color: #eee;
+    		opacity: 1;
+		}
+		body {
+			text-align:center;
+		}
 		#content.chk {
 			margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
 		}
@@ -57,36 +65,35 @@
 	
 	</section>
 	</main>
+	<body>
+		<h1>게시판 글 작성 페이지</h1>
+		
+	 	<hr/>
 	 	
 	 	<div>
-				<%@include file="nav.jsp" %>
+			<%@include file="nav.jsp" %>
 		</div>
-		<hr />
-	<body>
+		
+		<hr>
 	
 		<div id="root">
-			<header>
-				<h1> 게시판</h1>
-			</header>
-			<hr />
-			
 			<section id="container">
 				<form name="writeForm" method="post" action="write.do">
 					<table>
 						<tbody id="boardwriteform">
 							<tr>
 								<td>
-									<label for="title">제목 : </label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
+									<label for="title">제목 : </label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요." placeholder="제목을 입력해 주세요"/>
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용 : </label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
+									<label for="content">내용 : </label><textarea id="content" name="content" class="chk" title="내용을 입력하세요." placeholder="내용을 입력해 주세요"></textarea>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="userId">작성자 : </label><input type="text"id="userId" name="userId" class="chk" title="작성자를 입력하세요."/>
+									<label for="userId">작성자 : </label><input type="text"id="userId" name="userId" class="chk" title="작성자를 입력하세요." />
 								</td>
 							<tr>
 								<td>						

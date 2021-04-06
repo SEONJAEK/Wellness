@@ -22,11 +22,17 @@
     	margin-right: -13px;
     	margin-left: -141px;
 	}
+	.form-group {
+    	margin-bottom: 25px;
+	}
 	.control-label {
 		font-size:25px;
 	}
 	# crudbutton { 
-		text-align: left; 
+		float: left; 
+	}
+	ul, h1 {
+		text-align:center;
 	}
 
 </style>

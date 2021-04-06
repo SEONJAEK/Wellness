@@ -11,9 +11,25 @@
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
 	 	<title>게시판 수정 페이지</title>
-	 	<style>
-			
-		</style>
+	<style>
+		.chk {
+			background-color: #eee;
+    		opacity: 1;	
+		}
+		h1 {
+			text-align:center;
+		}
+		#content.chk {
+			margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
+		}
+		#container {
+  			display: flex;
+ 			justify-content: center;
+		}
+		#boardupdateform {
+			font-size: 30px;
+		}
+	</style>
 	</head>
 	
 	<script type="text/javascript">
@@ -82,7 +98,7 @@
 					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
 					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
 					<table>
-						<tbody>
+						<tbody id="boardupdateform">
 							<tr>
 								<td>
 									<label for="title">제목 : </label><input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
@@ -95,7 +111,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="userId">작성자 : </label><input type="text" id="userId" name="userId" value="${update.userId}" readonly="readonly"/>
+									<label for="userId">작성자 : </label><input type="text" id="userId" name="userId" class="chk" value="${update.userId}" readonly="readonly"/>
 								</td>
 							</tr>
 							<tr>
