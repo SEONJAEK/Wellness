@@ -162,10 +162,13 @@
 				<label for="bRegDate" class="col-sm-2 control-label">작성날짜</label>
 				<fmt:formatDate value="${read.bRegDate}" pattern="yyyy-MM-dd" />
 			</div>
-
+			
 			<div id="crudbutton">
-				<button type="button" class="update_btn btn btn-warning">수정</button>
-				<button type="button" class="delete_btn btn btn-danger">삭제</button>
+				<c:if test="${sessionScope.userId == read.userId}">
+						<button type="button" class="update_btn btn btn-warning">수정</button>
+						<button type="button" class="delete_btn btn btn-danger">삭제</button>
+				</c:if>
+				
 				<button type="button" class="list_btn btn btn-primary">목록</button>
 			</div>
 
@@ -201,14 +204,9 @@
 				<input type="hidden" id="keyword" name="keyword"
 					value="${scri.keyword}">
 
-				<div class="form-group">
-					<label for="userId" class="col-sm-2 control-label">댓글 작성자</label>
-					<div class="col-sm-10">
-						<input type="text" id="userId" name="userId" class="form-control" />
-					</div>
-				</div>
-
-				<div class="form-group">
+				
+				<c:if test="${sessionScope.userId != null}">
+						<div class="form-group">
 					<label for="rContent" class="col-sm-2 control-label">댓글 내용</label>
 					<div class="col-sm-10">
 						<input type="text" id="rContent" name="rContent"
@@ -221,6 +219,9 @@
 						<button type="button" class="replyWriteBtn btn btn-success">작성</button>
 					</div>
 				</div>
+				</c:if>
+				
+				
 			</form>
 		</section>
 		<hr />

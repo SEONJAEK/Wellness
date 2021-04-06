@@ -92,10 +92,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<label for="userId">작성자 : </label><input type="text"id="userId" name="userId" class="chk" title="작성자를 입력하세요." />
-								</td>
-							<tr>
 								<td>						
 									<button class="write_btn" type="submit">작성</button>	
 								</td>

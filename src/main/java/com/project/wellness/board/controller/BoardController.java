@@ -50,9 +50,10 @@ public class BoardController {
 	
 	// 게시판 글 작성
 	@RequestMapping(value = "write.do", method = RequestMethod.POST)
-	public String write(BoardVO boardVO) throws Exception{
+	public String write(HttpServletRequest request, BoardVO boardVO) throws Exception{
 		logger.info("write");
-		
+		String user_id = (String) request.getSession().getAttribute("userId");
+		boardVO.setUserId(user_id);
 		service.write(boardVO);
 		
 		return "redirect:list.do";
@@ -135,9 +136,10 @@ public class BoardController {
 	
 	//댓글 작성
 	@RequestMapping(value="replyWrite.do", method = RequestMethod.POST)
-	public String replyWrite(ReplyVO vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
+	public String replyWrite(HttpServletRequest request,ReplyVO vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
 		logger.info("reply Write");
-		
+		String user_id = (String) request.getSession().getAttribute("userId");
+		vo.setUserId(user_id);
 		replyService.writeReply(vo);
 		
 		rttr.addAttribute("bno", vo.getBno());
