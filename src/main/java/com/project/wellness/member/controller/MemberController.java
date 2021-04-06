@@ -83,20 +83,25 @@ public class MemberController {
 	}
 
 	//회원정보 수정
-	@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
-	public String getJoinupd(@ModelAttribute MemberVO memberVO, Model model) throws Exception {
+		@RequestMapping(value = "joinupd.do", method = RequestMethod.GET)
+		public String getJoinupd(HttpServletRequest request, Model model) throws Exception {
+			String userId = (String)request.getSession().getAttribute("userId");
+			MemberVO memberVO = new MemberVO();
+			memberVO.setUserId(userId);
+
+
+			model.addAttribute("update", service.viewMember(memberVO)) ;
+			System.out.println("memberREsult : " + service.viewMember(memberVO));
+			return "member/joinupd";
+		}
 		
-		model.addAttribute("update", service.viewMember(memberVO)) ;
-		System.out.println("memberREsult : " + service.viewMember(memberVO));
-		return "member/joinupd";
+		@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
+		public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
+			service.joinupd(vo);
+			return "index";
+		
 	}
-	
-	@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
-	public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
-		service.joinupd(vo);
-		return "index";
-	}
-	
+		
 	// ID 찾기 화면
 		@RequestMapping(value = "idfind.do", method = RequestMethod.GET)
 		public String idfind() {

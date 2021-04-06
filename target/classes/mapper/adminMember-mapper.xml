@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
+<mapper namespace="Graph">   
+	
+   <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
+	<resultMap id="resultGraph" type="Graph"> 
+		<id property="userId" column="USER_ID" />
+		<result property="userName" column="USER_NAME"/>
+		<result property="gender" column="GENDER"/>
+		<result property="age" column="AGE"/>
+		<result property="phone" column="PHONE"/>
+		<result property="email" column="EMAIL"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="is_admin" column="IS_ADMIN"/>
+	</resultMap>
+	
+	
+
+	<select id="selectGraph" resultMap="resultGraph">
+		SELECT USER_ID, USER_NAME, GENDER,
+		(select extract(year from sysdate) from dual)-USER_BIRTH1 + 1 AS AGE,PHONE,
+		EMAIL, ADDRESS, IS_ADMIN FROM MEMBER_INFO
+	</select>
+	
+	
+	
+	<!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
+	<resultMap id="graph1" type="Graph"> 
+		<result property="count_male" column="COUNT_MALE"/>
+		<result property="count_female" column="COUNT_FEMALE"/>
+	</resultMap>
+	<select id="graph1" resultMap="graph1">
+		SELECT SUM(CASE WHEN Gender = 'M' THEN 1 ELSE 0 END) as COUNT_MALE,
+      	SUM(CASE WHEN Gender = 'F' THEN 1 ELSE 0 END) as COUNT_FEMALE
+	  	FROM member_info
+	</select>
+	
+	
+	<resultMap id="graph2m" type="Graph"> 
+	<result property="m_ten" column="M_TEN"/>
+		<result property="m_twenty" column="M_TWENTY"/>
+		<result property="m_thirty" column="M_THIRTY"/>
+		<result property="m_fourty" column="M_FOURTY"/>
+		<result property="m_fifty" column="M_FIFTY"/>
+		<result property="m_other" column="M_OTHER"/>
+	</resultMap>
+	
+	<select id="graph2m" resultMap="graph2m">
+		SELECT SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=10 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ < 20  ]]> THEN 1 ELSE 0 END) as "M_TEN",
+		SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>20 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ < 30  ]]>THEN 1 ELSE 0 END) as "M_TWENTY",
+      	SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=30 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ <40 ]]> THEN 1 ELSE 0 END) as "M_THIRTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=40 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<50 ]]> THEN 1 ELSE 0 END) as "M_FOURTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=50 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<60]]> THEN 1 ELSE 0 END) as "M_FIFTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<10 ]]> or ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[>60]]> THEN 1 ELSE 0 END) as "M_OTHER"
+	  	FROM member_info WHERE GENDER='M' 
+	</select>
+	
+	<resultMap id="graph2f" type="Graph"> 
+		<result property="f_ten" column="F_TEN"/>
+		<result property="f_twenty" column="F_TWENTY"/>
+		<result property="f_thirty" column="F_THIRTY"/>
+		<result property="f_fourty" column="F_FOURTY"/>
+		<result property="f_fifty" column="F_FIFTY"/>
+		<result property="f_other" column="F_OTHER"/>
+	</resultMap>
+	
+	<select id="graph2f" resultMap="graph2f">
+		SELECT SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=10 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ < 20  ]]> THEN 1 ELSE 0 END) as "F_TEN",
+		SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>20 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ < 30  ]]>THEN 1 ELSE 0 END) as "F_TWENTY",
+      	SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=30 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[ <40 ]]> THEN 1 ELSE 0 END) as "F_THIRTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=40 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<50 ]]> THEN 1 ELSE 0 END) as "F_FOURTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1)>=50 and ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<60]]> THEN 1 ELSE 0 END) as "F_FIFTY",
+        SUM(CASE WHEN ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[<10 ]]> or ((select extract(year from sysdate) from dual)-USER_BIRTH1+1) <![CDATA[>60]]> THEN 1 ELSE 0 END) as "F_OTHER"
+	  	FROM member_info WHERE GENDER='F' 
+	</select>
+	
+	<update id="updateRole">
+		UPDATE member_info SET
+		IS_ADMIN = #{is_admin} WHERE 
+		USER_ID = #{userId}
+	</update>
+</mapper>
