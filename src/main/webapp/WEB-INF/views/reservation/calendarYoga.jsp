@@ -168,25 +168,31 @@
 		</nav>
 	</div>
 
-		<h1 id="title">요가</h1>
-		<div id='container'>
-			<div id='calendarYoga'></div>
-			
-			<div id='reservation-morning'>
-				<div id='reservation-img'>
-					<img src='resources/images/r_images/yoga1.jpg' />
-					<span id='imgtext'>10:00-11:00</span>
-					<input type="button" id="yogaMorning" name="programId1" value="오전예약"/>
-				</div>
-			</div>
-			<div id='reservation-evening'>
-				<div id='reservation-img'>
-					<img src='resources/images/r_images/yoga2.jpg' />
-					<span id='imgtext'>19:00-20:00</span>
-					<input type="button" id="yogaEvening" name="programId2" value="오후예약"/>
-				</div>
-			</div>
-		</div>
+		 <h1 id="title">요가</h1>
+      <div id='container'>
+         <div id='calendarYoga'></div>
+      
+         <div class="wrap">
+         <div id='reservation-morning'>
+            <div id='reservation-img'>
+               <img src='resources/images/r_images/yoga1.jpg' />
+               <span id='imgtext'>10:00-11:00</span>
+               <input type="button" class="btn" id="yogaMorning" name="programId1" onclick="btn_reservation();" value="오전예약"/>
+               </div>
+            </div>
+         </div>
+         
+         <div class="wrap">
+         <div id='reservation-evening'>
+            <div id='reservation-img'>
+               <img src='resources/images/r_images/yoga2.jpg' />
+               <span id='imgtext'>19:00-20:00</span>
+               <input type="button" class="btn" id="yogaEvening" name="programId2" onclick="btn_reservation();" value="오후예약"/>
+            </div>
+         </div>
+      </div>
+
+
 
 	
 
