@@ -106,22 +106,32 @@
 							 $.ajax({
 									type: 'POST',
 									url: 'reservation.do',
-									data: {regDate: regDate, programId: document.querySelector("input[name='programId1']").id },
+									data: {regDate: regDate,
+										   programId: document.querySelector("input[name='programId1']").id },
 									dataType: 'json',
-									success: function(data) {
-										alert("예약되었습니다.");
-									},
+									success: function(cnt) {
+										if(cnt == 1) {
+											alert("예약되었습니다.");	
+										}else {
+											alert("로그인 해주세요.");
+										}
+									}
 							  });
 							}
 						 document.getElementById('pilatesEvening').onclick=function(){
 							 $.ajax({
 									type: 'POST',
 									url: 'reservation.do',
-									data: {regDate: regDate, programId: document.querySelector("input[name='programId2']").id },
+									data: {regDate: regDate,
+										   programId: document.querySelector("input[name='programId2']").id },
 									dataType: 'json',
-									success: function(data) {
-										alert("예약되었습니다.");
-									},
+									success: function(cnt) {
+										if(cnt == 1) {
+											alert("예약되었습니다.");	
+										}else {
+											alert("로그인 해주세요.");
+										}
+									}
 							  });
 						}
 					}
