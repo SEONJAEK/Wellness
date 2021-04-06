@@ -3,7 +3,7 @@
     PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-Mapper.dtd">
 <mapper namespace="Reservation">   
-   <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다. -->
+   <!-- resultMap은 db컬럼명과 vo의 필드값이 안 맞을 때 사용한다.:type은 DAO에 있는 reservation -->
    <resultMap id="resultReservation" type="Reservation"> 
       <id property="num" column="R_NUM" />
       <result property="regDate" column="R_REG_DATE"/>

@@ -30,9 +30,16 @@ public class ReservationDao {
 	}
 
 	public int insertReservation(ReservationVO vo) throws Exception {
-
-		int cnt = sqlSession.insert("Reservation.insertReservation", vo);
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("Reservation.insertReservation", vo);
+			
+        } catch (Exception e) {
+            return -1;
+        }
 		return cnt;
+		
+
 	}
 
 	// 관리자페이지_회원 yoga1 select

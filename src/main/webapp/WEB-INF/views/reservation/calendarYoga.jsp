@@ -83,7 +83,7 @@
 		    background: #0e0e0e;
 		    color: #c59d55;
 		}
-		
+		 
 		 .btn{
       width: 400px;
       height: 70px;
