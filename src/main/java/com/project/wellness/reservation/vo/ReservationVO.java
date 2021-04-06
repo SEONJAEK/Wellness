@@ -14,10 +14,11 @@ public class ReservationVO {
 	private String userId;
 	private String userName;
 	private String programId;
+	private String phone;
 	
 	public ReservationVO() {}
 	
-	public ReservationVO(int num, Date regDate, String programName, String programTime, String userId, String userName, String programId) {
+	public ReservationVO(int num, Date regDate, String programName, String programTime, String userId, String userName, String programId, String phone) {
 		this.num = num;
 		this.regDate = regDate;
 		this.programName = programName;
@@ -25,6 +26,7 @@ public class ReservationVO {
 		this.userId = userId;
 		this.userName = userName;
 		this.programId = programId;
+		this.phone = phone;
 	}	
 	
 	public int getNum() {
@@ -70,6 +72,11 @@ public class ReservationVO {
 	public void setProgramId(String programId) {
 		this.programId = programId;
 	}
-	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	
 }
