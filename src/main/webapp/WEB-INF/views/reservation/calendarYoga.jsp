@@ -83,6 +83,17 @@
 		    background: #0e0e0e;
 		    color: #c59d55;
 		}
+		
+		 .btn{
+      width: 400px;
+      height: 70px;
+      position: absolute;
+      margin-left: -410px;
+      margin-top: 440px;
+      font-size: 20px;
+      }
+		
+		
 	</style>
 	
 	<script>	
