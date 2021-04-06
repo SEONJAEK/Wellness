@@ -55,13 +55,15 @@
 				<div class="mobile-nav nav-down">
 					<div class="menu-icon">
 						<div class="top">
-							<a href="#"><i class="fas fa-dumbbell"></i>
-								<p>지점 소개</p></a> <a href="#"><i class="fas fa-running"></i>
+							<a href="${pageContext.request.contextPath}/intro.do"><i class="fas fa-dumbbell"></i>
+								<p>지점 소개</p></a>
+							<a href="${pageContext.request.contextPath}/program.do"><i class="fas fa-running"></i>
 								<p>프로그램</p></a>
 						</div>
 						<div class="bottom">
-							<a href="#"><i class="far fa-calendar-check"></i>
-								<p>GX 예약</p></a> <a href="#"><i class="far fa-comments"></i>
+							<a href="reservationYoga.do"><i class="far fa-calendar-check"></i>
+								<p>GX 예약</p></a>
+							<a href="list.do"><i class="far fa-comments"></i>
 								<p>Q &amp; A</p></a>
 						</div>
 					</div>
@@ -117,16 +119,16 @@
 						<li class="menu_li"><a class="menu_a"
 							href="${pageContext.request.contextPath}/intro.do">지점소개</a>
 							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="#">시설소개</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">시설방역</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">코치소개</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">위치안내</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#facility">시설소개</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#covid">시설방역</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#coach">코치소개</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#location">위치안내</a></li>
 							</ul></li>
 						<li class="menu_li"><a class="menu_a"
 							href="${pageContext.request.contextPath}/program.do">프로그램</a>
 							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="#">PT</a></li>
-								<li class="sub_li"><a class="sub_a" href="#">GX 프로그램</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/program.do#pt">PT</a></li>
+								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/program.do#gx">GX 프로그램</a></li>
 							</ul></li>
 						<li class="menu_li"><a class="menu_a" href="reservationYoga.do">GX 예약</a>
 							<ul class="sub_ul">
