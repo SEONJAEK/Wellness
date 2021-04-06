@@ -84,7 +84,7 @@
 		    color: #c59d55;
 		}
 		
-		  .btn{
+		 .btn{
       width: 400px;
       height: 70px;
       position: absolute;
@@ -92,6 +92,7 @@
       margin-top: 440px;
       font-size: 20px;
       }
+		
 		
 	</style>
 	
