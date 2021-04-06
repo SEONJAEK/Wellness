@@ -4,10 +4,9 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ include file="../include/header.jsp" %>
 <link rel="stylesheet"
 	href="<c:url value="resources/css/bootstrap.css"/>">
-<%@ include file="../include/header.jsp" %>
-
 <style type="text/css">
 body {
 	line-height: 2em;
