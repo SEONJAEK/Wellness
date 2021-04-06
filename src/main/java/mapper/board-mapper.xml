@@ -14,15 +14,19 @@
    </resultMap>
    
    <!-- 게시판 글 작성 -->
-   <insert id="insert" parameterType="Board" useGeneratedKeys="true" keyProperty="bno">
+   <insert id="insert" parameterType="Board" useGeneratedKeys="false" keyProperty="bno" >
        INSERT INTO BOARD(    BNO 
                             , TITLE 
                             , CONTENT 
-                            , USER_ID  )
-                     VALUES(    #{bno}
+                            , USER_ID
+                            , B_REG_DATE
+                            , HIT  )
+                     VALUES( BOARD_NUM_SEQ.NEXTVAL
                              , #{title}
                              , #{content}
-                             , #{userId}  )
+                             , #{userId}
+                             , SYSDATE
+                             , 0  )
    
     </insert>
    
@@ -31,13 +35,15 @@
               TITLE, 
               CONTENT,
               USER_ID, 
-              B_REG_DATE
+              B_REG_DATE, 
+              HIT 
        FROM ( 
               SELECT BNO, 
                      TITLE, 
                      CONTENT, 
                      USER_ID, 
-                     B_REG_DATE, 
+                     B_REG_DATE,
+                     HIT,  
                      ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
                FROM BOARD
                WHERE 1=1 

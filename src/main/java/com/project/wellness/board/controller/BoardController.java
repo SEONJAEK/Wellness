@@ -3,6 +3,7 @@ package com.project.wellness.board.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,9 +36,14 @@ public class BoardController {
 	
 	// 게시판 글 작성 화면
 	@RequestMapping(value = "writeView.do", method = RequestMethod.GET)
-	public String writeView() throws Exception{
+	public String writeView(HttpServletRequest request) throws Exception{
 		logger.info("writeView");
-		
+
+//		if(request.getSession() != null ){
+//	       if(request.getSession().getAttribute("userId") != null ) {
+//	         vo.setUserId((String) request.getSession().getAttribute("userId"));
+//	       }
+//		}
 		return "board/writeView";
 		
 	}

@@ -4,24 +4,24 @@
 <%@ include file="../include/header.jsp" %>
 	<head>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
 		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="<c:url value="resources/css/bootstrap-theme.css"/>">
 		
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 
 	 	<title>게시판 페이지</title>
 	<style>
-		tbody {
-			font-size: 20px;
+		.input-group .form-control {
+			width:94%;
+		}
+		.boardmain{
+			font-size:20px;
 		}
 		.thead1 {
-			font-size: 25px;
+			font-size:25px;
 		}
-	 	#keywordInput{
-	 		width : 93%;
-	 	}
-
+		
 	</style>
 	</head>
 	<!-- 각 페이지 내비 -->
@@ -37,7 +37,7 @@
 	</section>
 	
 	</main>
-	<body>
+	<body class="boardmain">
 		<div class="container">
 			<h1>게시판 목록 페이지</h1>
 			<hr />

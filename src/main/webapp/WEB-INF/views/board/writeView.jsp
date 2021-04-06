@@ -3,13 +3,25 @@
 <%@ include file="../include/header.jsp" %>
 	<head>
 		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
 		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="<c:url value="resources/css/bootstrap-theme.css"/>">
 	 	
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	 	
-	 	<title>게시판 글 쓰기</title>
+	<style>
+		#content.chk {
+			margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
+		}
+		#container {
+  			display: flex;
+ 			justify-content: center;
+		}
+		#boardwriteform {
+			font-size: 30px;
+		}
+	
+	</style>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -45,6 +57,11 @@
 	
 	</section>
 	</main>
+	 	
+	 	<div>
+				<%@include file="nav.jsp" %>
+		</div>
+		<hr />
 	<body>
 	
 		<div id="root">
@@ -56,20 +73,20 @@
 			<section id="container">
 				<form name="writeForm" method="post" action="write.do">
 					<table>
-						<tbody>
+						<tbody id="boardwriteform">
 							<tr>
 								<td>
-									<label for="title">제목</label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
+									<label for="title">제목 : </label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
 								</td>
 							</tr>	
 							<tr>
 								<td>
-									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
+									<label for="content">내용 : </label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="userId">작성자</label><input type="text" id="userId" name="userId" class="chk" title="작성자를 입력하세요."/>
+									<label for="userId">작성자 : </label><input type="text"id="userId" name="userId" class="chk" title="작성자를 입력하세요."/>
 								</td>
 							<tr>
 								<td>						
@@ -79,7 +96,6 @@
 						</tbody>			
 					</table>
 				</form>
-				
 			</section>
 			<hr />
 		</div>

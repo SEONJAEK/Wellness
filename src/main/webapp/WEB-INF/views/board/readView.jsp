@@ -5,25 +5,30 @@
 <%@ include file="../include/header.jsp"%>
 <head>
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
 <!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="<c:url value="resources/css/bootstrap-theme.css"/>">
 
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <title>게시판 상세보기</title>
 <style>
+	#content{
+		margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
+	}
+	
+	.form-horizontal .form-group {
+    	margin-right: -13px;
+    	margin-left: -141px;
+	}
+	.control-label {
+		font-size:25px;
+	}
+	# crudbutton { 
+		text-align: left; 
+	}
 
-	.replyContent {
-		font-size : 20px;	
-	}
-	.replyList li {
-		list-style: none;
-		border-bottom: 1px solid black;
-	}
 </style>
 </head>
 
@@ -152,7 +157,7 @@
 				<fmt:formatDate value="${read.bRegDate}" pattern="yyyy-MM-dd" />
 			</div>
 
-			<div>
+			<div id="crudbutton">
 				<button type="button" class="update_btn btn btn-warning">수정</button>
 				<button type="button" class="delete_btn btn btn-danger">삭제</button>
 				<button type="button" class="list_btn btn btn-primary">목록</button>
@@ -168,7 +173,7 @@
 								<fmt:formatDate value="${replyList.regDate}"
 									pattern="yyyy-MM-dd" />
 							</p>
-
+							<br/>
 							<p>${replyList.rContent}</p>
 							<div>
 								<button type="button" class="replyUpdateBtn btn btn-warning"
