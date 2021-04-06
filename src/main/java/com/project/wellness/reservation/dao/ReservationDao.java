@@ -35,7 +35,13 @@ public class ReservationDao {
 			cnt = sqlSession.insert("Reservation.insertReservation", vo);
 			
         } catch (Exception e) {
-            return -1;
+        	String error_message = e.getMessage();
+        	boolean check_error = error_message.contains("ALREADY REGISTERED");
+        	if(check_error ==true) {
+        		return -1;
+        	}else {
+        		return -2;
+        	}
         }
 		return cnt;
 		
