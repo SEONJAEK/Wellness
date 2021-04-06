@@ -23,11 +23,11 @@
     <meta property="og:url" content="http://wfitness.co.kr">
     <meta name="robots" content="ALL"> -->
 
-<link rel="stylesheet" href="<c:url value="/resources/css/reset.css" />"
+<link rel="stylesheet" href="<c:url value="/resources/css/reset.css?ver=1"/>"
 	type="text/css">
-<link rel="stylesheet" href="<c:url value="/resources/css/pages.css"/>"
+<link rel="stylesheet" href="<c:url value="/resources/css/pages.css?ver=1"/>"
 	type="text/css">
-<link rel="stylesheet" href="<c:url value="/resources/css/mobile.css"/>"
+<link rel="stylesheet" href="<c:url value="/resources/css/mobile.css?ver=1"/>"
 	type="text/css">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
