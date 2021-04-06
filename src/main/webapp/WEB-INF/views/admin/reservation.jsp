@@ -208,7 +208,6 @@ a.menubox:hover {
 <br>
 <div id='container'>
 	<div id='calendarYoga'></div>
-
 </div>
 <!-- 요가 -->
 <div id="mainWrapper">
@@ -229,13 +228,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listYoga1}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${yoga1_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${yoga1_count+1}" scope="page" />
+				<c:set var="yoga1_count" value="${yoga1_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
@@ -254,13 +253,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listYoga2}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${yoga2_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${yoga2_count+1}" scope="page" />
+				<c:set var="yoga2_count" value="${yoga2_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
@@ -278,13 +277,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listPilates1}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${pilates1_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${pilates1_count+1}" scope="page" />
+				<c:set var="pilates1_count" value="${pilates1_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
@@ -302,13 +301,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listPilates2}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${pilates2_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${pilates2_count+1}" scope="page" />
+				<c:set var="pilates2_count" value="${pilates2_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
@@ -327,13 +326,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listAerobic1}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${aerobic1_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${aerobic1_count+1}" scope="page" />
+				<c:set var="aerobic1_count" value="${aerobic1_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
@@ -352,13 +351,13 @@ a.menubox:hover {
 			<!-- 반복문 써서 모든 회원정보 출력 -->
 			<c:forEach items="${listAerobic2}" var="item">
 				<tr>
-					<td>${index_count}</td>
+					<td>${aerobic2_count}</td>
 					<td>${item.userName}</td>
 					<td>${item.userId}</td>
 					<td>${item.phone}</td>
 				</tr>
 				<!-- index_count 1씩 증가 -->
-				<c:set var="index_count" value="${aerobic2_count+1}" scope="page" />
+				<c:set var="aerobic2_count" value="${aerobic2_count+1}" scope="page" />
 			</c:forEach>
 		</table>
 	</div>
