@@ -30,12 +30,6 @@ public class EmailSender  {
 			System.out.println("MessagingException");
 			e.printStackTrace();
 		}
-		  try {
-              mailSender.send(msg);
-          }catch(MailException e) {
-              System.out.println("MailException발생");
-              e.printStackTrace();
-          }
 
 	}
 }

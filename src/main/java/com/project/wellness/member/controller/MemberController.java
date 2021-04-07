@@ -105,7 +105,7 @@ public class MemberController {
 		@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
 		public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
 			service.joinupd(vo);
-			return "index";
+			return "joinupd";
 		
 	}
 		
@@ -129,7 +129,7 @@ public class MemberController {
 		}
 		@RequestMapping(value = "resultId.do", method = RequestMethod.POST)
 		public String resultId() {
-			return "index";
+			return "login";
 		}		
 			
 		//비밀번호 찾기

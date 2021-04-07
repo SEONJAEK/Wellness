@@ -234,7 +234,7 @@ background-color: black;
 <!-- 입력  -->
 <h1 style="text-align:center; margin-top: 40px;">회원가입</h1>
 
-<div class="jumbotron" style="width:500px; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
+<div class="jumbotron" style="width:500px; height: 600px; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
    <h2>이용약관</h2>
         <textarea name="area" style="font-size: 10px; width: 350px; height: 90px;" readonly>
     	웰니스 개인정보 처리 방침
@@ -255,43 +255,46 @@ background-color: black;
    		<!-- 아이디 중복 값 체크용 히든 밸류 -->
    		<input type="hidden" id="hiddenIdCheck"/>
    		<h6><label>아이디<span id="red"></span><br>
-      		<input type="text" placeholder="아이디"  name="userId" id="userid" class="form-control" required style="display:inline-block; width: 250px" />
-      		<button type ="button" value="ID중복확인" "id="idCheckbutton" class="id_Button" onclick="idCheck()" style="margin-left: 260px; margin-top: -80px;"><i class="fa fa-search"></i> ID중복확인</button>
+      		<input type="text" placeholder="아이디"  name="userId" id="userid" class="form-control" required style="display:inline-block; width: 230px; height: 30px;" />
+      		<button type ="button" value="ID중복확인" "id="idCheckbutton" class="id_Button" onclick="idCheck()" style="display: inline-block;"><i class="fa fa-search"></i> ID중복확인</button>
       		</label><div id="id_check"></div><div id="id_check2"></div>
       	</h6>
  
    		<h6><label>비밀번호<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호" name="userPass" id="userpw" class="form-control" required style="width: 400px"/></label>
+      		<input type="password" placeholder="비밀번호" name="userPass" id="userpw" class="form-control" required style="width: 400px; height: 30px;"/></label>
   			<div id="pw_check"></div>
   		</h6>
   
    		<h6><label>비밀번호확인<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 400px"/></label>
+      		<input type="password" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 400px; height: 30px;"/></label>
    			<div id="pw_check2"></div>
    		</h6>
    
    		<h6><label>이름<span id="red"></span><br>
-      		<input type="text" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 400px"/></label>
+      		<input type="text" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 400px; height: 30px;"/></label>
       		<div id="name_check"></div>
       	</h6>
       
   		<h6><label>핸드폰<span id="red"></span><br>
-      		<input type="tel" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 400px;height: 25px;"/></label>
+      		<input type="tel" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 400px;height: 30px;"/></label>
       	</h6>
   
  		<h6><label>성별<span id="red"></span><br>
- 		 	<select name="gender" style="float:left; height: 25px;" >
+ 		 	<select name="gender" style="float:left; height: 20px;" >
          		<option value="">선택</option>
          		<option value="M">남자</option>
          		<option value="F">여자</option>
          		</select>
          		</label>
          		<br>
-  
+  				<br>
+  			
+  				
   		<h6><label>생년월일<span id="red"></span><br>
-     		<input type="text" name="userBirth1" id="userbirth_yy" class="form-control" maxlength="4" placeholder="년(4자)" size="10" style="float:left;width:200px; display:inline-block;">
+     		<input type="text" name="userBirth1" id="userbirth_yy" class="form-control" maxlength="4" placeholder="년(4자)" size="10" style="float:left;width:200px; height: 30px; display:inline-block;">
+			</label>
 			<!-- 생년월일 월 -->
-      		<select name="userBirth2" style="float:left; height: 25px;" >
+      		<select name="userBirth2" style="float:left; height: 30px;" >
          		<option value="">월</option>
          		<option value="01">1</option>
          		<option value="02">2</option>
@@ -306,8 +309,9 @@ background-color: black;
          		<option value="11">11</option>
          		<option value="12">12</option>   
       		</select>
+      		</h6>
 			<!-- 생년월일 일 -->
-      		<select name="userBirth3" style="float:left;height: 25px;" >
+      		<select name="userBirth3" style="float:left;height: 30px;" >
         		<option value="">일</option>
          		<option value="01">1</option>
          		<option value="02">2</option>
@@ -341,23 +345,23 @@ background-color: black;
          		<option value="30">30</option>
          		<option value="31">31</option>
       		</select>
-     		<div id="year_check"></div></label></h6><br>
+     		<div id="year_check"></div></label></h6><br><br>
      	
    		<h6><label >이메일<span id="red"></span><br>
-      		<input type="email" placeholder="이메일" name="email" id="useremail"  class="form-control" required style="display:inline-block; width: 300px"/>
+      		<input type="email" placeholder="이메일" name="email" id="useremail"  class="form-control" required style="display:inline-block; width: 300px; height: 30px;"/>
       		</label>
       	</h6>
 		
 	<h6>주소<label><span id="red"></span>
 		<div class="form-group">                   
-			<input class="form-control"  placeholder="우편번호" name="post_num" id="mem_oaddress" type="text" readonly="readonly" required style="display:inline-block; width: 100px">
+			<input class="form-control"  placeholder="우편번호" name="post_num" id="mem_oaddress" type="text" readonly="readonly" required style="display:inline-block; width: 100px; height: 30px;">
     			</label>
     		<button type="button" class="id_Button" onclick="execPostCode();" style="display:inline-block;"><i class="fa fa-search"></i> 우편번호 찾기</button>                               
 		</div>
 	
 		<div class="form-group">
-    		<input type="text" class="form-control"  placeholder="도로명 주소" name="address" id="mem_address" required style="width: 254px" readonly="readonly" />
-   	 		<input type="text" class="form-control" placeholder="상세주소" name="address2" id="mem_detailaddress" required style="display:inline-block; width: 200px"/>
+    		<input type="text" class="form-control"  placeholder="도로명 주소" name="address" id="mem_address" required style="width: 254px; height: 30px;" readonly="readonly" />
+   	 		<input type="text" class="form-control" placeholder="상세주소" name="address2" id="mem_detailaddress" required style="display:inline-block; width: 200px; height: 30px;"/>
 		</div>
 	</h6>
 	<div style="margin:0 auto;text-align:center;">

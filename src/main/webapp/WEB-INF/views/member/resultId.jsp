@@ -38,8 +38,8 @@ h3{margin-bottom:2%;}
 	   				<h5 id="idfind">아이디: ${memberVO.userId}  </h5>
 					
 					<span>
-						<input type="submit" style="margin-top: 30px;" value="로그인" class="signup" onclick="location.href='login.do'">
-						<input type="submit" style="margin-top: 30px;" value="비밀번호 찾기" class="signup" onclick="location.href='${path}/member/pwfind.do'">
+						<input type="button" style="margin-top: 30px;" value="로그인" class="signup" onclick="location.href='login.do'">
+						<input type="button" style="margin-top: 30px;" value="비밀번호 찾기" class="signup" onclick="location.href='pwfind.do'">
 					</span>
 				</div> 
 			</div>
