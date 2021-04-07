@@ -67,6 +67,7 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	
 	@RequestMapping(value="loginCheck.do", method=RequestMethod.GET)
 	@ResponseBody
 	public String loginCheck(@RequestParam(value="userId", required = false) String userId,
@@ -79,8 +80,8 @@ public class MemberController {
 		JSONObject json = new JSONObject();
 		
 		if(userId.equals("") || userPass.equals("")) {
-			json.put("rseult", "1");
-		}else if(userPass != vo.getUserPass()) {
+			json.put("result", "1");
+		}else if((userId != null && userPass != null && userPass != vo.getUserPass()) || (userId != null && userPass != null && vo.getAddress()== null)) {
 			json.put("result", "2");
 		}
 		return json.toJSONString();
