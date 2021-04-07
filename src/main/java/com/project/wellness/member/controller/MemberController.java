@@ -67,28 +67,6 @@ public class MemberController {
 		return "member/login";
 	}
 	
-	@RequestMapping(value="loginCheck.do", method=RequestMethod.GET)
-	@ResponseBody
-	public String loginCheck(@RequestParam(value="userId", required = false) String userId, 
-							@RequestParam(value="userPass", required = false) String userPass,HttpServletRequest request) throws Exception {
-		MemberVO vo = new MemberVO();
-		vo.setUserId(userId);
-		vo = service.viewMember(vo);
-		
-		
-		JSONObject json = new JSONObject();
-		System.out.println(userId);
-		System.out.println(userPass);
-		
-		if(userId.equals("") || userPass.equals("")) {
-			json.put("loginCheck",1);
-		}else if(userId != vo.getUserId() || userPass != vo.getUserPass()) {
-			json.put("loginCheck", 2);
-		}
-		System.out.println(json.toJSONString());
-		return json.toJSONString();
-	}
-	
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public ModelAndView postLogin(@ModelAttribute MemberVO vo, HttpSession session) throws Exception{
 		
