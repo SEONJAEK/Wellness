@@ -75,6 +75,11 @@ ul, li {
 .left {
 	text-align: center;
 }
+.reservationMsg {
+	margin: auto;
+	text-align: center;
+	font-size: 48px;
+}
 </style>
 <script>
 	function btnDelete(num) {
@@ -110,9 +115,11 @@ ul, li {
 				<c:param name="p" value="~" />
 			</c:url>
 					
-			<table class="table table-bordered">		
+			<table class="table table-bordered">
 					<c:choose>
-						<c:when test="${empty pagedListHolder.pageList}">등록된 예약이 없습니다.</c:when>
+						<c:when test="${empty pagedListHolder.pageList}">
+							<tr id="reservationMsg">등록된 예약이 없습니다.</tr>
+						</c:when>
 						<c:otherwise>
 							<tr>
 								<th>날짜</th>
