@@ -77,6 +77,14 @@
 		    background: #0e0e0e;
 		    color: #c59d55;
 		}
+		.btn{
+			width: 400px;
+			height: 70px;
+			position: absolute;
+			margin-left: -410px;
+			margin-top: 440px;
+			font-size: 20px;
+		}
 	</style>
 	
 	<script>	
@@ -95,6 +103,9 @@
 					selectable: true,
 					select: function(){
 						document.querySelector(".fc-highlight").style.background = '#5a5a5a';
+					},
+					selectConstraint: {
+					    start: new Date().toISOString().slice(0, 10)
 					},
 					dateClick: function(info) {
 						 var year = info.date.getYear()+1900;
@@ -174,18 +185,22 @@
 	<div id='container'>
 		<div id='calendarAerobic'></div>
 		
-		<div id='reservation-morning'>
-			<div id='reservation-img'>
-				<img src='resources/images/r_images/aerobic1.jpg' /> 
-				<span id='imgtext'>09:00:10:00</span>
-				<input type="button" id="aerobicMorning" name="programId1" value="오전예약"/>
+		<div class="wrap">
+			<div id='reservation-morning'>
+				<div id='reservation-img'>
+					<img src='resources/images/r_images/aerobic1.jpg' /> 
+					<span id='imgtext'>09:00:10:00</span>
+					<input type="button" class="btn" id="aerobicMorning" name="programId1" value="오전예약"/>
+				</div>
 			</div>
 		</div>
-		<div id='reservation-evening'>
-			<div id='reservation-img'>
-				<img src='resources/images/r_images/aerobic2.jpg' />
-				<span id='imgtext'>18:00-19:00</span>
-				<input type="button" id="aerobicEvening" name="programId2" value="오후예약"/>
+		<div class="wrap">
+			<div id='reservation-evening'>
+				<div id='reservation-img'>
+					<img src='resources/images/r_images/aerobic2.jpg' />
+					<span id='imgtext'>18:00-19:00</span>
+					<input type="button" class="btn" id="aerobicEvening" name="programId2" value="오후예약"/>
+				</div>
 			</div>
 		</div>
 	</div>
