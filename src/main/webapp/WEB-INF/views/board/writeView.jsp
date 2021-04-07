@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
+		<!-- 합쳐지고 최소화된 최신 CSS -->
 		<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-theme.css"/>">
@@ -64,25 +64,27 @@
 				<tbody id="boardwriteform">
 					<div class="form-group">
 						<label for="title" class="col-sm-2 control-label"
-							style="margin: 20px 0 10px 0; width: auto;">제목</label> <input
-							type="text" id="title" class="form-control" name="title"
+							style="margin: 20px 0 10px 0; width: auto;">제목</label> 
+						<input type="text" id="title" class="form-control" name="title"
 							value="${update.title}" class="chk" title="제목을 입력해주세요"
-							placeholder="제목을 입력해주세요"
-							style="padding: 6px 16px; box-sizing: border-box;" />
+							placeholder="제목을 입력해주세요" style="padding: 6px 16px; box-sizing: border-box;" />
 					</div>
+					
 					<div class="form-group">
 					<label for="content"class="col-sm-2 control-label" style="margin: 20px 0 10px 0; width: auto;">내용</label>
 					<textarea id="ir1" name="content" class="chk form-control" title="내용을 입력해주세요" 	
 						placeholder="내용을 입력해주세요" style="min-width: 300px; min-height: 350px;"></textarea>
 					</div>
+					
 					<div class="form-group">
 						<label for="userId" class="col-sm-2 control-label"
 							style="margin: 20px 0 10px 0; width: auto;">작성자</label>
 							 
-						<input type="text" id="userId" name="userId" class="chk form-control"
+						<input type="text" id="userId" name="userId" class="chk form-control" value="${sessionScope.userId}"
 							title="작성자를 입력해주세요" placeholder="작성자를 입력해주세요"
 							style="padding: 6px 16px; box-sizing: border-box;" />
 					</div>
+					
 					<div style="display:inline-block; float:right;">
 					<button id="save" class="write_btn" type="submit">작성</button>
 					<input type="reset" class="btn btn-danger" value="취소">		

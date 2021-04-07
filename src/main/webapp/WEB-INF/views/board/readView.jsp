@@ -14,7 +14,7 @@
 
 <title>게시판 상세보기</title>
 <style>
-	#content{
+	#content {
 		margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
 	}
 	
