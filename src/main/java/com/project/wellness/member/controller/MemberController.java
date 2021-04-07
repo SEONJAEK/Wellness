@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+import com.project.wellness.email.Email;
+import com.project.wellness.email.EmailSender;
 import com.project.wellness.member.service.MemberService;
 import com.project.wellness.member.vo.MemberVO;
 
@@ -32,6 +33,12 @@ public class MemberController {
 	
 	@Inject
 	MemberService service;
+	
+	@Autowired
+	private EmailSender emailSender;
+
+	@Autowired
+	private Email email;
 	
 	//회원가입 form
 		@RequestMapping(value = "join.do", method = RequestMethod.GET)
@@ -122,8 +129,33 @@ public class MemberController {
 		}
 		@RequestMapping(value = "resultId.do", method = RequestMethod.POST)
 		public String resultId() {
-			return "login";
-	}
-		
+			return "index";
+		}		
+			
+		//비밀번호 찾기
+			@RequestMapping(value="pwfind.do", method = RequestMethod.GET)
+			public String resultIdForm(){
+				return "member/pwfind";
+		}
 
-}
+			@RequestMapping(value="findpw.do")
+		    public ModelAndView sendEmailAction (@RequestParam Map<String, Object> paramMap, ModelMap model) throws Exception {
+		        ModelAndView mav;
+		        String id=(String) paramMap.get("userId");
+		        String e_mail=(String) paramMap.get("email");
+			        String pw=service.getPw(paramMap);
+			        System.out.println(pw);
+			        if(pw!=null) {
+			            email.setContent("비밀번호는 "+pw+" 입니다.");
+		            email.setReceiver(e_mail);
+		            email.setSubject(id+"님 비밀번호 찾기 메일입니다.");
+		            emailSender.SendEmail(email);
+		            mav= new ModelAndView("redirect:login.do");
+		            return mav;
+		        }else {
+		            mav=new ModelAndView("redirect:logout.do");
+		            return mav;
+		        }
+			}
+
+	}

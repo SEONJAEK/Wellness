@@ -91,4 +91,9 @@
 	SELECT USER_ID FROM member_info WHERE USER_NAME=#{userName} AND EMAIL=#{email}	
 	</select>
 	
+	  <!-- 비밀번호 찾기 -->
+    <select id = "getPw" parameterType="java.util.Map" resultType="String">
+        select USER_PASS from member_info
+        where USER_ID=#{userId} and email=#{email}
+    </select>
 	</mapper>

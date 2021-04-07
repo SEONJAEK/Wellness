@@ -43,6 +43,8 @@ public class MemberDAO {
 		return sql.selectOne("Member.idfind", memberVO);
 	}
 
-	
-
+	//비밀번호찾기
+		public String getPw(Map<String, Object> paramMap) {
+			return sql.selectOne("Member.getPw", paramMap);
+		}
 }
