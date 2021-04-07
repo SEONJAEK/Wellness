@@ -1,6 +1,7 @@
 package com.project.wellness.member.service;
 
 import java.lang.reflect.Member;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
@@ -47,5 +48,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public MemberVO idfind(MemberVO memberVO) {
 		return dao.idfind(memberVO);
+	}
+	
+	@Override
+	public String getPw(Map<String, Object> paramMap) {
+		return dao.getPw(paramMap);
 	}
 }

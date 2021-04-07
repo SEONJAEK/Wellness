@@ -1,6 +1,7 @@
 package com.project.wellness.member.service;
 
 import java.lang.reflect.Member;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +17,7 @@ public interface MemberService {
 	
 	public void joinupd(MemberVO memberVO);
 	
-	public MemberVO idfind(MemberVO memberVO);  //아이디 찾기
+	public MemberVO idfind(MemberVO memberVO);  
 		
+	public String getPw(Map<String, Object> paramMap);
 }
