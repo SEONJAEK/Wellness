@@ -44,6 +44,15 @@
 	    box-sizing: border-box;
 	    position: relative;}
 	</style>
+	<script>
+		function btn_login() {
+			if(confirm('로그인을 해주세요.') == true) {
+				location.href="login.do";
+			}else{
+				return false;
+			}
+		};
+	</script>
 	</head>
 	<!-- 각 페이지 내비 -->
 	<main class="main">
@@ -74,6 +83,12 @@
 							<tr>
 								<td><c:out value="${list.bno}" /></td>
 								<td>
+								<!--<c:choose>
+								<c:when test="${}">
+								</c:when>
+								<c:otherwise>
+								</c:otherwise>
+								</c:choose>	-->
 									<a href="readView.do?bno=${list.bno}&page=${scri.page}&perPageNum=${scri.perPageNum}&searchType=${scri.searchType}&keyword=${scri.keyword}"><c:out value="${list.title}" /></a>
 								</td>
 								<td><c:out value="${list.userId}" /></td>
@@ -102,7 +117,14 @@
 								</span>
 							</div>
 						</div>
-						<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" href="writeView.do">글 작성</a></li>
+						<c:choose>
+							<c:when test="${userId != null}">
+								<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" href="writeView.do">글 작성</a></li>
+							</c:when>
+							<c:otherwise>
+								<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" onclick="btn_login();">글 작성</a></li>
+							</c:otherwise>
+						</c:choose>
 						<script>
 							 $(function(){
 								 $('#searchBtn').click(function() {
@@ -127,7 +149,6 @@
 							</c:if> 
 						</ul>
 					</div>
-								
 				</form>
 			</section>
 		</div>

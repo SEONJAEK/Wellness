@@ -179,22 +179,23 @@ public class BoardController {
 	}
 	
 //	//댓글 삭제 GET
-	@RequestMapping(value="replyDeleteView.do", method = RequestMethod.GET)
-	public String replyDeleteView(ReplyVO vo, SearchCriteria scri, Model model) throws Exception {
+//	@RequestMapping(value="replyDeleteView.do", method = RequestMethod.GET)
+//	public String replyDeleteView(ReplyVO vo, SearchCriteria scri, Model model) throws Exception {
+//		logger.info("reply Write");
+//		
+//		model.addAttribute("replyDelete", replyService.selectReply(vo.getRno()));
+//		model.addAttribute("scri", scri);
+//		
+//
+//		return "board/replyDeleteView";
+//	}
+	
+	//댓글 삭제
+	@RequestMapping(value="replyDelete.do", method = RequestMethod.GET)
+	public String replyDelete(ReplyVO vo, SearchCriteria scri, RedirectAttributes rttr, Model model) throws Exception {
 		logger.info("reply Write");
 		
 		model.addAttribute("replyDelete", replyService.selectReply(vo.getRno()));
-		model.addAttribute("scri", scri);
-		
-
-		return "board/replyDeleteView";
-	}
-	
-	//댓글 삭제
-	@RequestMapping(value="replyDelete.do", method = RequestMethod.POST)
-	public String replyDelete(ReplyVO vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
-		logger.info("reply Write");
-		
 		replyService.deleteReply(vo);
 		
 		rttr.addAttribute("bno", vo.getBno());

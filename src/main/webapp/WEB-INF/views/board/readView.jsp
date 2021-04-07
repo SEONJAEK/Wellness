@@ -100,13 +100,17 @@
 								.on(
 										"click",
 										function() {
-											location.href = "replyDeleteView.do?bno=${read.bno}"
-													+ "&page=${scri.page}"
-													+ "&perPageNum=${scri.perPageNum}"
-													+ "&searchType=${scri.searchType}"
-													+ "&keyword=${scri.keyword}"
-													+ "&rno="
-													+ $(this).attr("data-rno");
+											if(confirm('삭제하시겠습니까?') == true){
+												location.href = "replyDelete.do?bno=${read.bno}"
+														+ "&page=${scri.page}"
+														+ "&perPageNum=${scri.perPageNum}"
+														+ "&searchType=${scri.searchType}"
+														+ "&keyword=${scri.keyword}"
+														+ "&rno="
+														+ $(this).attr("data-rno");
+											}else {
+												return false;
+											}
 										});
 					})
 </script>
@@ -144,6 +148,17 @@
 			</form>
 
 			<div class="form-group">
+				<label for="userId" class="col-sm-2 control-label">작성자</label> <input
+					type="text" id="userId" name="userId" class="form-control"
+					value="${read.userId}" readonly="readonly" />
+			</div>
+			
+			<div class="form-group">
+				<label for="bRegDate" class="col-sm-2 control-label">작성날짜</label>
+				<fmt:formatDate value="${read.bRegDate}" pattern="yyyy-MM-dd" />
+			</div>
+			
+			<div class="form-group">
 				<label for="title" class="col-sm-2 control-label">제목</label> <input
 					type="text" id="title" name="title" class="form-control"
 					value="${read.title}" readonly="readonly" />
@@ -152,15 +167,6 @@
 				<label for="content" class="col-sm-2 control-label">내용</label>
 				<textarea id="content" name="content" class="form-control"
 					readonly="readonly"><c:out value="${read.content}" /></textarea>
-			</div>
-			<div class="form-group">
-				<label for="userId" class="col-sm-2 control-label">작성자</label> <input
-					type="text" id="userId" name="userId" class="form-control"
-					value="${read.userId}" readonly="readonly" />
-			</div>
-			<div class="form-group">
-				<label for="bRegDate" class="col-sm-2 control-label">작성날짜</label>
-				<fmt:formatDate value="${read.bRegDate}" pattern="yyyy-MM-dd" />
 			</div>
 			
 			<div id="crudbutton">
@@ -178,17 +184,18 @@
 					<c:forEach items="${replyList}" var="replyList">
 						<li>
 							<p class="replyContent">
-								작성자 : ${replyList.userId}<br /> 작성 날짜 :
+								작성자 : ${replyList.userId} &nbsp; 작성 날짜 :
 								<fmt:formatDate value="${replyList.regDate}"
 									pattern="yyyy-MM-dd" />
 							</p>
-							<br/>
 							<p>${replyList.rContent}</p>
 							<div>
-								<button type="button" class="replyUpdateBtn btn btn-warning"
-									data-rno="${replyList.rno}">수정</button>
-								<button type="button" class="replyDeleteBtn btn btn-danger"
-									data-rno="${replyList.rno}">삭제</button>
+								<c:if test="${sessionScope.userId == replyList.userId}">
+									<button type="button" class="replyUpdateBtn btn btn-warning"
+										data-rno="${replyList.rno}">수정</button>
+									<button type="button" class="replyDeleteBtn btn btn-danger"
+										data-rno="${replyList.rno}">삭제</button>
+								</c:if>
 							</div>
 						</li>
 					</c:forEach>
