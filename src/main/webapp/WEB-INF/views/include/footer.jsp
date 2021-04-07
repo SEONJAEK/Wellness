@@ -10,6 +10,7 @@
                     <span class="line"></span>
                     <p>웰니스 피트니스</p>
                     <p>서울 강남구 압구정로 99길 99 웰니스빌딩</p>
+                    <p>copyright&copy; 2021. all rights reserved.</p>
                     <span></span>
                 </div>
 
@@ -30,9 +31,8 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>copyright&copy; 2021. all rights reserved.</p>
-            </div>    
+            <!-- <div class="copyright">
+            </div> -->    
 	</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="<c:url value="/resources/js/style.js"/>"
