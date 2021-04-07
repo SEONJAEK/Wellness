@@ -16,11 +16,9 @@
 			font-size: 25px;
 			text-align: center;
 		}
-			.container {
-			min-height: 1000px;
-		}
-			.chk {
-			font-size: 16px;	
+			#container {
+			display: inline-block;
+			text-align: center;
 		}
 		</style>
 	</head>
@@ -56,11 +54,10 @@
 	
 		<div id="root">
 			
+			<h1> 댓글 수정 페이지 </h1>
+			<hr />
 			
-			
-			<section class="container">
-				<h1 class="text-left">댓글 수정</h1>
-			 	<hr style="border-top: 1px solid #818181;"/>
+			<section id="container">
 				<form name="updateForm" role="form" method="post" action="replyUpdate.do">
 					<input type="hidden" name="bno" value="${replyUpdate.bno}" readonly="readonly"/>
 					<input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" />
@@ -68,14 +65,7 @@
 					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
 					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
 					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-					
-					<div class="form-group">
-						<label for="content" class="col-xs-1 control-label" >내용</label>
-						<textarea id="content" name="content" class="chk form-control" style="min-width: 300px; min-height: 350px;">
-						<c:out value="${replyUpdate.rContent}"/></textarea>
-					</div>
-
-					<!-- <table>
+					<table>
 						<tbody>
 							<tr>
 								<td>
@@ -84,16 +74,11 @@
 							</tr>	
 							
 						</tbody>			
-					</table>  -->
-					<div style="display:inline-block; float:right;">
-						<button type="submit" class="update_btn btn btn-success">저장</button>
-						<input type="reset" class="btn btn-danger" value="취소">
-						<a  class="list_btn btn btn-primary" href="list.do">목록</a></li>	
-					</div>
-					<!--  <div>
-						<button type="submit" class="update_btn">저장</button>
+					</table>
+					<div>
+						<button type="submit" class="update_btn">수정</button>
 						<button type="button" class="cancel_btn">취소</button>
-					</div> -->
+					</div>
 				</form>
 			</section>
 			<hr />
