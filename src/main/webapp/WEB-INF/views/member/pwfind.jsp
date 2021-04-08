@@ -30,7 +30,7 @@ color: white;
 			<h2 class="text-center" style="text-align: center; margin-top: 40px;">비밀번호 찾기</h2>
 			<hr style= "border: 1px solid; width: 200px;">
 			<p class="text-center"  style="text-align: center; margin-top: 30px;">
-				아래 이메일주소를 입력하시면,<br> 입력하신 이메일로 새암호를 보내드립니다<br>
+				아래 이메일주소를 입력하시면,<br> 입력하신 이메일로 비밀번호를 보내드립니다<br>
 				<br></p>
 				
 			<div class="jumbotron" style="width:500px; height: 200px; margin-top:40px; margin-bottom: 40px; margin-left: 400px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
