@@ -32,6 +32,8 @@ import com.project.wellness.member.vo.MemberVO;
 public class MemberController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+
+	private static final boolean Exception = false;
 	
 	@Inject
 	MemberService service;
@@ -73,18 +75,34 @@ public class MemberController {
 	public String loginCheck(@RequestParam(value="userId", required = false) String userId,
 							@RequestParam(value="userPass", required = false) String userPass,
 							HttpServletRequest request) {
+		
+		
+		JSONObject json = new JSONObject();
+		
+		//데이터베이스에서 ID PW 체킹하기 전에 값이 적혀져 있지 않은 경우
+		if(userId.equals("") || userPass.equals("") || userId == null || userPass == null) {
+			json.put("result", "1");
+			return json.toJSONString();
+		}
+		
 		MemberVO vo = new MemberVO();
 		vo.setUserId(userId);
 		vo = service.viewMember(vo);
 		
-		JSONObject json = new JSONObject();
-		
-		if(userId.equals("") || userPass.equals("")) {
-			json.put("result", "1");
-		}else if((userId != null && userPass != null && userPass != vo.getUserPass()) || (userId != null && userPass != null && vo.getAddress()== null)) {
+		//vo에 아무것도 담기지 않을 때 (존재하지 않는 아이디를 넣었을 때)
+		if(vo == null) {
 			json.put("result", "2");
+			return json.toJSONString();
 		}
-		return json.toJSONString();
+		
+		//DB에 있는 PW 비교할 경우
+		if(!userPass.equals(vo.getUserPass()) || vo == null) {
+			json.put("result", "2");
+			return json.toJSONString();
+		}else{
+			json.put("result", "0");
+			return json.toJSONString();
+		}
 	}
 	
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)

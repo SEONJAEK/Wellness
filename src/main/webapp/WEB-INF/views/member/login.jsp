@@ -20,9 +20,9 @@ padding: 30px;
 				type: 'GET',
 				data: {userId : $('#userId').val(), userPass : $('#userPass').val()},
 				success: function(data) {
-					if(data.result == "1"){
+					if(data.result[0] == "1"){
 						alert('아이디 또는 비밀번호를 입력해주세요.');
-					}else if(data.result == "2" ) {
+					}else if(data.result[0] == "2" ) {
 						alert('아이디 또는 비밀번호를 확인해주세요.');
 					}
 				}
