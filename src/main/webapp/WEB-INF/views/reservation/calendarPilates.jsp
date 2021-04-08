@@ -123,13 +123,20 @@
 									dataType: 'json',
 									success: function(cnt) {
 										if(cnt == 1) {
-											alert("예약되었습니다.");	
+											alert("예약되었습니다.");
+											if(confirm('My 예약 페이지로  이동하시겠습니까?') == true) {
+												location.href="mypage.do";
+											}
 										}else if(cnt == -1){
 											alert("예약이 이미 완료되었습니다");
 										}else if(cnt == -2){
 											alert("예약불가: 예약 인원수를 초과하였습니다");
 										}else {
-											alert("로그인 해주세요.");
+											if(confirm("로그인을 해주세요. 로그인 페이지로 이동하시겠습니까?") == true) {
+												location.href="login.do";
+											}else {
+												return false;	
+											}
 										}
 									}
 							  });
@@ -143,13 +150,20 @@
 									dataType: 'json',
 									success: function(cnt) {
 										if(cnt == 1) {
-											alert("예약되었습니다.");	
+											alert("예약되었습니다.");
+											if(confirm('My 예약 페이지로  이동하시겠습니까?') == true) {
+												location.href="mypage.do";
+											}
 										}else if(cnt == -1){
 											alert("예약이 이미 완료되었습니다");
 										}else if(cnt == -2){
 											alert("예약불가: 예약 인원수를 초과하였습니다");
 										}else {
-											alert("로그인 해주세요.");
+											if(confirm("로그인을 해주세요. 로그인 페이지로 이동하시겠습니까?") == true) {
+												location.href="login.do";
+											}else {
+												return false;	
+											}
 										}
 									}
 							  });
