@@ -98,7 +98,7 @@
 					header: {        	  
 						left:'',
 						center: 'title',
-						right: ''
+						right: 'prev,next'
 					},		        
 					selectable: true,
 					select: function(){
