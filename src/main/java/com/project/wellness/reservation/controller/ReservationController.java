@@ -84,10 +84,12 @@ public class ReservationController {
       return "reservation/calendarAerobic";
    }
    
-   //예약 insert
+
    @RequestMapping(value="reservation.do", method=RequestMethod.POST)
-   @ResponseBody   //ajax post 방식 할 때 꼭 써줘야함
-   public int insertReservation(HttpServletRequest request, Date regDate, String programId) throws Exception {
+   @ResponseBody
+   public int insertReservation(HttpServletRequest request,
+		   						Date regDate,
+		   						String programId) throws Exception {
       int cnt = 0;
 	   if(request.getSession() != null ){
 		   if(request.getSession().getAttribute("userId") != null ) {
@@ -95,7 +97,6 @@ public class ReservationController {
 			    vo.setUserId((String) request.getSession().getAttribute("userId"));
 				vo.setRegDate(regDate);
 				vo.setProgramId(programId);
-				System.out.println(vo);
 				cnt = reservationService.insertReservation(vo);
 				return cnt;
 		   }
