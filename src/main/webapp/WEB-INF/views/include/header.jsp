@@ -14,7 +14,7 @@
 <title>웰니스 피트니스</title>
 
 <!-- <link rel="canonical" href="http://wfitness.co.kr">
-    <link rel="favicon" href="favicon.ico">
+    <link rel="favicon" href="resources/images/s_images/favi.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="웰니스 피트니스">
     <meta property="og:site_name" content="웰니스 피트니스"/>
@@ -98,16 +98,10 @@
 						<!--선재 수정한 코드  -->
 						<c:choose>
 							<c:when test="${isAdmin == 1}">
-								<li class="menu_li"><a class="menu_a"
-									href="member_admin.do">회원 관리 페이지</a>
-									<ul class="sub_ul">
-										<li class="sub_li"><a class="sub_a" href="graph.do">회원 분석</a></li>
-										<li class="sub_li"><a class="sub_a" href="member_admin.do">회원 목록</a></li>
-										<li class="sub_li"><a class="sub_a" href="reservation_admin.do">예약 현황</a></li>
-									</ul></li>
+								<a href="member_admin.do"><p>회원 관리 페이지</p></a>
 							</c:when>
 							<c:otherwise>
-								<li class="menu_li"><a class="menu_a" href="mypage.do">내 예약</a></li>
+								<a href="mypage.do"><p>내 예약</p></a>
 							</c:otherwise>
 						</c:choose>
 					</div>
