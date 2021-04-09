@@ -272,12 +272,12 @@ h2{font-size: 2rem;}
 		var config2 = {
 				type: 'line',
 				data: {
-					labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월','8월','9월','10월','11월','12월'],
+					labels: ['5월', '6월', '7월', '8월', '9월', '10월', '11월','12월','1월','2월','3월','4월'],
 					datasets: [{
 						label: 'My First dataset',
 						backgroundColor: window.chartColors.red,
 						borderColor: window.chartColors.red,
-						data: [10, 30, 39, 20, 25, 34, 0,0,0,0,0,0],
+						data: [10, 30, 39, 40, 35, 34, 15, 20, 30,20,35,26],
 						fill: false,
 					}]
 				},
