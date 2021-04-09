@@ -14,14 +14,16 @@
 
 <title>게시판 상세보기</title>
 <style>
-	#content {
-		margin: 0px -28px 0px 0px; height: 350px; width: 1165px;
+	#content{
+		margin: 0px -28px 0px 0px; height: 350px; min-width: 300px;
 	}
-	
-	.form-horizontal .form-group {
+	#title, #userId{
+	min-width: 300px;
+	}
+	/* .form-horizontal .form-group {
     	margin-right: -13px;
     	margin-left: -141px;
-	}
+	} */
 	.form-group {
     	margin-bottom: 25px;
 	}
@@ -136,7 +138,6 @@
 		<div>
 			<%@include file="nav.jsp"%>
 		</div>
-		<hr />
 
 		<section id="container">
 			<form name="readForm" role="form" method="post">
@@ -171,7 +172,7 @@
 					readonly="readonly"><c:out value="${read.content}" /></textarea>
 			</div>
 			
-			<div id="crudbutton">
+			<div id="crudbutton" class="text-right" style="padding-top: 30px;">
 				<c:if test="${sessionScope.userId == read.userId || isAdmin == 1}">
 						<button type="button" class="update_btn btn btn-warning">수정</button>
 						<button type="button" class="delete_btn btn btn-danger">삭제</button>
@@ -181,8 +182,10 @@
 			</div>
 
 			<!-- 댓글 -->
+
 			<div id="reply">
-				<ol class="replyList">
+				    <p style="margin-left: 10px; font-size: 25px;">댓글</p>
+				    <hr style="margin-bottom: 10px; padding:0; border-top: 1px solid #818181;">
 					<c:forEach items="${replyList}" var="replyList">
 						<li>
 							<p class="replyContent">
@@ -190,7 +193,8 @@
 								<fmt:formatDate value="${replyList.regDate}"
 									pattern="yyyy-MM-dd" />
 							</p>
-							<p>${replyList.rContent}</p>
+							<hr style="margin:0; padding:0;">
+							<p style="margin-left: 10px; padding-top: 20px;">${replyList.rContent}</p>
 							<div>
 								<c:if test="${sessionScope.userId == replyList.userId}">
 									<button type="button" class="replyUpdateBtn btn btn-warning"
@@ -216,16 +220,14 @@
 				
 				<c:if test="${sessionScope.userId != null}">
 						<div class="form-group">
-					<label for="rContent" class="col-sm-2 control-label">댓글 내용</label>
-					<div class="col-sm-10">
-						<input type="text" id="rContent" name="rContent"
-							class="form-control" />
+					<div class="col-sm-12">
+						<input type="text" id="rContent" name="rContent" class="form-control" style="min-width: 300px; padding-left: 10px; box-sizing: border-box;" placeholder="댓글을 남겨보세요">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="button" class="replyWriteBtn btn btn-success">작성</button>
+					<div class="col-sm-offset-2 col-sm-10 text-right">
+						<button type="button" class="replyWriteBtn btn btn-success">등록</button>
 					</div>
 				</div>
 				</c:if>

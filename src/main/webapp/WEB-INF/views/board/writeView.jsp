@@ -86,7 +86,7 @@
 					</div>
 					
 					<div style="display:inline-block; float:right;">
-					<button id="save" class="write_btn" type="submit">작성</button>
+					<button id="save" class="write_btn btn btn-success" type="submit">작성</button>
 					<input type="reset" class="btn btn-danger" value="취소">		
 					<a  class="list_btn btn btn-primary" href="list.do">목록</a></li>
 						<hr/>

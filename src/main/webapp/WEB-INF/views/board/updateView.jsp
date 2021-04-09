@@ -31,6 +31,7 @@
 		.control-label {	
 			font-size: 25px;	
 		}
+	
 	</style>
 	</head>
 	
@@ -102,11 +103,7 @@
 	<main class="main">
 		<section class="main-top">
 	<h2 class="main-title">관리자메뉴</h2>
-	<!-- <div class="main-nav">
-		<a href="graph.do">Graph</a> 
-		<a href="member_admin.do">회원관리</a>
-		<a href="reservation_admin.do">예약관리</a>
-	</div> -->
+	
 	
 	</section>
 	</main>
@@ -130,7 +127,7 @@
 					</div>	
 					<div class="form-group">	
 						<label for="content" class="col-sm-2 control-label">내용</label>	
-						<textarea id="content" name="content" class="chk form-control" title="내용을 입력하세요." style="min-width: 300px; min-height: 350px;">	
+						<textarea id="ir1" name="content" class="chk form-control" title="내용을 입력하세요." style="min-width: 300px; min-height: 350px;">	
 						<c:out value="${update.content}" /></textarea>	
 					</div>	
 					<div class="form-group">	
