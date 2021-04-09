@@ -25,26 +25,26 @@ color: white;
 	</main>
 
 <body>
-	<div class="contact-clean">
+	<div class="contact-clean" style="min-height:600px;">
 		<form action="findpw.do" method="GET">
 			<h2 class="text-center" style="text-align: center; margin-top: 40px;">비밀번호 찾기</h2>
 			<hr style= "border: 1px solid; width: 200px;">
 			<p class="text-center"  style="text-align: center; margin-top: 30px;">
-				아래 이메일주소를 입력하시면,<br> 입력하신 이메일로 비밀번호를 보내드립니다<br>
+				아래 이메일주소를 입력하시면<br> 입력하신 이메일로 비밀번호를 보내드립니다<br>
 				<br></p>
 				
-			<div class="jumbotron" style="width:500px; height: 200px; margin-top:40px; margin-bottom: 40px; margin-left: 400px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
-				<input type="text" id="userId" name="userId" placeholder="ID를 입력해주세요" style="margin-top: 30px; margin-left: 130px; width: 250px; height: 40px;"
+			<div class="jumbotron" style="width:500px; height: 200px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; margin:0 auto;">
+				<input type="text" id="userId" name="userId" placeholder="아이디를 입력해주세요" style="margin-top: 30px; margin-left: 130px; width: 250px; height: 40px;"
 					class="form-control" class="input"/>
 					
 			<div class="form-group has-error has-feedback">
-				<input type="email" name="email" placeholder="email을 입력해주세요" style="margin-left: 130px; width: 250px; height: 40px;"
+				<input type="email" name="email" placeholder="이메일을 입력해주세요" style="margin-left: 130px; width: 250px; height: 40px;"
 					class="form-control" />
-				<p style="text-align: center; margin-top: 10px;">'@'포함한 이메일주소를 정확히 입력해주세요.</p>
+				<p style="text-align: center; margin-top: 10px;">'@'을 포함한 이메일 주소를 정확히 입력해주세요</p>
 			</div>
 
 			<div class="form-group">
-			<button type="submit" class="btn" style="width: 250px; height:30px; margin-left: 130px; margin-top: 10px;">다음</button>
+			<button type="submit" class="btn" style="border-radius:4px; width: 250px; height:30px; margin-left: 130px; margin-top: 10px;">다음</button>
 			
 			</div>
 			</div>
