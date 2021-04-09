@@ -28,41 +28,33 @@ public class ReservationController {
    @Autowired
    ReservationService reservationService;
    
-   //예약 조회
+
    @RequestMapping(value="mypage.do", method=RequestMethod.GET)
-   public String selectReservation(HttpServletRequest request, @ModelAttribute ReservationVO vo, Model model) throws Exception {
-      
+   public String selectReservation(HttpServletRequest request, 
+		   						   @ModelAttribute ReservationVO vo,
+		   						   Model model) throws Exception {      
 	   if(request.getSession() != null ){
-         if(request.getSession().getAttribute("userId") != null ) {
-            
-        	 vo.setUserId((String) request.getSession().getAttribute("userId"));
-            
-        	 List<ReservationVO> list = reservationService.selectReservation(vo);
-           
+         if(request.getSession().getAttribute("userId") != null ) {            
+        	 vo.setUserId((String) request.getSession().getAttribute("userId"));            
+        	 List<ReservationVO> list = reservationService.selectReservation(vo);         
         	PagedListHolder pagedListHolder = new PagedListHolder(list);
     		int page = ServletRequestUtils.getIntParameter(request, "p", 0);
     		pagedListHolder.setPage(page);
     		pagedListHolder.setPageSize(10);
-    		
     		model.addAttribute("pagedListHolder",pagedListHolder);
-            
             return "reservation/mypage";
          }
          else {
             return "member/login";
-         }
-         
+         }        
       }else {
          return "member/login";
       }
    }
-   
-   //예약 취소
+
    @RequestMapping(value="delete.do", method=RequestMethod.GET)
       public String deleteReservation(@RequestParam("num") int num) throws Exception {
-         
-	   	 reservationService.deleteReservation(num);
-         
+	   	 reservationService.deleteReservation(num);         
          return "redirect: mypage.do";
       }
    
