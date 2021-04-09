@@ -96,8 +96,7 @@
 		
 	</style>
 	
-	<script>	
-		
+	<script>			
 		document.addEventListener('DOMContentLoaded', function() {
 			var calendarEl = document.getElementById('calendarYoga');
 			var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -136,9 +135,9 @@
 												location.href="mypage.do";
 											}
 										}else if(cnt == -1){
-											alert("예약이 이미 완료되었습니다");
+											alert("예약이 이미 완료되었습니다.");
 										}else if(cnt == -2){
-											alert("예약불가: 예약 인원수를 초과하였습니다");
+											alert("예약불가: 예약 인원수를 초과하였습니다.");
 										}else {
 											if(confirm("로그인을 해주세요. 로그인 페이지로 이동하시겠습니까?") == true) {
 												location.href="login.do";
