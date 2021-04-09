@@ -251,8 +251,7 @@ h2{font-size: 2rem;}
 
 			   
 				options: {
-					// Elements options apply to all of the options unless overridden in a dataset
-					// In this case, we are setting the border of each horizontal bar to be 2px wide
+					//데이터 셋에 모두 적용가능한  option
 					elements: {
 						rectangle: {
 							borderWidth: 2,
@@ -285,13 +284,15 @@ h2{font-size: 2rem;}
 			    options: {}
 			};
 
+		
 		window.onload = function() {
+			//config(javascript)와 chart-area을 연결
 			var ctx = document.getElementById('chart-area').getContext('2d');
 			window.myDoughnut = new Chart(ctx, config);
-			
+			//config1(javascript)와 chart-area1을 연결
 			var ctx1 = document.getElementById('chart-area1').getContext('2d');
 			window.myDoughnut1 = new Chart(ctx1, config1);
-			
+			//config2(javascript)와 chart-area2을 연결
 			var ctx2 = document.getElementById('chart-area2').getContext('2d');
 			window.myDoughnut2 = new Chart(ctx2, config2);
 		};
