@@ -33,7 +33,7 @@ function hasScrolled() {
 }
 $(document).ready(function() {
   $(window).scroll(function() {
-    if ($(this).scrollTop() <= 500)  {
+    if ($(this).scrollTop() <= 300)  {
         $('header').css("background-color", "rgba(45, 80, 148, 0)");
          } 
         else {
