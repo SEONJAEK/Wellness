@@ -208,9 +208,21 @@ background-color: black;
 		height: 30px;
 }
 .form-control{
-		border-radius: 10px;
+		border-radius: 0px;
 		width: 400px;
 }
+.jumbotron{
+		width:500px; height: auto; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;
+}
+button[type=button], input[type=submit]{
+border-radius:4px;
+}
+input{
+margin-bottom: 10px;
+}
+
+h6{
+font-size: 1rem;}
 </style>
 
 <!-- 각 페이지 내비 -->
@@ -234,20 +246,15 @@ background-color: black;
 <!-- 입력  -->
 <h1 style="text-align:center; margin-top: 40px;">회원가입</h1>
 
-<div class="jumbotron" style="width:500px; height: 600px; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
-   <h2>이용약관</h2>
-        <textarea name="area" style="font-size: 10px; width: 350px; height: 90px;" readonly>
-    	웰니스 개인정보 처리 방침
-    	웰니스는 정보통신망 이용촉진 및 정보보호 등에
-    	관한 법률, 개인정보 보호법 등에 관한 법률에 근거하여
-    	관련 법령상의 개인정보를 보호하고, 이와 관련한 고충을 
-    	신속하고 원활하게 처리할 수 있도록 하기위하여
-    	 다음과 같이 개인정보 처리방침을 수렵합니다.
+<div class="jumbotron" style="width:500px; height: auto; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
+   <h2 style="font-size:1rem;">이용약관</h2>
+        <textarea name="area" style="font-size: 10px;min-width:90%;height:50px;resize: none;rows: 3;cols: 3;vertical-align:middle; text-align:left;" readonly="">웰니스 개인정보 처리 방침
+웰니스는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보 보호법 등에 관한 법률에 근거하여 관련 법령상의 개인정보를 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기위하여 다음과 같이 개인정보 처리방침을 수렵합니다.
         </textarea><br>
 
-        <input type='checkbox' name='enable' value='agree'> 
+        <input type='checkbox' name='enable' value='agree'  style="font-size:1rem;"> 
                가입 약관에 동의합니다. &nbsp
-       	<input type='checkbox' name='disable' value='disagree'>
+       	<input type='checkbox' name='disable' value='disagree'  style="font-size:1rem;">
                가입 약관에 동의하지 않습니다.
 
 	<form action="join.do" method="post" id="myForm">
@@ -261,22 +268,22 @@ background-color: black;
       	</h6>
  
    		<h6><label>비밀번호<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호" name="userPass" id="userpw" class="form-control" required style="width: 400px; height: 30px;"/></label>
+      		<input type="password" placeholder="비밀번호" name="userPass" id="userpw" class="form-control " required style="width: 90%; height: 30px;"/></label>
   			<div id="pw_check"></div>
   		</h6>
   
    		<h6><label>비밀번호확인<span id="red"></span><br>
-      		<input type="password" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 400px; height: 30px;"/></label>
+      		<input type="password" placeholder="비밀번호확인" name="userpw_ck" id="userpw_ck" class="form-control" required style="width: 90%; height: 30px;"/></label>
    			<div id="pw_check2"></div>
    		</h6>
    
    		<h6><label>이름<span id="red"></span><br>
-      		<input type="text" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 400px; height: 30px;"/></label>
+      		<input type="text" placeholder="이름" name="userName" id="username" class="form-control" required style="width: 90%; height: 30px;"/></label>
       		<div id="name_check"></div>
       	</h6>
       
   		<h6><label>핸드폰<span id="red"></span><br>
-      		<input type="tel" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 400px;height: 30px;"/></label>
+      		<input type="tel" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control" required style="width: 90%;height: 30px;"/></label>
       	</h6>
   
  		<h6><label>성별<span id="red"></span><br>
@@ -291,7 +298,7 @@ background-color: black;
   			
   				
   		<h6><label>생년월일<span id="red"></span><br>
-     		<input type="text" name="userBirth1" id="userbirth_yy" class="form-control" maxlength="4" placeholder="년(4자)" size="10" style="float:left;width:200px; height: 30px; display:inline-block;">
+     		<input type="text" name="userBirth1" id="userbirth_yy" class="form-control" maxlength="4" placeholder="년(4자)" size="10" style="float:left;width:230px; height: 30px; display:inline-block;">
 			</label>
 			<!-- 생년월일 월 -->
       		<select name="userBirth2" style="float:left; height: 30px;" >
@@ -345,10 +352,10 @@ background-color: black;
          		<option value="30">30</option>
          		<option value="31">31</option>
       		</select>
-     		<div id="year_check"></div></label></h6><br><br>
-     	
+     		<div id="year_check"></div></label></h6>
+     		<br><br><br>
    		<h6><label >이메일<span id="red"></span><br>
-      		<input type="email" placeholder="이메일" name="email" id="useremail"  class="form-control" required style="display:inline-block; width: 300px; height: 30px;"/>
+      		<input type="email" placeholder="이메일" name="email" id="useremail"  class="form-control" required style="display:inline-block; width: 90%; height: 30px;"/>
       		</label>
       	</h6>
 		
