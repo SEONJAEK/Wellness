@@ -179,14 +179,17 @@ h2{font-size: 2rem;}
 			<canvas id="chart-area"></canvas>
 			
 		</div>
-
+		<div>
+		남: ${count_male}<br>
+		여: ${count_female}<br>
+		총: ${count_male+count_female}<br>
+		</div>
 		<!-- 남녀 연령별 막대그래프 -->
 		<div class="column" id="canvas-holder">
 		<h2 style="text-align: center">나이대별 회원 분포도</h2><br><br>
-		<canvas id="chart-area">남: ${count_male}
-			여: ${count_female}
-			총: ${count_male+count_female}</canvas>
+		<canvas id="chart-area1"></canvas>
 		</div>
+		
 		<!-- 회원 증가추이 꺾은선 그래프 -->
 		<div class="column" id="canvas-holder">
 		<h2 style="text-align: center">월별 회원 증가 추이</h2><br><br>
