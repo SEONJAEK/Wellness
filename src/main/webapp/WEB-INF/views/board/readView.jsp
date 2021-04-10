@@ -182,7 +182,6 @@
 			</div>
 
 			<!-- 댓글 -->
-
 			<div id="reply">
 				    <p style="margin-left: 10px; font-size: 25px;">댓글</p>
 				    <hr style="margin-bottom: 10px; padding:0; border-top: 1px solid #818181;">
@@ -221,7 +220,8 @@
 				<c:if test="${sessionScope.userId != null}">
 						<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text" id="rContent" name="rContent" class="form-control" style="min-width: 300px; padding-left: 10px; box-sizing: border-box;" placeholder="댓글을 남겨보세요">
+						<input type="text" id="rContent" name="rContent" class="form-control" 
+						style="min-width: 300px; padding-left: 10px; box-sizing: border-box;" placeholder="댓글을 남겨보세요">
 					</div>
 				</div>
 
@@ -231,8 +231,6 @@
 					</div>
 				</div>
 				</c:if>
-				
-				
 			</form>
 		</section>
 		<hr />
