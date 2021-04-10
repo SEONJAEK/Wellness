@@ -111,14 +111,9 @@
 								</span>
 							</div>
 						</div>
-						<c:choose>
-							<c:when test="${userId != null}">
+							<c:if test="${ sessionScope.userId != null }"> 
 								<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" href="writeView.do">글 작성</a></li>
-							</c:when>
-							<c:otherwise>
-								<li style="margin:30px 10px -30px 0; float:right;"><a class="write text-right" onclick="btn_login();">글 작성</a></li>
-							</c:otherwise>
-						</c:choose>
+							</c:if>
 						<script>
 							 $(function(){
 								 $('#searchBtn').click(function() {
