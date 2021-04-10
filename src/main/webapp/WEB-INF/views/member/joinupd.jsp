@@ -242,85 +242,21 @@ width: 90%;
       		<input type="tel" value="${update.phone}" placeholder="- 없이 숫자만 써주세요(숫자11자리)" name="phone" maxlength="11" id="usertel" class="form-control width90" required "/></label>
       	</h6>
   
- 		<h6 style="display: inline-block;"><label>성별<span id="red"></span><br>
- 		 	<select name="gender" style="float:left; height: 25px;" >
-         		<option value="" >선택</option>
-         		<option value="M">남자</option>
-         		<option value="F">여자</option>
-         		</select>
-         		</label>
-         		<br>
-  
-  		<h6 style="margin-top:10px;"><label>생년월일<span id="red"></span><br>
-     		<input type="text" name="userBirth1" id="userbirth_yy" class="form-control" maxlength="4" placeholder="년(4자)" size="10" style="float:left;width:200px; display:inline-block;" readonly="readonly" >
-			<!-- 생년월일 월 -->
-      		<select name="userBirth2" style="float:left; height: 25px;" >
-         		<option value="">월</option>
-         		<option value="01">1</option>
-         		<option value="02">2</option>
-         		<option value="03">3</option>
-         		<option value="04">4</option>
-         		<option value="05">5</option>
-         		<option value="06">6</option>
-         		<option value="07">7</option>
-         		<option value="08">8</option>
-         		<option value="09">9</option>
-         		<option value="10">10</option>
-         		<option value="11">11</option>
-         		<option value="12">12</option>   
-      		</select>
-			<!-- 생년월일 일 -->
-      		<select name="userBirth3" style="float:left;height: 25px;" >
-        		<option value="">일</option>
-         		<option value="01">1</option>
-         		<option value="02">2</option>
-         		<option value="03">3</option>
-         		<option value="04">4</option>
-         		<option value="05">5</option>
-         		<option value="06">6</option>
-         		<option value="07">7</option>
-         		<option value="08">8</option>
-         		<option value="09">9</option>
-         		<option value="10">10</option>
-         		<option value="11">11</option>
-         		<option value="12">12</option>
-         		<option value="13">13</option>
-         		<option value="14">14</option>
-         		<option value="15">15</option>
-         		<option value="16">16</option>
-         		<option value="17">17</option>
-         		<option value="18">18</option>
-         		<option value="19">19</option>
-         		<option value="20">20</option>
-         		<option value="21">21</option>
-         		<option value="22">22</option>
-         		<option value="23">23</option>
-         		<option value="24">24</option>
-         		<option value="25">25</option>
-         		<option value="26">26</option>
-         		<option value="27">27</option>
-         		<option value="28">28</option>
-         		<option value="29">29</option>
-         		<option value="30">30</option>
-         		<option value="31">31</option>
-      		</select>
-     		<div id="year_check"></div></label></h6><br>
-     	
    		<h6><label >이메일<span id="red"></span><br>
-      		<input type="email" placeholder="이메일" name="email" id="useremail"  class="form-control width90" required style="display:inline-block; width: 300px"/>
+      		<input type="email" value="${update.email}" placeholder="이메일" name="email" id="useremail"  class="form-control width90" required style="display:inline-block; width: 300px"/>
       		</label>
       	</h6>
 		
 	<h6>주소<label><span id="red"></span>
 		<div class="form-group">                   
-			<input class="form-control"  placeholder="우편번호" name="post_num" id="mem_oaddress" type="text" readonly="readonly" required style="display:inline-block; width: 100px">
+			<input class="form-control" placeholder="우편번호" name="post_num" id="mem_oaddress" type="text" value="${update.post_num}" readonly="readonly" required style="display:inline-block; width: 100px">
     			</label>
     		<button type="button" class="id_Button" onclick="execPostCode();" style="display:inline-block;"><i class="fa fa-search"></i> 우편번호 찾기</button>                               
 		</div>
 	
 		<div class="form-group">
-    		<input type="text" class="form-control"  placeholder="도로명 주소" name="address" id="mem_address" required style="width: 254px" readonly="readonly" />
-   	 		<input type="text" class="form-control" placeholder="상세주소" name="address2" id="mem_detailaddress" required style="display:inline-block; width: 280px"/>
+    		<input type="text" class="form-control"  placeholder="도로명 주소" name="address" id="mem_address"  value="${update.address}" required style="width: 254px" readonly="readonly" />
+   	 		<input type="text" class="form-control" placeholder="상세주소" name="address2" id="mem_detailaddress"  value="${update.address2}" required style="display:inline-block; width: 280px"/>
 		</div>
 	</h6>
 	<div style="margin-top: 30px; text-align:center;">

@@ -145,7 +145,7 @@ public class MemberController {
 		@RequestMapping(value = "joinupd.do", method = RequestMethod.POST)
 		public String postJoinupd(@ModelAttribute MemberVO vo) throws Exception{
 			service.joinupd(vo);
-			return "joinupd";
+			return "index";
 		
 	}
 		
