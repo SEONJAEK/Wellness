@@ -27,7 +27,7 @@
                   <div class="main-pic-wrapper">
                             <div class="right-text">
                                 <div class="pro">
-                                    <img class="" style="width: 100%;" src="https://kinective.com/wp-content/uploads/2019/11/home-personal-training@2x.jpg" alt="PT 하는 모습">
+                                    <img class="" style="width: 100%;" src="resources/images/p_images/propt.jpg" alt="PT 하는 모습">
                                 </div>        
                                 <div class="pro text">
                                     <div class="ptext-box">
@@ -52,7 +52,7 @@
                   <div class="main-pic-wrapper">
                             <div class="right-text">
                                 <div class="pro">
-                                    <img class="" style="width: 100%;" src="resources/images/p_images/group.jpg" alt="GX 하는 모습">
+                                    <img class="" style="width: 100%;" src="resources/images/p_images/groupex.jpg" alt="GX 하는 모습">
                                 </div>        
                                 <div class="pro text">
                                     <div class="ptext-box">
@@ -106,5 +106,4 @@
               </section>
 
 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap" async defer></script>		
- <%@ include file="include/footer.jsp" %>  
+<%@ include file="include/footer.jsp" %>

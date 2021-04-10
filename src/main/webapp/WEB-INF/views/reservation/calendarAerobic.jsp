@@ -1,90 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="../include/header.jsp" %>
-
-	<!-- 제이쿼리  -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<link href="resources/fullcalendar/packages/core/main.css" rel='stylesheet' />
-	<link href="resources/fullcalendar/packages/daygrid/main.css" rel='stylesheet' />
-	<script src="resources/fullcalendar/packages/core/main.js"></script>
-	<script src="resources/fullcalendar/packages/interaction/main.js"></script>
-	<script src="resources/fullcalendar/packages/daygrid/main.js"></script>
-	
-	<style>
-		#title {
-			font-size: 60px;
-			text-align: center;;
+	<%@ page language="java" contentType="text/html; charset=UTF-8"	
+	pageEncoding="UTF-8"%>	
+<%@ include file="../include/header.jsp" %>	
+			
+	<link rel="stylesheet" href="<c:url value="/resources/css/reservation.css?ver=1"/>"	
+	type="text/css">		
+	<!-- 제이쿼리  -->	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+	<link href="resources/fullcalendar/packages/core/main.css" rel='stylesheet' />	
+	<link href="resources/fullcalendar/packages/daygrid/main.css" rel='stylesheet' />	
+	<script src="resources/fullcalendar/packages/core/main.js"></script>	
+	<script src="resources/fullcalendar/packages/interaction/main.js"></script>	
+	<script src="resources/fullcalendar/packages/daygrid/main.js"></script>	
+		
+	<style>	
+		#title {	
+			font-size: 4rem;	
+			text-align: center;	
+			margin: 100px 0;	
 		}
 		
-		#container {
-			display: flex;
-			justify-content: space-between;
-			height: 800px;
-		}
-		
-		#calendarAerobic {
-			padding: 0px;
-			margin: 5px;
-			height: 500px;
-			width: 500px;
-		}
-		
-		#reservation-img {
-			position: relative;
-		}
-		
-		img {
-			padding: 0px;
-			margin: 5px;
-			height: 500px;
-			width: 400px;
-			opacity: 0.5;
-			-webkit-filter: grayscale(100%);
-			filter: gray;
-		}
-		#imgtext {
-			position: absolute;;
-			font-size: 48px;
-			top: 250px;
-			right: 80px;
-		}
-		
-		.list-group {
-			text-align: center;
-			padding-left: 0;
-			margin-bottom: 20px;
-		}
-		.list-group a.menubox {
-		    display: inline-block;
-		    width: 250px;
-		    height: 50px;
-		    text-align: center;
-		    line-height: 50px;
-		    background: #ebebeb;
-		    border: 1px solid #ebebeb;
-		    font-weight: 400;
-		    font-size: 30px;
-		    color: #666;
-		    text-decoration: none;
-		    margin: 0 2px;
-		    }
-		    .list-group a.active {
-		    background: #0e0e0e;
-		    color: #c59d55;
-		}
-		
-		a.menubox:hover{
-		    background: #0e0e0e;
-		    color: #c59d55;
-		}
-		.btn{
-			width: 400px;
-			height: 70px;
-			position: absolute;
-			margin-left: -410px;
-			margin-top: 440px;
-			font-size: 20px;
-		}
 	</style>
 	
 	<script>	
@@ -185,38 +119,42 @@
 	</section>
 	</main>
 	
-	<div class="sub_menu">
-		<nav id="sub_menu">
-			<div class="list-group" style="text-align:center!important;">
-					<a href="reservationYoga.do" target="_self" class="menubox">Yoga</a>
-					<a href="reservationPilates.do" target="_self" class="menubox">Pilates</a>
-					<a href="reservationAerobic.do" target="_self" class="menubox active">Aerobic</a>
-			</div>
-		</nav>
-	</div>
-
-	<h1 id="title">에어로빅</h1>
-	<div id='container'>
-		<div id='calendarAerobic'></div>
+	<h1 id="title">에어로빅</h1>	
+	<div class="sub_menu">	
+		<nav id="sub_menu">	
+			<div class="list-group" style="text-align:center!important;">	
+					<!-- <a href="reservationYoga.do" target="_self" class="menubox active">Yoga</a>	
+					<a href="reservationPilates.do" target="_self" class="menubox">Pilates</a>	
+					<a href="reservationAerobic.do" target="_self" class="menubox ">Aerobic</a>  -->	
+					<a href="reservationYoga.do" target="_self" class="menubox">요가</a>	
+					<a href="reservationPilates.do" target="_self" class="menubox">필라테스</a>	
+					<a href="reservationAerobic.do" target="_self" class="menubox active">에어로빅</a> 	
+			</div>	
+		</nav>	
+	</div>	
 		
-		<div class="wrap">
-			<div id='reservation-morning'>
-				<div id='reservation-img'>
-					<img src='resources/images/r_images/aerobic1.jpg' /> 
-					<span id='imgtext'>09:00:10:00</span>
-					<input type="button" class="btn" id="aerobicMorning" name="programId1" value="오전예약"/>
-				</div>
-			</div>
-		</div>
-		<div class="wrap">
-			<div id='reservation-evening'>
-				<div id='reservation-img'>
-					<img src='resources/images/r_images/aerobic2.jpg' />
-					<span id='imgtext'>18:00-19:00</span>
-					<input type="button" class="btn" id="aerobicEvening" name="programId2" value="오후예약"/>
-				</div>
-			</div>
-		</div>
+	<div id='container'>	
+		<div id='calendarAerobic'></div>	
+		<div class="wrap-wrap">	
+		<div class="wrap">	
+			<div id='reservation-morning'>	
+				<div id='reservation-img'>	
+					<img src='resources/images/r_images/aerobic1.jpg' /> 	
+					<span id='imgtext'>09:00:10:00</span>	
+					<input type="button" class="btn" id="aerobicMorning" name="programId1" value="오전예약"/>	
+				</div>	
+			</div>	
+		</div>	
+		<div class="wrap">	
+			<div id='reservation-evening'>	
+				<div id='reservation-img'>	
+					<img src='resources/images/r_images/aerobic2.jpg' />	
+					<span id='imgtext'>18:00-19:00</span>	
+					<input type="button" class="btn" id="aerobicEvening" name="programId2" value="오후예약"/>	
+				</div>	
+			</div>	
+		</div>	
+	</div>	
 	</div>
 
 

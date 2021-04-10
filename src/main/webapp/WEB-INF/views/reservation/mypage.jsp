@@ -8,10 +8,10 @@
 <link rel="stylesheet"
 	href="<c:url value="resources/css/bootstrap.css"/>">
 <style type="text/css">
-body {
+/*body {
 	line-height: 2em;
 	font-family: "맑은 고딕";
-}
+}*/
 
 ul, li {
 	list-style: none;
@@ -23,14 +23,16 @@ ul, li {
 #mainWrapper {
 	width: 80%;
 	margin: 0 auto; /*가운데 정렬*/
+	min-height: 800px;
 }
 
 #mainWrapper>ul>li:first-child {
-	text-align: center;
-	font-size: 14pt;
-	height: 40px;
-	vertical-align: middle;
-	line-height: 30px;
+    text-align: center;
+    font-size: 4rem;
+    height: 40px;
+    vertical-align: middle;
+    line-height: 30px;
+    padding: 100px 0;
 }
 
 #ulTable {
@@ -79,6 +81,21 @@ ul, li {
 	margin: auto;
 	text-align: center;
 	font-size: 48px;
+}
+.table-bordered {
+font-size: 1rem;
+min-width: 300px;
+max-width: 1200px; 
+margin:0 auto;"
+}
+.table > tbody > tr > th{
+font-size: 1.5rem;
+text-align: center;
+}
+.container{
+margin:0 auto;
+min-width: 300px;
+max-width: 1200px;
 }
 </style>
 <script>

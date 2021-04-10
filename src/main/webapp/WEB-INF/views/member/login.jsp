@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    
 
 <style>
 h2{
@@ -11,26 +11,6 @@ text-align: center;
 padding: 30px;
 }
 </style>
-<script>
-	$(function(){
-		 $('#loginCheck').click(function(){
-			$.ajax({
-				url: 'loginCheck.do',
-				dataType: 'json',
-				type: 'GET',
-				data: {userId : $('#userId').val(), userPass : $('#userPass').val()},
-				success: function(data) {
-					if(data.result[0] == "1"){
-						alert('아이디 또는 비밀번호를 입력해주세요.');
-					}else if(data.result[0] == "2" ) {
-						alert('아이디 또는 비밀번호를 확인해주세요.');
-					}
-				}
-			});
-		 });
-	});
-</script>
-
 <!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
@@ -43,17 +23,16 @@ padding: 30px;
 	
 	</section>
 	</main>
-<form action ="login.do" method="post">
-            <h2  style="margin-top: 40px;"> Member Login</h2>
+		<form action ="login.do" method="post" style="min-height: 800px;">
+            <h2 style="padding:50px 0; font-size: 2rem;">로그인</h2>
            
-             <div class="login" style="margin-top: 30px; margin-bottom: 40px;">
-<div class="jumbotron" style="width:500px; height: 350px; margin: 0 auto; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
-                <input type="text" name="userId" id="userId" placeholder="ID" title="아이디입력" style="width: 250px; height: 40px; margin-left: 120px; margin-top: 50px; "><br>
-                <input type="password" name="userPass" id="userPass" placeholder="PASSWORD" title="비밀번호입력" style="width: 250px; height: 40px;  margin-left: 120px;"><br>
-                <input type="submit" value="LOGIN" id="loginCheck" style="width: 250px; height: 40px;  margin-left: 120px;">
+      <div class="login">
+			<div class="jumbotron" style="width:500px; height: 350px; margin: 0 auto; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
+                <input type="text" name="userId" placeholder="아이디" title="아이디입력" style="width: 250px; height: 40px; margin-left: 120px; margin-top: 50px; "><br>
+                <input type="password" name="userPass" placeholder="비밀번호" title="비밀번호입력" style="width: 250px; height: 40px;  margin-left: 120px;"><br>
+                <input type="submit" value="로그인" style="width: 250px; height: 40px;  margin-left: 120px; font-weight: 700;">
              
             <div>
-            
             <ul> <br>
                 <a href="idfind.do" style="margin-left: 110px; font-size: 20px;" >아이디 찾기</a> &nbsp;
                 <a href="pwfind.do" style="font-size: 20px;">비밀번호 찾기</a> &nbsp;

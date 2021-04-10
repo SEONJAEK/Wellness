@@ -1,0 +1,144 @@
+@charset "UTF-8";
+	
+    
+		#title {
+			font-size: 4rem;
+			text-align: center;
+			margin: 100px 0;
+		}
+		
+		#container {
+			display: flex;
+		    justify-content: space-around;
+		    min-height: 800px;
+		    padding-top: 50px;
+		    margin: 0 auto;
+		}
+		
+		/* #calendarYoga {
+			padding: 10px;
+			margin: 10px;
+			height: 500px;
+			width: 600px;
+		}
+		#calendarAerobic {
+			padding: 0px;
+			margin: 5px;
+			height: 500px;
+			width: 500px;
+		} */
+		#calendarYoga, #calendarPilates, #calendarAerobic {
+			 padding: 0px;
+		    margin: 5px;
+		    min-height: 500px;
+		    min-width: 300px;
+		    max-width: 600px;	
+		}
+		
+		
+		#reservation-img {
+			position: relative;
+   			min-width: 300px;
+		}
+		.wrap{
+			width: 100%;
+		    max-width: 400px;
+		    margin: 0 10px;
+		}
+
+		img {
+			height: 500px;
+		    min-width: 100%;
+		    max-width: 30%;
+		    opacity: 0.5;
+		    -webkit-filter: grayscale(100%);
+		    position: relative;
+		    box-sizing: border-box;
+		}
+		
+		/*#imgtext {
+			position: absolute;;
+			font-size: 48px;
+			top: 250px;
+			right: 80px;
+		}*/
+		
+		#imgtext {
+		    position: absolute;
+		    font-size: 3rem;
+		    top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    text-align: center;
+		}
+		
+		.list-group {
+			text-align: center;
+			padding-left: 0;
+			margin-bottom: 20px;
+		}
+		.list-group a.menubox {
+		    display: inline-block;
+		    width: 250px;
+		    height: 50px;
+		    text-align: center;
+		    line-height: 50px;
+		    background: #ebebeb;
+		    border: 1px solid #ebebeb;
+		    font-weight: 400;
+		    font-size: 30px;
+		    color: #666;
+		    text-decoration: none;
+		    margin: 0 2px;
+		    }
+		    .list-group a.active {
+		    background: #0e0e0e;
+		    color: #c59d55;
+		}
+		
+		a.menubox:hover{
+		    background: #0e0e0e;
+		    color: #c59d55;
+		}
+		 
+		 /*.btn{
+	      width: 400px;
+	      height: 70px;
+	      position: absolute;
+	      margin-left: -410px;
+	      margin-top: 440px;
+	      font-size: 20px;
+	      }*/
+	      .btn {
+		    min-width: 100%;
+		    height: 70px;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    font-size: 20px;
+		    box-sizing: content-box;
+		}
+		.wrap-wrap{
+		display:flex;
+		justify-content: center;
+		margin: 50px 0;
+		}
+		input[type=button]:hover;{
+		cursor: pointer;
+		}
+	    @media screen and (max-width: 1024px) {
+	    .wrap-wrap{
+	    min-width: 100%;}
+	    .wrap{
+		width: 45%;
+		}
+	    
+		#container {
+			display: flex;
+			flex-flow: column wrap;
+		}
+		#calendarYoga, #calendarPilates, #calendarAerobic {
+			margin: 0 auto;	
+		}
+	    }
+		

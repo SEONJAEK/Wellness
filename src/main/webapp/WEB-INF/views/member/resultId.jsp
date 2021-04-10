@@ -28,8 +28,8 @@ h3{margin-bottom:2%;}
 	</section>
 	</main>
 
-<form action = "resultId.do" method="post">
-<div class="jumbotron" style="width:500px; height: 200px; margin-top:40px; margin-bottom: 40px; margin-left: 500px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
+<form action = "resultId.do" method="post" style="min-height: 600px;">
+<div class="jumbotron" style="width:500px; height: 200px; margin:0 auto; margin-top: 100px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray;">
   	<div class="row out-div">
 		<div class="col-12">
 	     	<div class="row">

@@ -23,7 +23,7 @@
     }
     .mobile-nav p{font-size: 2rem;}
     .mobile-info{width: 100%; display: flex; position: absolute;
-        bottom:18%; justify-content: space-around;}
+        bottom:18%; justfiy-content: center;}
     .mobile-info a{color: #5c5857;}
     
     .menu-icon{width: 100%; display: flex; flex-direction: column wrap; padding-top: 40px;}
