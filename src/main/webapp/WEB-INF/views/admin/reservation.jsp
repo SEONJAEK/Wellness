@@ -198,7 +198,7 @@ h2{font-size: 2rem;}
 			<div class="list-group" style="text-align:center; margin-top: 100px;">
 					<a href="graph.do" target="_self" class="menubox">회원 분석</a>
 					<a href="member_admin.do" target="_self" class="menubox">회원 목록</a>
-					<a href="reservation_admin.do" target="_self" class="menubox active">예약 현황</a>
+					<a href="reservation_admin.do" target="_self" class="menubox active">GX 예약 현황</a>
 			</div>
 		</nav>
 	</div><br><br><br>
@@ -209,7 +209,7 @@ h2{font-size: 2rem;}
 <br>
 <br>
 <div id='container'>
-	<div id='calendarYoga'></div>
+	<div id='calendar'></div>
 </div>
 <!-- 요가 -->
 <div id="mainWrapper">
@@ -370,7 +370,7 @@ h2{font-size: 2rem;}
 <!-- 에어로빅 -->
 <script>	
 		document.addEventListener('DOMContentLoaded', function() {
-			var calendarEl = document.getElementById('calendarYoga');
+			var calendarEl = document.getElementById('calendar');
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 					timezone: 'local',
 				
