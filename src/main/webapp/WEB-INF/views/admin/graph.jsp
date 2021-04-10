@@ -146,7 +146,7 @@ h2{font-size: 2rem;}
 	<!-- 각 페이지 내비 -->
 	<main class="main">
 		<section class="main-top">
-	<h2 class="main-title">회원 관리 페이지</h2>
+	<h2 class="main-title">관리자 페이지</h2>
 	<!-- <div class="main-nav">
 		<a href="graph.do">Graph</a> 
 		<a href="member_admin.do">회원관리</a>
