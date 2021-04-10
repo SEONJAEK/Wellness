@@ -146,7 +146,7 @@
 						-->
 						<c:choose>
                                   <c:when test="${isAdmin == 1}">
-                                      <li class="menu_li"><a class="menu_a" href="member_admin.do" >회원 관리 페이지</a>
+                                      <li class="menu_li"><a class="menu_a" href="member_admin.do" >관리자 페이지</a>
                                           <ul class="sub_ul">
                                               <li class="sub_li"><a class="sub_a" href="graph.do">회원 분석</a></li>
                                               <li class="sub_li"><a class="sub_a" href="member_admin.do">회원 목록</a></li>
