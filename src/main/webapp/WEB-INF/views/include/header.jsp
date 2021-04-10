@@ -98,7 +98,7 @@
 						<!--선재 수정한 코드  -->
 						<c:choose>
 							<c:when test="${isAdmin == 1}">
-								<a href="member_admin.do"><p>회원 관리 페이지</p></a>
+								<a href="member_admin.do"><p>관리자 페이지</p></a>
 							</c:when>
 							<c:otherwise>
 								<a href="mypage.do"><p>내 예약</p></a>
@@ -150,7 +150,7 @@
                                           <ul class="sub_ul">
                                               <li class="sub_li"><a class="sub_a" href="graph.do">회원 분석</a></li>
                                               <li class="sub_li"><a class="sub_a" href="member_admin.do">회원 목록</a></li>
-                                              <li class="sub_li"><a class="sub_a" href="reservation_admin.do">예약 현황</a></li>
+                                              <li class="sub_li"><a class="sub_a" href="reservation_admin.do">GX 예약 현황</a></li>
                                           </ul>    
                                       </li>
                                    </c:when>
