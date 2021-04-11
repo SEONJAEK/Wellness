@@ -113,7 +113,7 @@
 						<li class="menu_li"><a class="menu_a"
 							href="${pageContext.request.contextPath}/intro.do">지점소개</a>
 							<ul class="sub_ul">
-								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#facility">시설소개</a></li>
+								<!--  <li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#facility">시설소개</a></li> -->
 								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#covid">시설방역</a></li>
 								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#coach">코치소개</a></li>
 								<li class="sub_li"><a class="sub_a" href="${pageContext.request.contextPath}/intro.do#location">위치안내</a></li>
@@ -127,7 +127,7 @@
 						<li class="menu_li"><a class="menu_a" href="reservationYoga.do">GX 예약</a>
 							<ul class="sub_ul">
 								<li class="sub_li"><a class="sub_a" href="reservationYoga.do">요가</a></li>
-								<li class="sub_li"><a class="sub_a" href="#reservationPilates.do">필라테스</a></li>
+								<li class="sub_li"><a class="sub_a" href="reservationPilates.do">필라테스</a></li>
 								<li class="sub_li"><a class="sub_a" href="reservationAerobic.do">에어로빅</a></li>
 							</ul></li>
 						<li class="menu_li"><a class="menu_a" href="list.do">Q & A</a></li>

@@ -140,6 +140,12 @@ a.menubox:hover{
 h1{font-size: 4rem;}
 h2{font-size: 2rem;}
 
+.total {
+    position: absolute;
+    left: 81%;
+    bottom: 29%;
+    font-size: 1rem;
+}
 </style>
   
 
@@ -174,16 +180,16 @@ h2{font-size: 2rem;}
 	<div class="three-column" style="padding-top: 100px; margin: 0 auto; min-width: 100%;">
 		<!-- 원형그래프 -->
 		
-		<div class="column" id="canvas-holder">
-			<h2 style="text-align: center">남여 회원 성비 </h2><br><br>
+		<div class="column" id="canvas-holder" style="position: relative;">
+			<h2 style="text-align: center">남녀 회원 성비 </h2><br><br>
 			<canvas id="chart-area"></canvas>
-			
+			<div class="total">
+			남: ${count_male}<br>
+			여: ${count_female}<br>
+			총: ${count_male+count_female}<br>
+			</div>
 		</div>
-		<div>
-		남: ${count_male}<br>
-		여: ${count_female}<br>
-		총: ${count_male+count_female}<br>
-		</div>
+		
 		<!-- 남녀 연령별 막대그래프 -->
 		<div class="column" id="canvas-holder">
 		<h2 style="text-align: center">나이대별 회원 분포도</h2><br><br>

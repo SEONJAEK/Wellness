@@ -155,7 +155,7 @@
                                         <h4 style="font-size: 4rem;">Personal Training</h4>
                                         <span class="pro-line"></span>
                                         <p>운동 강습이 절실하게 필요한 회원님께 50분 동안 제공해드리는 개인 지도입니다.</p>
-                                        <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                                        <a href="${pageContext.request.contextPath}/program.do#propt" class="bg-red-btn"><span>더 알아보기</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                         <h4 style="font-size: 4rem;">Group Exercise</h4>
                                         <span class="pro-line"></span>
                                         <p>요가, 필라테스, 에어로빅 그룹 운동을 통해 개인별 운동 목표를 달성합니다.</p>
-                                        <a href="#" class="bg-red-btn"><span>더 알아보기</span></a>
+                                        <a href="${pageContext.request.contextPath}/program.do#progx" class="bg-red-btn"><span>더 알아보기</span></a>
                                     </div>
                                 </div>
                                 <div class="pro">
@@ -201,21 +201,21 @@
                                     <img class="gx3-pic" src="resources/images/p_images/gxyoga.jpg" alt="그룹 요가 수업 모습">
                                     <div class="gx3-text">
                                         <h2 class="gx3-title">요가</h2>
-                                        <a href="gx3-rsv">예약하기</a>			
+                                        <a href="reservationYoga.do" class="gx3-rsv">예약하기</a>			
                                     </div>
                                 </div>
                                 <div class="gx3-container">
                                     <img class="gx3-pic" src="resources/images/p_images/gxps.jpg" alt="그룹 필라테스 수업 모습">
                                     <div class="gx3-text">
                                         <h2 class="gx3-title">필라테스</h2>
-                                        <a href="gx3-rsv">예약하기</a>
+                                        <a href="reservationPilates.do" class="gx3-rsv">예약하기</a>
                                     </div>
                                 </div>
                                 <div class="gx3-container">
                                     <img class="gx3-pic" src="resources/images/p_images/gxar.jpg" alt="그룹 에어로빅 수업 모습">       
                                     <div class="gx3-text">
                                         <h2 class="gx3-title">에어로빅</h2>
-                                        <a href="gx3-rsv">예약하기</a>		
+                                        <a href="reservationAerobic.do" class="gx3-rsv">예약하기</a>		
                                     </div>
                                 </div>
                             </div>

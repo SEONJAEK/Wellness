@@ -20,6 +20,12 @@
 		<title>Q &amp; A</title>
 
 	<style>
+			@media (min-width: 1200px)
+		.container {
+		    width: 1172px;
+		}
+
+	
 		.chk {
 			background-color: #eee;
     		opacity: 1;

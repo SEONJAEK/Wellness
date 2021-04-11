@@ -24,7 +24,7 @@
 		.thead1 {
 			font-size:25px;
 		}
-		a{color:#333333;}
+		td a{color:#333333;}
 		a.write {
 	    display: flex;
 	    justify-content: center;
