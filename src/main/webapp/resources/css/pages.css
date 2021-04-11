@@ -263,11 +263,12 @@
 
   /* 코치 소개 */
   .i-wrapper{display: flex; flex-flow: column nowrap;}
-  .ibox{overflow: hidden; display: flex; width: 100%; height: auto; background: #1c1c1c;}
-  .ipic{min-width: 300px; max-width: 50%; margin-top: 100px; transition: all 0.1s ease-out;}
+  .ibox{overflow: hidden; display: flex; width: 100%; height: auto; background: #1c1c1c; margin: 0 auto; max-width: 1400px;}
+  .ipic{min-width: 300px; max-width: 50%; transition: all 0.1s ease-out;}
   .ipic:hover{transform: scale(1.1);}
-  .itext{min-width: 50%; max-width: 300px; min-height: 500px; margin:0 auto;}
-  .itext h2{display:inline-block; font-size: 2rem; color: #de3726; padding: 2%; border: 1px solid #fff;}
+  .itext{min-width: 50%; max-width: 300px; min-height: 500px; margin:0 auto; margin-top:50px;}
+  .itext h2{display:inline-block; font-size: 2rem; color: #de3726; padding: 2%; border: 1px solid #fff; margin: 0 0 0 16px;
+  }
   
   .ibox .career, .ibox .moto{width: 100%; padding: 2%;}
   .ibox .career{display: inline-block; font-size: 1.5rem; color: #fff; line-height: 1.5;}
@@ -280,6 +281,7 @@
   .jen{right: 30px; bottom: 1000px;}
   .mia{left: 3px; bottom: 500px;}
   .tina{right: 30px; bottom: 30px;}
+  
 
   /* 위치 안내 */
   .l-wrapper{display: flex;}
@@ -313,6 +315,21 @@
   .gxbox h3 span:after{content: ''; display: block; border-left: 2px solid #fff; height: 77px;
     position: absolute; left: 50%; margin-top: -103px; z-index: 0;}
 
-   
+  
+  .tg  {min-width: 80%; max-width: 600px; margin:0 auto; border-collapse:collapse;border-spacing:0; font-color: #fff;}
+  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg tr:nth-child(2n){}
+  .tg tr:nth-child(2n-1){}
+  .tg th{background: brown; border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  .tg .tg-baqh, .tg .tg-c3ow, .tg .tg-0pky, .tg .tg-0lax{font-family:'Do Hyeon'; color: #fff; font-size: 1.3rem; border-color:#fff;
+  text-align:center; vertical-align: middle;}
+ 
+  .tg .ae{opacity:1;}
+  .tg .yo{opacity:1;}
+  .tg .pil{opacity:1;} 
+
+
 
   

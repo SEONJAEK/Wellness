@@ -71,7 +71,8 @@
     .c-wrapper{flex-flow: column wrap;}
 
     /* 코치 소개 */
-
+	.ibox{flex-flow: column wrap;}
+	.ipic{max-width: 100%; order: -1;}
     /* 위치 안내 */
     .l-wrapper{flex-flow: column wrap;}
     #map, .ltext{width: 100%;}
