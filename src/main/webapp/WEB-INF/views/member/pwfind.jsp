@@ -8,7 +8,8 @@
 background-color: black;
 color: white;
 }
-
+input {font-size: 1rem;
+    font-family: 'Do Hyeon';}
 </style>
 
 <!-- 각 페이지 내비 -->

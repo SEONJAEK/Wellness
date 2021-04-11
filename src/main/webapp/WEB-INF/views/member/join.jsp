@@ -190,7 +190,10 @@ $(document).ready(function(){
 
 <!-- css -->
 <style type="text/css">
-
+input{
+font-family:'Do Hyeon';
+font-size: 1rem;
+}
 
 h5{
    text-align: center;
@@ -216,14 +219,23 @@ background-color: black;
 }
 button[type=button], input[type=submit]{
 border-radius:4px;
+font-family:'Do Hyeon';
+font-size: 1rem;
 }
+
 input{
 margin-bottom: 10px;
 }
 
 h6{
 font-size: 1rem;}
+
+textarea{
+font-family:'Do Hyeon';
+font-size: 1rem;
+}
 </style>
+
 
 <!-- 각 페이지 내비 -->
 	<main class="main">
@@ -248,7 +260,7 @@ font-size: 1rem;}
 
 <div class="jumbotron" style="width:500px; height: auto; margin: 0 auto; margin-top: 40px; margin-bottom: 50px; border-radius: 30px; border: 2.5px dotted; background-color: lightgray; padding-left: 30px; padding-top: 40px; padding-bottom: 50px;">
    <h2 style="font-size:1rem;">이용약관</h2>
-        <textarea name="area" style="font-size: 10px;min-width:90%;height:50px;resize: none;rows: 3;cols: 3;vertical-align:middle; text-align:left;" readonly="">웰니스 개인정보 처리 방침
+        <textarea name="area" style="min-width:90%;height:50px;resize: none;rows: 3;cols: 3;vertical-align:middle; text-align:left;" readonly="">웰니스 개인정보 처리 방침
 웰니스는 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보 보호법 등에 관한 법률에 근거하여 관련 법령상의 개인정보를 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기위하여 다음과 같이 개인정보 처리방침을 수렵합니다.
         </textarea><br>
 

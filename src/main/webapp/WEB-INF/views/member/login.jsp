@@ -10,6 +10,10 @@ text-align: center;
 .container-fluid{
 padding: 30px;
 }
+input{
+font-family:'Do Hyeon';
+font-size: 1.3rem;
+}
 </style>
 <!-- 각 페이지 내비 -->
 	<main class="main">

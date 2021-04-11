@@ -10,7 +10,10 @@ padding: 30px;
 .btn{
 background-color: black;
 color: white;
-
+}
+input{
+font-family:'Do Hyeon';
+font-size: 1.3rem;
 }
 </style>
 

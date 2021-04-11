@@ -5,6 +5,12 @@
 <%@ include file="../include/header.jsp" %>
 
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<style>
+input{
+font-family:'Do Hyeon';
+font-size: 1rem;
+}
+</style>
 <script>
 function execPostCode() {
     new daum.Postcode({
@@ -174,7 +180,7 @@ h5{
 background-color: black;
 		color: white;
 		width: 130px;
-
+	
 }
 .form-control{
 		border-radius: 0px;
@@ -185,6 +191,7 @@ background-color: black;
 }
 button[type=button], input[type=submit]{
 border-radius:4px;
+font-family:'Do Hyeon';
 }
 input{
 margin-bottom: 10px;
