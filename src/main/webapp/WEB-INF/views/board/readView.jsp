@@ -36,7 +36,7 @@
 	ul, h1 {
 		text-align:center;
 	}
-
+	input, textarea, p{font-size: 1.3rem;}
 </style>
 </head>
 
