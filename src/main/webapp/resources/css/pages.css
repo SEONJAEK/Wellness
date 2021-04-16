@@ -316,19 +316,24 @@
     position: absolute; left: 50%; margin-top: -103px; z-index: 0;}
 
   
-  .tg  {min-width: 80%; max-width: 600px; margin:0 auto; border-collapse:collapse;border-spacing:0; font-color: #fff;}
-  .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-  .tg tr:nth-child(2n){}
-  .tg tr:nth-child(2n-1){}
-  .tg th{background: brown; border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-  .tg .tg-baqh, .tg .tg-c3ow, .tg .tg-0pky, .tg .tg-0lax{font-family:'Do Hyeon'; color: #fff; font-size: 1.3rem; border-color:#fff;
-  text-align:center; vertical-align: middle;}
- 
-  .tg .ae{opacity:1;}
-  .tg .yo{opacity:1;}
-  .tg .pil{opacity:1;} 
+  .gx-timetable .pro-table{
+  width: 1000px;
+  height: 600px;
+  border-collapse: collapse;
+  font-family: 'Do Hyeon';
+  font-size: 1rem;
+  background: #56463c;
+  color: #fff;
+	}
+  .gx-timetable .pro-table tr{
+  text-align: center;
+  width: 100%;
+  height: auto;
+	}
+  .gx-timetable .pro-table tr:nth-child(2n-1){background: #5f4d42;}
+  .gx-timetable .pro-table td, .gx-timetable .pro-table th{width: 120px; height: 120px;}
+  .yogatxt, .aerotxt, .pilatxt{visibility: hidden;}
+  .yogapic, .aeropic, .pilapic{cursor: pointer; width: 30px; height: 30px; background: #fff; border-radius: 100px;}
 
 
 
