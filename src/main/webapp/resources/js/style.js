@@ -1,4 +1,4 @@
-// main.html
+// 헤더
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5; 
@@ -50,12 +50,7 @@ $(document).ready(function(){
   });
 });
 
-//시설 소개 애니메이션
-$(".mp").hover(function(){
-  $(".mpt.tran").css("display", "block");
-}, function(){
-  $(".mpt.tran").css("display", "none");
-});
+
 
 //위치 안내 지도
 function initMap() {
