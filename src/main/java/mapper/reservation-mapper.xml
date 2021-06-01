@@ -19,7 +19,7 @@
 	  join reservation r  on p.program_id = r.program_id
       join member_info m1 on  m1.user_id = r.user_id
 	  join member_info m2 on p.user_id = m2.user_id where r.user_id = #{userId}
-	  order by r.r_reg_date desc
+	  order by r.r_reg_date desc 
    </select>
    
    <delete id="deleteReservation" parameterType="int">
